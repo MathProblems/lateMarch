@@ -1,0 +1,1462 @@
+Tim's cat had kittens. He gave 3 to Jessica and 6 to Sara. He now has 9 kittens left. How many kittens did he have to start with ?
+
+
+ENTITY DESCRIPTION
+Unit : kittens
+Number : 3
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : kitten
+each : False
+adj : 
+widx : 3
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+
+ENTITY DESCRIPTION
+Unit : kittens
+Number : 6
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : kitten
+each : False
+adj : 
+widx : 7
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.09918629347635352]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.21769427195911856]]
+
+ENTITY DESCRIPTION
+Unit : kittens kittens
+Number : 3  *  6
+role :  
+sidx : 1 1
+verb :  
+sent :  
+lemma : kitten kitten
+each : False
+adj :  
+widx : 3 7
+orels :  
+loc :  
+text :  
+container : ??? ???
+ow :  
+------------------
+
+ENTITY DESCRIPTION
+Unit : kittens
+Number : 9
+role : do
+sidx : 2
+verb :  has
+sent : 
+lemma : kitten
+each : False
+adj : 
+widx : 5
+orels :  num rcmod
+loc : 
+text : 
+container : he
+ow :  9 left
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.42852093562417826]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.45034928871584423]]
+incorrect
+9 (x-3)-6=9 | x=18
+
+Joan has 9 blue balloons, Sally has 5 blue balloons, and Jessica has  2 blue balloons. How many blue balloons do they have in total ?
+
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 9
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : balloon
+each : False
+adj :  blue
+widx : 5
+orels :  num
+loc : 
+text : 
+container : joan
+ow :  9
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 5
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : balloon
+each : False
+adj :  blue
+widx : 11
+orels :  num
+loc : 
+text : 
+container : joan
+ow :  5
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.48014750027891295]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.6098126369177941]]
+
+ENTITY DESCRIPTION
+Unit : balloons balloons
+Number : 9  +  5
+role : do do
+sidx : 0 0
+verb :  has  has
+sent :  
+lemma : balloon balloon
+each : False
+adj :  blue  blue
+widx : 5 11
+orels :  num  num
+loc :  
+text :  
+container : joan joan
+ow :  9  5
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 2
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : balloon
+each : False
+adj :  blue
+widx : 18
+orels :  num
+loc : 
+text : 
+container : joan
+ow :  2
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.1908593661649857]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.48139432182392267]]
+Correct!
+16 9+5+2=x | x=16
+
+A restaurant served 5 cakes during lunch and 6 during dinner today. The restaurant served 3 cakes yesterday. How many cakes were served in total ?
+
+
+ENTITY DESCRIPTION
+Unit : cakes
+Number : 5
+role : do
+sidx : 0
+verb :  served
+sent : 
+lemma : cake
+each : False
+adj : 
+widx : 5
+orels :  num
+loc : 
+text : 
+container : restaurant
+ow :  5
+------------------
+
+ENTITY DESCRIPTION
+Unit : cakes
+Number : 6
+role : 
+sidx : 0
+verb : 
+sent : 
+lemma : cake
+each : False
+adj : 
+widx : 9
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.108032820289708]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.0018465115825683932]]
+
+ENTITY DESCRIPTION
+Unit : cakes cakes
+Number : 5  *  6
+role : do 
+sidx : 0 0
+verb :  served 
+sent :  
+lemma : cake cake
+each : False
+adj :  
+widx : 5 9
+orels :  num 
+loc :  
+text :  
+container : restaurant ???
+ow :  5 
+------------------
+
+ENTITY DESCRIPTION
+Unit : cakes
+Number : 3
+role : do
+sidx : 1
+verb :  served
+sent : 
+lemma : cake
+each : False
+adj : 
+widx : 5
+orels :  num
+loc : 
+text : 
+container : restaurant
+ow :  3
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.1358640493419737]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.03581275611229732]]
+incorrect
+90 5+6+3=x | x=14
+
+Melanie picked 4 plums, Dan picked 9 plums, and Sally picked 3 plums from the plum tree. How many plums were picked in total ?
+
+
+ENTITY DESCRIPTION
+Unit : plums
+Number : 4
+role : do
+sidx : 0
+verb :  picked
+sent : 
+lemma : plum
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : melanie
+ow :  4
+------------------
+
+ENTITY DESCRIPTION
+Unit : plums
+Number : 9
+role : do
+sidx : 0
+verb :  picked
+sent : 
+lemma : plum
+each : False
+adj : 
+widx : 9
+orels :  num
+loc : 
+text : 
+container : melanie
+ow :  9
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.1358640493419737]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.03581275611229732]]
+
+ENTITY DESCRIPTION
+Unit : plums plums
+Number : 4  *  9
+role : do do
+sidx : 0 0
+verb :  picked  picked
+sent :  
+lemma : plum plum
+each : False
+adj :  
+widx : 4 9
+orels :  num  num
+loc :  
+text :  
+container : melanie melanie
+ow :  4  9
+------------------
+
+ENTITY DESCRIPTION
+Unit : plums
+Number : 3
+role : do
+sidx : 0
+verb :  picked
+sent : 
+lemma : plum
+each : False
+adj : 
+widx : 15
+orels :  num
+loc : 
+text : 
+container : melanie
+ow :  3
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.1358640493419737]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.03581275611229732]]
+incorrect
+108 4+9+3=x | x=16
+
+There are 7 dogwood trees currently in the park. Park workers will plant 3 more dogwood trees today and 2 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 7
+role : s
+sidx : 0
+verb :  are
+sent : 
+lemma : dogwood tree
+each : False
+adj : 
+widx : 5
+orels :  num
+loc : 
+text : 
+container : dogwood trees
+ow :  7
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 2
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : dogwood tree
+each : False
+adj :  more
+widx : 14
+orels :  num dep
+loc : 
+text : 
+container : park workers
+ow :  2 tomorrow
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.2923719660554819]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.006033899214812916]]
+
+ENTITY DESCRIPTION
+Unit : dogwood trees dogwood trees
+Number : 7  /  2
+role : s 
+sidx : 0 1
+verb :  are 
+sent :  
+lemma : dogwood tree dogwood tree
+each : False
+adj :   more
+widx : 5 14
+orels :  num  num dep
+loc :  
+text :  
+container : dogwood trees park workers
+ow :  7  2 tomorrow
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 3
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : dogwood tree
+each : False
+adj :  more
+widx : 8
+orels :  num dep
+loc : 
+text : 
+container : park workers
+ow :  3 today
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.23252983999586227]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.0034760958881856242]]
+incorrect
+1.1666666666666667 7+3+2=x | x=12
+
+Sara grew 4 onions, Sally grew 5 onions, and Fred grew  9 onions. How many onions did they grow in all ?
+
+
+ENTITY DESCRIPTION
+Unit : onions
+Number : 4
+role : do
+sidx : 0
+verb :  grew
+sent : 
+lemma : onion
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : sara
+ow :  4
+------------------
+
+ENTITY DESCRIPTION
+Unit : onions
+Number : 5
+role : do
+sidx : 0
+verb :  grew
+sent : 
+lemma : onion
+each : False
+adj : 
+widx : 9
+orels :  num
+loc : 
+text : 
+container : sara
+ow :  5
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.3457901162804302]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.5282466903174579]]
+
+ENTITY DESCRIPTION
+Unit : onions onions
+Number : 4  +  5
+role : do do
+sidx : 0 0
+verb :  grew  grew
+sent :  
+lemma : onion onion
+each : False
+adj :  
+widx : 4 9
+orels :  num  num
+loc :  
+text :  
+container : sara sara
+ow :  4  5
+------------------
+
+ENTITY DESCRIPTION
+Unit : onions
+Number : 9
+role : do
+sidx : 0
+verb :  grew
+sent : 
+lemma : onion
+each : False
+adj : 
+widx : 15
+orels :  num
+loc : 
+text : 
+container : sara
+ow :  9
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.05650198216650312]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.3998283752235864]]
+Correct!
+18 4+5+9=x | x=18
+
+There are 39 dogwood trees currently in the park. Park workers will plant  41 more dogwood trees today and 20 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 39
+role : s
+sidx : 0
+verb :  are
+sent : 
+lemma : dogwood tree
+each : False
+adj : 
+widx : 5
+orels :  num
+loc : 
+text : 
+container : dogwood trees
+ow :  39
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 20
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : dogwood tree
+each : False
+adj :  more
+widx : 14
+orels :  num dep
+loc : 
+text : 
+container : park workers
+ow :  20 tomorrow
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.2923719660554819]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.006033899214812916]]
+
+ENTITY DESCRIPTION
+Unit : dogwood trees dogwood trees
+Number : 39  /  20
+role : s 
+sidx : 0 1
+verb :  are 
+sent :  
+lemma : dogwood tree dogwood tree
+each : False
+adj :   more
+widx : 5 14
+orels :  num  num dep
+loc :  
+text :  
+container : dogwood trees park workers
+ow :  39  20 tomorrow
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 41
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : dogwood tree
+each : False
+adj :  more
+widx : 8
+orels :  num dep
+loc : 
+text : 
+container : park workers
+ow :  41 today
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.23252983999586227]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.0034760958881856242]]
+incorrect
+0.0475609756097561 39+41+20=x | x=100
+
+Sandy has 10 books, Benny has 24 books, and Tim has  33 books. How many books do they have together ?
+
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 10
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : book
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : sandy
+ow :  10
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 24
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : book
+each : False
+adj : 
+widx : 9
+orels :  num
+loc : 
+text : 
+container : sandy
+ow :  24
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.344572832205169]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.38749497854900505]]
+
+ENTITY DESCRIPTION
+Unit : books books
+Number : 10  +  24
+role : do do
+sidx : 0 0
+verb :  has  has
+sent :  
+lemma : book book
+each : False
+adj :  
+widx : 4 9
+orels :  num  num
+loc :  
+text :  
+container : sandy sandy
+ow :  10  24
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 33
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : book
+each : False
+adj : 
+widx : 15
+orels :  num
+loc : 
+text : 
+container : sandy
+ow :  33
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.05528469809124187]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.25907666345513364]]
+Correct!
+67 10+24+33=x | x=67
+
+Jason picked 46 pears, Keith picked 47 pears, and Mike picked  12 pears from the pear tree. How many pears were picked in total ?
+
+
+ENTITY DESCRIPTION
+Unit : pears
+Number : 46
+role : do
+sidx : 0
+verb :  picked
+sent : 
+lemma : pear
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : jason
+ow :  46
+------------------
+
+ENTITY DESCRIPTION
+Unit : pears
+Number : 47
+role : do
+sidx : 0
+verb :  picked
+sent : 
+lemma : pear
+each : False
+adj : 
+widx : 9
+orels :  num
+loc : 
+text : 
+container : jason
+ow :  47
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.3972726531158547]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.6550734210261122]]
+
+ENTITY DESCRIPTION
+Unit : pears pears
+Number : 46  +  47
+role : do do
+sidx : 0 0
+verb :  picked  picked
+sent :  
+lemma : pear pear
+each : False
+adj :  
+widx : 4 9
+orels :  num  num
+loc :  
+text :  
+container : jason jason
+ow :  46  47
+------------------
+
+ENTITY DESCRIPTION
+Unit : pears
+Number : 12
+role : do
+sidx : 0
+verb :  picked
+sent : 
+lemma : pear
+each : False
+adj : 
+widx : 15
+orels :  num
+loc : 
+text : 
+container : jason
+ow :  12
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.10798451900192749]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.5266551059322409]]
+Correct!
+105 46+47+12=x | x=105
+
+Keith grew 29 cantelopes, Fred grew 16 cantelopes, and Jason grew  20 cantelopes. How many cantelopes did they grow in total ?
+
+
+ENTITY DESCRIPTION
+Unit : cantelopes
+Number : 29
+role : do
+sidx : 0
+verb :  grew
+sent : 
+lemma : cantelope
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : keith
+ow :  29
+------------------
+
+ENTITY DESCRIPTION
+Unit : cantelopes
+Number : 16
+role : do
+sidx : 0
+verb :  grew
+sent : 
+lemma : cantelope
+each : False
+adj : 
+widx : 9
+orels :  num
+loc : 
+text : 
+container : keith
+ow :  16
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.3972726531158547]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.6550734210261122]]
+
+ENTITY DESCRIPTION
+Unit : cantelopes cantelopes
+Number : 29  +  16
+role : do do
+sidx : 0 0
+verb :  grew  grew
+sent :  
+lemma : cantelope cantelope
+each : False
+adj :  
+widx : 4 9
+orels :  num  num
+loc :  
+text :  
+container : keith keith
+ow :  29  16
+------------------
+
+ENTITY DESCRIPTION
+Unit : cantelopes
+Number : 20
+role : do
+sidx : 0
+verb :  grew
+sent : 
+lemma : cantelope
+each : False
+adj : 
+widx : 15
+orels :  num
+loc : 
+text : 
+container : keith
+ow :  20
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.10798451900192749]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.5266551059322409]]
+Correct!
+65 29+16+20=x | x=65
+
+Alyssa has 37 blue balloons, Sandy has 28 blue balloons, and Sally  has 39 blue balloons. How many blue balloons do they have in all ?
+
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 37
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : balloon
+each : False
+adj :  blue
+widx : 5
+orels :  num
+loc : 
+text : 
+container : alyssa
+ow :  37
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 28
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : balloon
+each : False
+adj :  blue
+widx : 11
+orels :  num
+loc : 
+text : 
+container : alyssa
+ow :  28
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.4286649634434886]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.4829859062091396]]
+
+ENTITY DESCRIPTION
+Unit : balloons balloons
+Number : 37  +  28
+role : do do
+sidx : 0 0
+verb :  has  has
+sent :  
+lemma : balloon balloon
+each : False
+adj :  blue  blue
+widx : 5 11
+orels :  num  num
+loc :  
+text :  
+container : alyssa alyssa
+ow :  37  28
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 39
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : balloon
+each : False
+adj :  blue
+widx : 18
+orels :  num
+loc : 
+text : 
+container : alyssa
+ow :  39
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.13937682932956127]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.35456759111526825]]
+Correct!
+104 37+28+39=x | x=104
+
+Sally had 27 cards. Dan gave her 41 new cards. Sally bought 20 cards. How many cards does Sally have now ?
+
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 27
+role : do
+sidx : 0
+verb :  had
+sent : 
+lemma : card
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : sally
+ow :  27
+------------------
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 41
+role : do
+sidx : 1
+verb :  gave
+sent : 
+lemma : card
+each : False
+adj :  new
+widx : 6
+orels :  num poss
+loc : 
+text : 
+container : dan
+ow :  41 her
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.8682446299019057]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.0971299079481664]]
+
+ENTITY DESCRIPTION
+Unit : cards cards
+Number : 27  +  41
+role : do do
+sidx : 0 1
+verb :  had  gave
+sent :  
+lemma : card card
+each : False
+adj :   new
+widx : 4 6
+orels :  num  num poss
+loc :  
+text :  
+container : sally dan
+ow :  27  41 her
+------------------
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 20
+role : do
+sidx : 2
+verb :  bought
+sent : 
+lemma : card
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : ???
+ow :  20
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.5798963149089832]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.026474816212352446]]
+incorrect
+48 27+41+20=x | x=88
+
+Jason went to 11 football games this month. He went to 17 games last month, and plans to go to 16 games next month. How many games will he attend in all ?
+
+
+ENTITY DESCRIPTION
+Unit : football games
+Number : 11
+role : 
+sidx : 0
+verb : 
+sent : 
+lemma : football game
+each : False
+adj : 
+widx : 6
+orels :  prep_to num
+loc : 
+text : 
+container : jason
+ow :  went 11
+------------------
+
+ENTITY DESCRIPTION
+Unit : games
+Number : 17
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : game
+each : False
+adj : 
+widx : 5
+orels :  prep_to num
+loc : 
+text : 
+container : he
+ow :  went 17
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.014551806353333988]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.002351548253429349]]
+
+ENTITY DESCRIPTION
+Unit : football games games
+Number : 11  +  17
+role :  
+sidx : 0 1
+verb :  
+sent :  
+lemma : football game game
+each : False
+adj :  
+widx : 6 5
+orels :  prep_to num  prep_to num
+loc :  
+text :  
+container : jason he
+ow :  went 11  went 17
+------------------
+
+ENTITY DESCRIPTION
+Unit : games
+Number : 16
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : game
+each : False
+adj : 
+widx : 15
+orels :  prep_to num
+loc : 
+text : 
+container : he
+ow :  go 16
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.10248607763674271]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.2700339904355598]]
+incorrect
+283 11+17+16=x | x=44
+
+Mike has 45 dollars in 5 dollar bills.  How many 5 dollars bills does  he have ?
+
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 45
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : dollar
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : bills
+text : 
+container : mike
+ow :  45
+------------------
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 5
+role : do
+sidx : 1
+verb :  have
+sent : 
+lemma : dollar
+each : False
+adj :  many
+widx : 4
+orels :  num dep
+loc : 
+text : 
+container : he
+ow :  5 bills
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.11974800600639585]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.08179819715884705]]
+Correct!
+9.0 45/5=x | x=9
+
+Dan found 36 seashells. He plans to give all of his seashells equally to his 4 friends. How many seashells will each friend get ?
+
+
+ENTITY DESCRIPTION
+Unit : seashells
+Number : 36
+role : do
+sidx : 0
+verb :  found
+sent : 
+lemma : seashell
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : dan
+ow :  36
+------------------
+
+ENTITY DESCRIPTION
+Unit : friends
+Number : 4
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : friend
+each : True
+adj : 
+widx : 13
+orels :  prep_to num poss
+loc : 
+text : 
+container : he
+ow :  equally 4 his
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.3372461643852397]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.04362401219563769]]
+Correct!
+9.0 36/4=x | x=9
+
+There are 60 calories in a candy bar. How many 12 calories are there in 45 candy bars?
+
+
+ENTITY DESCRIPTION
+Unit : calories
+Number : 60
+role : s
+sidx : 0
+verb :  are
+sent : 
+lemma : calorie
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : bar
+text : 
+container : calories
+ow :  60
+------------------
+
+ENTITY DESCRIPTION
+Unit : calories
+Number : 12
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : calorie
+each : False
+adj : 
+widx : 3
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.3456858964766738]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.055237366060503494]]
+
+ENTITY DESCRIPTION
+Unit : calories calories
+Number : 60  -  12
+role : s 
+sidx : 0 1
+verb :  are 
+sent :  
+lemma : calorie calorie
+each : False
+adj :  
+widx : 4 3
+orels :  num 
+loc : bar 
+text :  
+container : calories ???
+ow :  60 
+------------------
+
+ENTITY DESCRIPTION
+Unit : candy bars
+Number : 45
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : candy bar
+each : False
+adj : 
+widx : 10
+orels :  num
+loc : are
+text : 
+container : calories
+ow :  45
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.39958591458389026]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.07924607086655755]]
+incorrect
+-480 (60*45)/12=x | x=225
+
+Melanie has 84 blue marbles. Sandy has 8 times more blue marbles than Melanie. How many 12 blue marbles does Sandy have?
+
+
+ENTITY DESCRIPTION
+Unit : marbles
+Number : 84
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : marble
+each : False
+adj :  blue
+widx : 5
+orels :  num
+loc : 
+text : 
+container : melanie
+ow :  84
+------------------
+
+ENTITY DESCRIPTION
+Unit : marbles
+Number : 8
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : marble
+each : False
+adj : 
+widx : 3
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.12858539830340893]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.07194768816675005]]
+
+ENTITY DESCRIPTION
+Unit : marbles marbles
+Number : 84  /  8
+role : do 
+sidx : 0 1
+verb :  has 
+sent :  
+lemma : marble marble
+each : False
+adj :  blue 
+widx : 5 3
+orels :  num 
+loc :  
+text :  
+container : melanie ???
+ow :  84 
+------------------
+
+ENTITY DESCRIPTION
+Unit : marbles
+Number : 12
+role : 
+sidx : 2
+verb : 
+sent : 
+lemma : marble
+each : False
+adj : 
+widx : 3
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.29485210914521953]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.0770295216839405]]
+incorrect
+126.0 (84*8)/12=x | x=56
+
+Mike has 48 books. Alyssa has 8 times more books than  Mike. How many 12 books does Alyssa have?
+
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 48
+role : do
+sidx : 0
+verb :  has
+sent : 
+lemma : book
+each : False
+adj : 
+widx : 4
+orels :  num
+loc : 
+text : 
+container : mike
+ow :  48
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 8
+role : 
+sidx : 1
+verb : 
+sent : 
+lemma : book
+each : False
+adj : 
+widx : 3
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.12858539830340893]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.07194768816675005]]
+
+ENTITY DESCRIPTION
+Unit : books books
+Number : 48  /  8
+role : do 
+sidx : 0 1
+verb :  has 
+sent :  
+lemma : book book
+each : False
+adj :  
+widx : 4 3
+orels :  num 
+loc :  
+text :  
+container : mike ???
+ow :  48 
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 12
+role : 
+sidx : 2
+verb : 
+sent : 
+lemma : book
+each : False
+adj : 
+widx : 3
+orels : 
+loc : 
+text : 
+container : ???
+ow : 
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.29485210914521953]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.0770295216839405]]
+incorrect
+72.0 (48*8)/12=x | x=32
+
+A restaurant sold 8 pies every day for a 7 days. How many pies were sold during the days ?
+
+
+ENTITY DESCRIPTION
+Unit : days
+Number : 7
+role : 
+sidx : 0
+verb : 
+sent : 
+lemma : day
+each : False
+adj : 
+widx : 11
+orels :  num det prep_for
+loc : 
+text : 
+container : restaurant
+ow :  7 a sold
+------------------
+
+ENTITY DESCRIPTION
+Unit : pies
+Number : 8
+role : do
+sidx : 0
+verb :  sold
+sent : 
+lemma : pie
+each : False
+adj : 
+widx : 5
+orels :  num dep
+loc : 
+text : 
+container : restaurant
+ow :  8 day
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.3224709690892413]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.3183986779260977]]
+Correct!
+56 8*7=x | x=56
+
+totals:  9 19
+[0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1]
