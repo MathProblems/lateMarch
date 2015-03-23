@@ -11,8 +11,10 @@ import entity as ENTITY
 from entity import entity
 import pickle
 import numpy as np
-sys.path.insert(0, '/Users/rikka/liblinear-1.94/python')
-from liblinearutil import *
+#sys.path.insert(0, '/Users/rikka/liblinear-1.94/python')
+#from liblinearutil import *
+sys.path.insert(0, '/Users/rikka/libsvm-3.18/python')
+from svmutil import *
 import setmaker
 
 class StanfordNLP:
@@ -67,9 +69,17 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         if sys.argv[1] == '-v':
             VERBOSE = True
+
+    '''
+    #liblinear
     asmd = load_model("data/3.19.asmd.classifier")
     adds = load_model("data/3.19.as.classifier")
     multd = load_model("data/3.19.md.classifier")
+    '''
+    #libsvm
+    asmd = svm_load_model("data/3.19.asmd.svmclassifier")
+    adds = svm_load_model("data/3.19.as.svmclassifier")
+    multd = svm_load_model("data/3.19.md.svmclassifier")
     wps = open("complex_dev.problems").readlines()
     answs = open("complex_dev.answers").readlines()
     right = 0
@@ -123,16 +133,19 @@ if __name__ == "__main__":
                 for i in range(len(vec)):
                     print(features[i],vec[i])
                 input()
-            p_label, p_acc, p_val = predict([-1], [vec], asmd,'-q')
+            #p_label, p_acc, p_val = predict([-1], [vec], asmd,'-q')
+            p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q')
             p[1].details();e[1].details()
             if p_label[0] == 1:
                 #adds 
-                op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
+                #op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
+                op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q')
                 if op_label[0] == 1:
                     op = " + "
                 else: op = " - "
             else:
-                op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
+                #op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
+                op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q')
                 if op_label[0] == 1:
                     op = " * "
                 else: op = " / "

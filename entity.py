@@ -108,9 +108,9 @@ def vector(a,b,problem,target,v=False):
         if type(a.__dict__[k])!=type('aaa'):continue
         if type(b.__dict__[k])!=type('aaa'):continue
         features.append(k)
-        ak = a.__dict__[k].strip().split(" ")
-        bk = b.__dict__[k].strip().split(" ")
-        if len([x for x in ak if x in bk])>0:
+        ak = [x for x in a.__dict__[k].strip().split(" ") if x is not "" and x is not "???"]
+        bk = [x for x in b.__dict__[k].strip().split(" ") if x is not "" and x is not "???"]
+        if len([x for x in ak if x in bk ])>0:
             dist = 0
         else:
             dist = 1
