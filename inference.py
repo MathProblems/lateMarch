@@ -16,6 +16,7 @@ import numpy as np
 sys.path.insert(0, '/Users/rikka/libsvm-3.18/python')
 from svmutil import *
 import setmaker
+from sympy.solvers.solvers import solve
 
 class StanfordNLP:
     def __init__(self, port_number=8080):
@@ -48,7 +49,7 @@ def combine(a,b,op):
     c = entity()
     for k in a.__dict__:
         if k == "num":
-            c.num = str(a.__dict__[k])+" "+op+" "+str(b.__dict__[k])
+            c.num = str(a.__dict__[k])+op+str(b.__dict__[k])
         else:
             if k!='each':
                 c.__dict__[k]= str(a.__dict__[k])+" "+str(b.__dict__[k])
@@ -66,9 +67,12 @@ def floatcheck(x):
 
 if __name__ == "__main__":
     VERBOSE = False
+    VVERBOSE = False
     if len(sys.argv) > 1:
         if sys.argv[1] == '-v':
             VERBOSE = True
+        if sys.argv[1] == '-vv':
+            VVERBOSE = True
 
     '''
     #liblinear
@@ -96,11 +100,15 @@ if __name__ == "__main__":
 
         story = nlp.parse(problem)
         numbs = setmaker.setmaker(story)
+        #for x in numbs: x[1].details()
+        #input(); continue
         allnumbs = {str(v.num):v for k,v in numbs}
         numlist = [(str(v.num),v) for k,v in numbs if floatcheck(v.num) or v.num == 'x']
         if VERBOSE:
             print(allnumbs,numlist,[v.num for k,v in numbs])
         #print(allnumbs)
+
+        #this is a rudimentary X finding method
 
 
 
@@ -119,8 +127,15 @@ if __name__ == "__main__":
         state = []
         print(numlist)
         #for e in allnumbs.items():
-        for e in numlist:
-            if e[0]=='x':continue
+        for i,e in enumerate(numlist):
+            #if e[0]=='x':continue
+            if i == len(numlist)-1:
+                if 'x' in state[-1][0]:
+                    state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
+                else:
+                    state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
+                break
+                
             if state == []:
                 state.append(e)
                 continue
@@ -129,37 +144,47 @@ if __name__ == "__main__":
             #turn into jawns and run through the classifiers. 
             target = allnumbs['x'].unit if 'x' in allnumbs else "???"
             vec,features = ENTITY.vector(p,e,problem,target,True)
-            if VERBOSE:
+            if VVERBOSE:
                 for i in range(len(vec)):
                     print(features[i],vec[i])
                 input()
             #p_label, p_acc, p_val = predict([-1], [vec], asmd,'-q')
-            p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q')
+            if p[1].unit==e[1].unit:
+                #HARD CONSTRAINT AGAINST MULTIPLICATION
+                p_label = [1]
+            else:
+                p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q')
             p[1].details();e[1].details()
             if p_label[0] == 1:
                 #adds 
                 #op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
                 op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q')
                 if op_label[0] == 1:
-                    op = " + "
-                else: op = " - "
+                    op = "+"
+                else: op = "-"
             else:
                 #op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
                 op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q')
                 if op_label[0] == 1:
-                    op = " * "
-                else: op = " / "
+                    op = "*"
+                else: op = "/"
             print("Operation selected : "+op)
             print("Stats for +- vs */ decision : ",p_label,p_acc,p_val)
             print("Stats for subsequent decision: ",op_label,op_acc,op_val)
             c = combine(p[1],e[1],op)
             try:
-                num = eval(c.num)
-            except: num = -1
+                num = str(eval(c.num))
+            except: num = c.num
             state.append(e)
             state.append((num,c))
         if len(state)>0:
-            guess = state[-1][0]
+            g = state[-1][0]
+            if type(g)==type([]):
+                if g != []:
+                    guess = state[-1][0][0]
+                else: guess = 0
+                
+            else: guess = g
         else: guess = 0
         answ = answs[j]
         #val = answ.split("|")[1].split("=")[1]

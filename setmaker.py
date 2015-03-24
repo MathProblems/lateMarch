@@ -1,4 +1,5 @@
 from entity import entity
+from xfinder import xfinder
 
 def nncompound(w,deps):
     li = [x for x in deps if (x[1]==w or x[2]==w) and x[0]=='nn']
@@ -116,20 +117,23 @@ def setmaker(story):
         for x in y:
             if x[3] not in [x[1] for x in allpsets]: allpsets.append((x[0],x[3]))
     
-    print(psets)
+    print("PSETS:",allpsets)
     for i,s in enumerate(story['sentences']):
         deps = s['indexeddependencies']
         passtwo = []
         words = s['words']
-        morphs = " "+" ".join([x[1]["Lemma"] for x in words])+" "
-        offset = 0
         for word,lemmas in allpsets:
+            morphs = " "+" ".join([x[1]["Lemma"] for x in words])+" "
+            offset = 0
+            print(lemmas)
+            print(psets[i])
             while " "+lemmas+" " in morphs:
                 head = lemmas.split(" ")[-1]
                 idx = morphs.split().index(head)+1
                 trueidx = offset+idx
                 ent = ' '.join([x[0] for x in words][idx-len(lemmas.split(" ")):idx])
                 pset = [x for x in psets[i] if x[1]==trueidx]
+                print(trueidx)
                 if pset:
                     entities.append([i*100+trueidx,makeentity(pset[0],deps,s['text'],i)])
                     #entities.append(pset)
@@ -163,6 +167,19 @@ def setmaker(story):
         num = float(entities[j][1].num.split("_")[0])
         entities[j][1].times = True
         entities[j][0]=num
+
+    #find x
+    exes = [(i,x) for i,x in enumerate(entities) if x[1].num=='x']
+    if len(exes)==1:
+        i,x = exes[0]
+        idx = xfinder(story['sentences'][-1])
+        if idx==-1:
+            entities[i][0] = 10000000
+        if idx==0:
+            entities[i][0] = -1
+
+        
+
 
 
 
