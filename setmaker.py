@@ -91,7 +91,7 @@ def setmaker(story):
         #print(nums,othernums,debts);exit()
         
         for x,num in nums:
-            print(x,num)
+            #print(x,num)
             el = [x for x in deps if x[0]=="nsubj"]
             if el:
                 cont = el[0][2]
@@ -140,7 +140,7 @@ def setmaker(story):
 
 
             elif word == 'much':
-                print("MUCH!")
+                #print("MUCH!")
                 manydep = [x for x in deps if 'much-' in x[2]][0]
                 widx = int(manydep[1].split("-")[1])
                 word = nncompound(manydep[1],deps)
@@ -242,12 +242,12 @@ def setmaker(story):
             entities[i][1].lemma = lemma
         
         if target is not None:
-            print("TARGET:" + target)
+            #print("TARGET:" + target)
             entnames = [y[1].lemma for y in entities]
             if target in entnames:
                 oidx = entities[entnames.index(target)][0]
                 entities[i][0]=oidx+1
-                print(oidx)
+                #print(oidx)
                 entities[i][1].num = "x*"
 
         else:

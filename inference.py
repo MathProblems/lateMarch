@@ -105,89 +105,98 @@ if __name__ == "__main__":
 
 
         state = []
-        print(numlist)
-        #for e in allnumbs.items():
-        if "*" in numlist[-1][0]:
-            numlist = numlist[1:]+[numlist[0]]
-        for i,e in enumerate(numlist):
-            #if e[0]=='x':continue
-            if i == len(numlist)-1:
-                if 'x' in state[-1][0]:
-                    print("EQUALITY")
-                    state[-1][1].details();e[1].details()
-                    state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
-                else:
-                    print("EQUALITY")
-                    state[-1][1].details();e[1].details()
-                    if e[1].ent=="dozen":
-                        state.append((solve("("+state[-1][0]+"/12)-"+e[1].num,'x'),None))
-                    else:
-                        state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
+        #print(numlist)
 
-                break
-                
-            if state == []:
-                state.append(e)
-                continue
-            possibilites = []
-            p = state[-1]
-            #turn into jawns and run through the classifiers. 
-            target = allnumbs['x'].ent if 'x' in allnumbs else "???"
-            vec,features = ENTITY.vector(p,e,problem,target,True)
-            if VVERBOSE:
-                for i in range(len(vec)):
-                    print(features[i],vec[i])
-                input()
-            #p_label, p_acc, p_val = predict([-1], [vec], asmd,'-q')
-            p[1].details();e[1].details()
-            if "/" in e[0]:
-                #DIVIDE ONLY
-                print("DIVIDING IN HALF")
-                e[1].num = ''.join([x for x in e[1].num if x!='/'])
-                op = "/"
-            elif "*" in e[0]:
-                #MULT:
-                e[1].num = ''.join([x for x in e[1].num if x!='*'])
-                op = "*"
+        
+
+        #for e in allnumbs.items():
+
+        #make max choice each time
+        numlist = [v for k,v in numbs if setmaker.floatcheck(v.num) or v.num == 'x']
+        if "*" in numlist[-1].num:
+            numlist = numlist[1:]+[numlist[0]]
+        target = numlist[-1]
+        numlist = numlist[:-1]
+        while len(numlist)>1:
+            pairs = [((i,numlist[i]),(i+1,numlist[i+1])) for i in range(len(numlist)-1)]
+            pairscoresop = []
+            for pair in pairs:
+                px,ex = pair
+                pi,p = px
+                ei,e = ex
+                vec,features = ENTITY.vector((0,p),(0,e),problem,target,True)
+
+                # do all the shit
+                #p.details();e.details()
+                if e.num[-1] == '/':
+                    #DIVIDE ONLY
+                    #print("DIVIDING IN HALF")
+                    e.num = ''.join([x for x in e.num if x!='/'])
+                    op = "/"; op_val=1
+                if e.num[-1] == '*':
+                    #MULT:
+                    e.num = ''.join([x for x in e.num if x!='*'])
+                    op = "*"; op_val=1
+                else:
+                    if p.ent==e.ent:
+                        #HARD CONSTRAINT AGAINST MULTIPLICATION
+                        #print("Hard constraint against Multiplication/Division")
+                        p_label = [1]
+                    else:
+                        p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q -b 1')
+                        #print("Stats for +- vs */ decision : ",p_label,p_acc,p_val)
+                    if p_label[0] == 1:
+                        #adds 
+                        #op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
+                        op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q -b 1')
+                        op_val = op_val[0]
+                        if op_label[0] == 1:
+                            op = "+"
+                            op_val = op_val[0]
+                        else: 
+                            op = "-"
+                            op_val = op_val[1]
+                    else:
+                        #op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
+                        op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q -b 1')
+                        #print("Stats for subsequent decision: ",op_label,op_acc,op_val)
+                        op_val = op_val[0]
+                        if op_label[0] == 1:
+                            op = "*"
+                            op_val = op_val[0]
+                        else: 
+                            op = "/"
+                            op_val = op_val[1]
+                    #print("Operation selected : "+op)
+                    #print("Stats for subsequent decision: ",op_label,op_acc,op_val)
+
+                pairscoresop.append((op_val,op))
+            m = max([(x[0],i) for i,x in enumerate(pairscoresop)])[1]
+            px,ex = pairs[m]
+            pi,p = px
+            ei,e = ex
+            p.details();e.details()
+            op = pairscoresop[m][1]
+            print("Operation selected: ",op)
+
+
+            c = setmaker.combine(p,e,op)
+            #try:
+            #    num = str(eval(c.num))
+            #except: num = c.num
+            numlist = numlist[:pi]+[c]+numlist[pi+2:]
+
+
+        try:
+            if target.ent=='dozen':
+                guess = solve('('+numlist[0].num+'/12)'+"-"+target.num,'x')[0]
+                print(numlist[0].num+"/12="+target.num)
             else:
-                if p[1].ent==e[1].ent:
-                    #HARD CONSTRAINT AGAINST MULTIPLICATION
-                    print("Hard constraint against Multiplication/Division")
-                    p_label = [1]
-                else:
-                    p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q')
-                    print("Stats for +- vs */ decision : ",p_label,p_acc,p_val)
-                if p_label[0] == 1:
-                    #adds 
-                    #op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
-                    op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q')
-                    if op_label[0] == 1:
-                        op = "+"
-                    else: op = "-"
-                else:
-                    #op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
-                    op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q')
-                    if op_label[0] == 1:
-                        op = "*"
-                    else: op = "/"
-                print("Operation selected : "+op)
-                print("Stats for subsequent decision: ",op_label,op_acc,op_val)
-            c = setmaker.combine(p[1],e[1],op)
-            try:
-                num = str(eval(c.num))
-            except: num = c.num
-            state.append(e)
-            state.append((num,c))
-        if len(state)>0:
-            g = state[-1][0]
-            if type(g)==type([]):
-                if g != []:
-                    guess = state[-1][0][0]
-                else: guess = 0
-                
-            else: guess = g
-        else: guess = 0
+                guess = solve(numlist[0].num+"-"+target.num,'x')[0]
+                print(numlist[0].num+"="+target.num)
+        except: guess = 0
         answ = answs[j]
+        print(guess, answ)
         #val = answ.split("|")[1].split("=")[1]
         val = answ
         if float(guess)==float(val):
@@ -195,10 +204,7 @@ if __name__ == "__main__":
             right +=1 
         else: print("incorrect")
         ad.append(int(float(guess)==float(val)))
-        print(guess, answ)
-        if VERBOSE:
-            input("Any key to continue...")
-    
+
     print("totals: ",right,len(answs))
     print(ad)
     
