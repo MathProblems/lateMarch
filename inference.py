@@ -44,25 +44,6 @@ def training(trips,problem,target):
 
 
 
-def combine(a,b,op):
-    #takes two entities and returns a combo of them.
-    c = entity()
-    for k in a.__dict__:
-        if k == "num":
-            c.num = str(a.__dict__[k])+op+str(b.__dict__[k])
-        else:
-            if k!='each':
-                c.__dict__[k]= str(a.__dict__[k])+" "+str(b.__dict__[k])
-    #print(c.__dict__)
-    return c
-
-def floatcheck(x):
-    try:
-        float(x)
-        return True
-    except:
-        return False
-
 
 
 if __name__ == "__main__":
@@ -103,17 +84,16 @@ if __name__ == "__main__":
         #for x in numbs: x[1].details()
         #input(); continue
         allnumbs = {str(v.num):v for k,v in numbs}
-        numlist = [(str(v.num),v) for k,v in numbs if floatcheck(v.num) or v.num == 'x']
+        numlist = [(str(v.num),v) for k,v in numbs if setmaker.floatcheck(v.num) or v.num == 'x']
         if VERBOSE:
             print(allnumbs,numlist,[v.num for k,v in numbs])
         #print(allnumbs)
 
-        #this is a rudimentary X finding method
 
 
 
         for num,e in allnumbs.items():
-            ent = e.unit
+            ent = e.ent
             if ent[-1]=='s':
                 ent = ent[:-1]
             if ent[-1]=='e':
@@ -127,13 +107,23 @@ if __name__ == "__main__":
         state = []
         print(numlist)
         #for e in allnumbs.items():
+        if "*" in numlist[-1][0]:
+            numlist = numlist[1:]+[numlist[0]]
         for i,e in enumerate(numlist):
             #if e[0]=='x':continue
             if i == len(numlist)-1:
                 if 'x' in state[-1][0]:
+                    print("EQUALITY")
+                    state[-1][1].details();e[1].details()
                     state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
                 else:
-                    state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
+                    print("EQUALITY")
+                    state[-1][1].details();e[1].details()
+                    if e[1].ent=="dozen":
+                        state.append((solve("("+state[-1][0]+"/12)-"+e[1].num,'x'),None))
+                    else:
+                        state.append((solve(state[-1][0]+"-"+e[1].num,'x'),None))
+
                 break
                 
             if state == []:
@@ -142,36 +132,47 @@ if __name__ == "__main__":
             possibilites = []
             p = state[-1]
             #turn into jawns and run through the classifiers. 
-            target = allnumbs['x'].unit if 'x' in allnumbs else "???"
+            target = allnumbs['x'].ent if 'x' in allnumbs else "???"
             vec,features = ENTITY.vector(p,e,problem,target,True)
             if VVERBOSE:
                 for i in range(len(vec)):
                     print(features[i],vec[i])
                 input()
             #p_label, p_acc, p_val = predict([-1], [vec], asmd,'-q')
-            if p[1].unit==e[1].unit:
-                #HARD CONSTRAINT AGAINST MULTIPLICATION
-                p_label = [1]
-            else:
-                p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q')
             p[1].details();e[1].details()
-            if p_label[0] == 1:
-                #adds 
-                #op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
-                op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q')
-                if op_label[0] == 1:
-                    op = "+"
-                else: op = "-"
+            if "/" in e[0]:
+                #DIVIDE ONLY
+                print("DIVIDING IN HALF")
+                e[1].num = ''.join([x for x in e[1].num if x!='/'])
+                op = "/"
+            elif "*" in e[0]:
+                #MULT:
+                e[1].num = ''.join([x for x in e[1].num if x!='*'])
+                op = "*"
             else:
-                #op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
-                op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q')
-                if op_label[0] == 1:
-                    op = "*"
-                else: op = "/"
-            print("Operation selected : "+op)
-            print("Stats for +- vs */ decision : ",p_label,p_acc,p_val)
-            print("Stats for subsequent decision: ",op_label,op_acc,op_val)
-            c = combine(p[1],e[1],op)
+                if p[1].ent==e[1].ent:
+                    #HARD CONSTRAINT AGAINST MULTIPLICATION
+                    print("Hard constraint against Multiplication/Division")
+                    p_label = [1]
+                else:
+                    p_label, p_acc, p_val = svm_predict([-1], [vec], asmd,'-q')
+                    print("Stats for +- vs */ decision : ",p_label,p_acc,p_val)
+                if p_label[0] == 1:
+                    #adds 
+                    #op_label, op_acc, op_val = predict([-1], [vec], adds,'-q')
+                    op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q')
+                    if op_label[0] == 1:
+                        op = "+"
+                    else: op = "-"
+                else:
+                    #op_label, op_acc, op_val = predict([-1], [vec], multd,'-q')
+                    op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q')
+                    if op_label[0] == 1:
+                        op = "*"
+                    else: op = "/"
+                print("Operation selected : "+op)
+                print("Stats for subsequent decision: ",op_label,op_acc,op_val)
+            c = setmaker.combine(p[1],e[1],op)
             try:
                 num = str(eval(c.num))
             except: num = c.num

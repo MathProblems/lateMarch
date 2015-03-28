@@ -1,15 +1,21 @@
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
+import pickle
 brown_ic = wordnet_ic.ic('ic-brown.dat')
+asverbs = pickle.load(open('data/3.24.verbs.as','rb'))
+mdverbs = pickle.load(open('data/3.24.verbs.md','rb'))
+asverbs += mdverbs
+
 
 class entity:
     # an entity corresponds to a quantified pl or mass noun
     # TODO distinguish pl and mass nouns from others somehow
-    def __init__(self,num='',unit='',sidx='',widx='',container='',lemma='',deps=None,s=None):
+    def __init__(self,num='',ent='',sidx='',widx='',container='',lemma='',deps=None,s=None):
         self.sidx=sidx
         self.widx=widx
         self.num = num
-        self.unit = unit
+        self.unit = ""
+        self.ent = ent
         self.adj = ""
         self.verb = ""
         self.role = ""
@@ -29,13 +35,15 @@ class entity:
             #self.getContainer(s)
 
 
+    def setUnit(self,unit):
+        self.unit = unit
 
     def getContainer(self,s):
         self.container = ' '.join([w[0] for w in s["words"] if w[1]["PartOfSpeech"] in ["PRP","NNP"]])
         #print(self.container)
 
     def parsedeps(self,deps):
-        noun = self.unit.split(" ")[-1]+"-"+str(self.widx)
+        noun = self.ent.split(" ")[-1]+"-"+str(self.widx)
         ndeps = [x for x in deps if x[1] == noun]
         protod = [(x[0],x[2].split("-")[0]) for x in ndeps]
         ndeps = [x for x in deps if x[2] == noun]
@@ -70,13 +78,15 @@ class entity:
                 self.orels += " "+x
                 self.ow += " "+deps[x]
 
+
     def details(self):
         print()
         print("ENTITY DESCRIPTION")
-        print('Unit : '+self.unit)
+        print("Entity : "+self.ent)
         print('Number : '+str(self.num))
+        print('Unit : '+self.unit)
         for x in self.__dict__:
-            if x in ['unit','num']: continue
+            if x in ['ent','unit','num']: continue
             if type(self.__dict__[x])==type([]):
                 print(x)
                 for y in self.__dict__[x]:
@@ -131,20 +141,20 @@ def vector(a,b,problem,target,v=False):
 
     
     #match location to entity
-    features.append('a location b unit')
+    features.append('a location b ent')
     a.loc = ' '.join([x for x in a.loc.split(" ") if x!="???"])
     b.loc = ' '.join([x for x in b.loc.split(" ") if x!="???"])
 
-    a.unit = ' '.join([x for x in a.unit.split(" ") if x!="???"])
-    b.unit = ' '.join([x for x in b.unit.split(" ") if x!="???"])
+    a.ent = ' '.join([x for x in a.ent.split(" ") if x!="???"])
+    b.ent = ' '.join([x for x in b.ent.split(" ") if x!="???"])
 
     a.container = ' '.join([x for x in a.container.split(" ") if x!="???"])
     b.container = ' '.join([x for x in b.container.split(" ") if x!="???"])
-    if len(set(a.__dict__["loc"].split(" ")).intersection(set(b.__dict__["unit"].split(" "))))>0:
+    if len(set(a.__dict__["loc"].split(" ")).intersection(set(b.__dict__["ent"].split(" "))))>0:
         vec.append(1)
     else: vec.append(0)
-    features.append('b location a unit')
-    if len(set(b.__dict__["loc"].split(" ")).intersection(set(a.__dict__["unit"].split(" "))))>0:
+    features.append('b location a ent')
+    if len(set(b.__dict__["loc"].split(" ")).intersection(set(a.__dict__["ent"].split(" "))))>0:
         vec.append(1)
     else: vec.append(0)
 
@@ -157,15 +167,32 @@ def vector(a,b,problem,target,v=False):
         vec.append(1)
     else: vec.append(0)
 
-    features.append('a cont b unit')
-    if len(set(a.__dict__["container"].split(" ")).intersection(set(b.__dict__["unit"].split(" "))))>0:
+    features.append('a cont b ent')
+    if len(set(a.__dict__["container"].split(" ")).intersection(set(b.__dict__["ent"].split(" "))))>0:
         vec.append(1)
     else: vec.append(0)
-    features.append('b cont a unit')
-    if len(set(b.__dict__["container"].split()).intersection(set(a.__dict__["unit"].split())))>0:
+    features.append('b cont a ent')
+    if len(set(b.__dict__["container"].split()).intersection(set(a.__dict__["ent"].split())))>0:
         vec.append(1)
     else: vec.append(0)
 
+    #Verb features
+    for i in range(4):
+        features.append('b verb + - * /')
+        vdist = 1 
+        if b.verb != "" and b.verb != "???":
+            if b.verb in asverbs[i]:
+                vdist = 0
+            else:
+                for asyn in asverbs[i]:
+                    try:
+                        sim = 1/(1+bsyn.res_similarity(asyn,brown_ic))
+                    except:
+                        sim = 1
+                    if sim < vdist:
+                        vdis = sim
+        vec.append(vdist)
+    
 
 
 
@@ -187,10 +214,10 @@ def vector(a,b,problem,target,v=False):
     else: vec.append(0)
 
     features.append('a target match')
-    if a.unit==target: vec.append(1)
+    if a.ent==target: vec.append(1)
     else: vec.append(0)
     features.append('b target match')
-    if b.unit==target: vec.append(1)
+    if b.ent==target: vec.append(1)
     else: vec.append(0)
 
     

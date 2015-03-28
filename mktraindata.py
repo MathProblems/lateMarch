@@ -36,27 +36,6 @@ def training(trips,problem,target):
 
     return texamples
 
-def combine(a,b,op):
-    #takes two entities and returns a combo of them.
-    c = entity()
-    for k in a.__dict__:
-        if k == "num":
-            c.num = str(a.__dict__[k])+" "+op+" "+str(b.__dict__[k])
-        else:
-            if k!='each':
-                c.__dict__[k]= str(a.__dict__[k])+" "+str(b.__dict__[k])
-    print(c.__dict__)
-    return c
-
-def floatcheck(x):
-    try:
-        float(x)
-        return True
-    except:
-        return False
-
-
-
 if __name__ == "__main__":
     raw_counts = {x:" " for x in ["+","*"]}
     if len(sys.argv)<2:
@@ -87,7 +66,7 @@ if __name__ == "__main__":
         problem = problem.lower()
         story = nlp.parse(problem)
         numbs = setmaker.setmaker(story)
-        allnumbs = {str(float(v.num)):v for k,v in numbs if floatcheck(v.num)}
+        allnumbs = {str(v.num):v for k,v in numbs if setmaker.floatcheck(v.num)}
         xes = [x[1] for x in numbs if x[1].num == 'x']
         if xes:
             allnumbs['x']=xes[0]
@@ -96,7 +75,7 @@ if __name__ == "__main__":
 
 
         for num,e in allnumbs.items():
-            ent = e.unit
+            ent = e.ent
             if ent[-1]=='s':
                 ent = ent[:-1]
             if ent[-1]=='e':
@@ -111,8 +90,7 @@ if __name__ == "__main__":
 
 
         #print(allnumbs.keys())
-        prblmnumbs = [int(x) for x in allnumbs if x.isdigit()]
-        prblmnumbs = [float(v.num) for k,v in numbs if floatcheck(v.num)]
+        prblmnumbs = [v.num for k,v in numbs if setmaker.floatcheck(v.num)]
 
         if len(prblmnumbs)<2: continue
         if j < addlen:
@@ -136,10 +114,10 @@ if __name__ == "__main__":
             c = cmplx[i]
             #print(i,c,state)
             #raw_input()
-            if state == [] and not (floatcheck(c) or c=='x'): 
+            if state == [] and not (setmaker.floatcheck(c) or c=='x'): 
                 i+=1; continue
 
-            if state == [] and (floatcheck(c) or c=='x'):
+            if state == [] and (setmaker.floatcheck(c) or c=='x'):
                 state = [(c,allnumbs[c])]
                 i+=1;continue
 
@@ -149,7 +127,7 @@ if __name__ == "__main__":
                 d = cmplx[i+1]
                 if d == "(":
                     j=1
-                    while not floatcheck(d):
+                    while not setmaker.floatcheck(d):
                         d = cmplx[i+j]
                         j+=1
                     opstack.append((op,state.index(c)))
@@ -159,7 +137,7 @@ if __name__ == "__main__":
                 else:
                     trips.append((op,c,(d,allnumbs[d])))
                     state = state[:-1]
-                    state.append((c[0]+op+d,combine(c[1],allnumbs[d],op)))
+                    state.append((c[0]+op+d,setmaker.combine(c[1],allnumbs[d],op)))
                     #print(i,c,state)
                     i+=2
                     continue
@@ -175,11 +153,11 @@ if __name__ == "__main__":
                     # perhaps the operation is more based on the first sentence?
                     trips.append((op,c,d))
                     state = [x for x in state[:-1] if x!= c]
-                    state.append((c[0]+op+d[0],combine(c[1],d[1],op)))
+                    state.append((c[0]+op+d[0],setmaker.combine(c[1],d[1],op)))
                     i+=1
 
         problem = problem.split(". ")[-1]
-        target = allnumbs['x'].unit if 'x' in allnumbs else "???"
+        target = allnumbs['x'].ent if 'x' in allnumbs else "???"
         tmpexamples = training(trips,problem,target)
         for k in texamples:
             texamples[k][0].extend(tmpexamples[k][0])
