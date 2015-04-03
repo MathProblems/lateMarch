@@ -23,7 +23,17 @@ def floatcheck(x):
             return False
 
 
-def nncompound(w,deps):
+def nncompound(w,deps,words):
+    return w.split("-")[0]
+
+def ncheck(w,words):
+    word,idx = w.split("-")
+    idx = int(idx)-1
+    assert(word==words[idx][0])
+    if words[idx][1]["PartOfSpeech"] not in ["NN","NNS","$"]:
+        return -1
+    else: return word
+    '''
     li = [x for x in deps if (x[1]==w or x[2]==w) and x[0]=='nn']
     if li:
         li = li[0]
@@ -31,9 +41,13 @@ def nncompound(w,deps):
     else:
         words = w.split("-")[0]
     return words
+    '''
 
 def makeentity(tup,deps,s,i,words=None):
     ent,idx,num,lemma,cont= tup
+    if ent == "$":
+        ent = "dollars"
+        lemma = "dollar"
     e = entity(num,ent,i,idx,cont,lemma,deps)
     ws = [x[0] for x in words]
     e.verb = e.verb.strip()
@@ -53,7 +67,7 @@ def makeentity(tup,deps,s,i,words=None):
 
 
 
-def setmaker(story):
+def setmaker(story, debug=False):
     
     entities = []
     # find potential sets: quantified entities in any way and target 
@@ -71,7 +85,9 @@ def setmaker(story):
             #look at other syntactic constructions for half
             if h[0] == 'prep_of':
                 nn,nidx = h[2].split("-")
-                nn = nncompound(nn,deps)
+                nn = nncompound(nn,deps,words)
+                if nn == -1:
+                    nn = "not_a_noun"
                 psetstmp.append((nn,int(nidx),"2/","???"))
 
 
@@ -80,13 +96,16 @@ def setmaker(story):
         #much = [(x[1],"x-") for x in deps if "much-" in x[2] if "times-" not in x[1]]
         #if len(many+much)==0:
         nums.extend([(x[1],"x-") for x in deps if "how-" in x[2]])
-        #else:
 
-        #   nums.extend(many+much)
+        #deal with NUM of NOUN forms:
+        ofnums = [(x[2],x[1]) for x in deps if x[0]=="prep_of" and x[1].split("-")[0].isdigit()]
+        if debug: print("OF NUMS: ", ofnums)
+        nums.extend(ofnums)
 
         # add othernums to debts
         othernums = [("???",str(words.index(x)+1),x[0],"???") for x in words if x[1]["PartOfSpeech"]=="CD"]
         othernums = [x for x in othernums if str(x[2])+'-'+x[1] not in [y[1] for y in nums]]
+
         debts.extend(othernums)
         #print(nums,othernums,debts);exit()
         
@@ -95,7 +114,8 @@ def setmaker(story):
             el = [x for x in deps if x[0]=="nsubj"]
             if el:
                 cont = el[0][2]
-                cont = nncompound(cont,deps)
+                cont = nncompound(cont,deps,words)
+                if cont == -1: cont = "???"
             else: cont = "???"
             num,numidx = num.split("-")
             word,idx = x.split("-")
@@ -108,11 +128,13 @@ def setmaker(story):
                 if len(nexnoun)>0:
                     nidx = nexnoun[0][1]+1
                     nn = nexnoun[0][0]+"-"+str(int(nexnoun[0][1])+1)
+                    if ncheck(nn,words) == -1:
+                        debts.append(("PREV",int(numidx),str(num)+'*',cont))
                     #check for nn compound
-                    nn = nncompound(nn,deps)
-
-                    nidx = [x[0] for x in s['words']].index(nn.split()[-1])+1
-                    psetstmp.append((nn,nidx,str(num)+"*",cont))
+                    else:
+                        nn = nncompound(nn,deps,words)
+                        nidx = [x[0] for x in s['words']].index(nn.split()[-1])+1
+                        psetstmp.append((nn,nidx,str(num)+"*",cont))
                 else:
                     #entity is prev
                     #print(numidx)
@@ -122,16 +144,22 @@ def setmaker(story):
                 manydep = [x for x in deps if 'many-' in x[2]][0]
                 if manydep[0]=='amod':
                     widx = int(manydep[1].split("-")[1])
-                    word = nncompound(manydep[1],deps)
-                    psetstmp.append((word,widx,'x',cont))
+                    word = nncompound(manydep[1],deps,words)
+                    if ncheck(manydep[1],words) == -1:
+                        debts.append(("PREV",manydep[1].split("-")[1],'x',cont))
+                    else:
+                        psetstmp.append((word,widx,'x',cont))
                 elif manydep[0]=='dep':
                     verb = manydep[1]
                     word = [x[2] for x in deps if x[1]==verb and 'subj' in x[0]]
                     if word:
                         word = word[0]
                         widx = int(word.split("-")[1])
-                        word = nncompound(word,deps)
-                        psetstmp.append((word,widx,'x',cont))
+                        if ncheck(word,words) == -1: 
+                            debts.append(("PREV",manydep[1].split("-")[1],'x',cont))
+                        else:
+                            word = nncompound(word,deps,words)
+                            psetstmp.append((word,widx,'x',cont))
                     else:
                         debts.append(("PREV",manydep[1].split("-")[1],'x',cont))
 
@@ -143,7 +171,7 @@ def setmaker(story):
                 #print("MUCH!")
                 manydep = [x for x in deps if 'much-' in x[2]][0]
                 widx = int(manydep[1].split("-")[1])
-                word = nncompound(manydep[1],deps)
+                word = nncompound(manydep[1],deps,words)
                 '''
                 if word=='did':
                     wordzero = [x[0] for x in s['words']]
@@ -157,8 +185,12 @@ def setmaker(story):
                 psetstmp.append((word,widx,'x',cont))
 
             else:
-                nn = nncompound(x,deps)
-                psetstmp.append((nn,int(idx),num,cont))
+                nn = nncompound(x,deps,words)
+                
+                if ncheck(x,words) == -1:
+                    debts.append(("PREV",int(idx),num,cont))
+                else:
+                    psetstmp.append((nn,int(idx),num,cont))
 
         passtwo = []
         for word,idx,num,cont in psetstmp:
@@ -178,7 +210,7 @@ def setmaker(story):
         for x in y:
             if x[3] not in [x[1] for x in allpsets]: allpsets.append((x[0],x[3]))
     
-    #print("PSETS:",allpsets)
+    if debug: print("PSETS:",allpsets)
     for i,s in enumerate(story['sentences']):
         deps = s['indexeddependencies']
         passtwo = []
@@ -197,11 +229,31 @@ def setmaker(story):
                 #print(trueidx)
                 if pset:
                     entities.append([i*100+trueidx,makeentity(pset[0],deps,s['text'],i,words)])
+                    num = pset[0][2]
+                    if num != 'x':
+                        if s['words'][trueidx][1]['Lemma'] in ["a","each","every","per"]:
+                            ent = s['words'][trueidx+1][0]
+                            lemma = s['words'][trueidx+1][1]["Lemma"]
+                            num = "*1"
+                            print('PER IS HAPPENING')
+                            print(ent,lemma,num)
+                            entities.append([i*100+trueidx+2,makeentity((ent,idx+2,num,lemma,"???"),deps,s['text'],i,words)])
+
                     #entities.append(pset)
+                '''
                 else:
                     #entities.append((ent,idx,"???",lemmas))
-                    entities.append([i*100+trueidx,makeentity((ent,idx,"???",lemmas,"???"),deps,s['text'],i,words)])
+                    #print(lemmas)
+                    #print(s['words'][trueidx-1]);input("NO NUM SET")
+                    if s['words'][trueidx-2][1]["Lemma"] in ["a","each","every","per"]:
+                        if s['words'][trueidx-3][1]
+                        num = "*1"
+                    else: num = "???"
+                    #wholewrd = s['words'][trueidx-1]+'-'+str(trueidx)
+                    #wrddeps = [x for x in deps if x[0]
+                    entities.append([i*100+trueidx,makeentity((ent,idx,num,lemmas,"???"),deps,s['text'],i,words)])
                     #make entity
+                '''
                 morphs = " "+' '.join(morphs.split()[idx:])+" "
                 offset = trueidx
         #handle debts
@@ -240,10 +292,24 @@ def setmaker(story):
             word,lemma = ent
             entities[i][1].ent = word
             entities[i][1].lemma = lemma
+
+        #handle per
+        permatches = [j for j,y in enumerate(entities) if y[1].lemma == ent[1] and y[1].num[0]=="*"]
+        if debug: 
+            print(ent)
+            print([y[1].lemma for y in entities])
+            print("PERMATCHES: ",permatches)
+        if len(permatches)==1:
+            j = permatches[0]
+            entities[j][1].num = "*x"
+            entities.pop(i)
+            target = None; idx = entities[j][0]
         
         if target is not None:
-            #print("TARGET:" + target)
+            if debug: print("TARGET:" + target)
+            print(entities[i][1].ent)
             entnames = [y[1].lemma for y in entities]
+            print(entnames)
             if target in entnames:
                 oidx = entities[entnames.index(target)][0]
                 entities[i][0]=oidx+1
@@ -259,14 +325,18 @@ def setmaker(story):
 
         words = [x[0] for x in story['sentences'][-1]['words']]
         if 'spend' in words:
-            x[1].ent = '$'
-            x[1].lemma = "$"
+            x[1].ent = 'dollars'
+            x[1].lemma = "dollar"
             x[1].verb = 'spend'
         elif 'cost' in words:
-            x[1].ent='$'
-            x[1].lemma = "$"
+            x[1].ent='dollars'
+            x[1].lemma = "dollar"
             x[1].verb='cost'
 
+    else:
+        for i,x in exes:
+            x[1].details()
+        #input()
 
 
         

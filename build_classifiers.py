@@ -34,6 +34,9 @@ def build_d(d, fn, c=1):
 
 
     prob = svm_problem(labels, bsqs)
+    param = svm_parameter('-q -v 10 -b 1 -t 2 -c '+str(c)+' -w-1 '+str(1/nl)+' -w1 '+str(1/pl))
+    m = svm_train(prob, param)
+
     param = svm_parameter('-q -b 1 -t 2 -c '+str(c)+' -w-1 '+str(1/nl)+' -w1 '+str(1/pl))
 
     m = svm_train(prob, param)

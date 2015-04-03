@@ -72,11 +72,13 @@ class entity:
         if "amod" in deps:
             self.adj += " "+deps["amod"]
 
+        '''
         for x in deps:
             if x not in ["amod","dobj","nsubjpass","nsubj","prep_in","prep_at","prep_on","nn"]:
                 #all other relations
                 self.orels += " "+x
                 self.ow += " "+deps[x]
+        '''
 
 
     def details(self):
@@ -177,6 +179,7 @@ def vector(a,b,problem,target,v=False):
     else: vec.append(0)
 
     #Verb features
+    '''
     for i in range(4):
         features.append('b verb + - * /')
         vdist = 1 
@@ -192,6 +195,7 @@ def vector(a,b,problem,target,v=False):
                     if sim < vdist:
                         vdis = sim
         vec.append(vdist)
+    '''
     
 
 
@@ -205,6 +209,7 @@ def vector(a,b,problem,target,v=False):
     if b.each: vec.append(1)
     else: vec.append(0)
 
+    '''
     features.extend(["a.times",'b.times','a or b .times'])
     if a.times: vec.append(1)
     else: vec.append(0)
@@ -212,6 +217,7 @@ def vector(a,b,problem,target,v=False):
     else: vec.append(0)
     if a.times or b.times: vec.append(1)
     else: vec.append(0)
+    '''
 
     features.append('a target match')
     if a.ent==target: vec.append(1)

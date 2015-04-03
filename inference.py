@@ -49,6 +49,8 @@ def training(trips,problem,target):
 if __name__ == "__main__":
     VERBOSE = False
     VVERBOSE = False
+    EDUMP = True
+    #EDUMP = False 
     if len(sys.argv) > 1:
         if sys.argv[1] == '-v':
             VERBOSE = True
@@ -80,7 +82,7 @@ if __name__ == "__main__":
 
 
         story = nlp.parse(problem)
-        numbs = setmaker.setmaker(story)
+        numbs = setmaker.setmaker(story,VERBOSE)
         #for x in numbs: x[1].details()
         #input(); continue
         allnumbs = {str(v.num):v for k,v in numbs}
@@ -116,11 +118,14 @@ if __name__ == "__main__":
         if "*" in numlist[-1].num:
             numlist = numlist[1:]+[numlist[0]]
         target = numlist[-1]
+        if EDUMP:
+            pickle.dump(numlist,open('entities'+str(j)+'.pickle','wb'))
+            exit();
         numlist = numlist[:-1]
         while len(numlist)>1:
             pairs = [((i,numlist[i]),(i+1,numlist[i+1])) for i in range(len(numlist)-1)]
             pairscoresop = []
-            for pair in pairs:
+            for k,pair in enumerate(pairs):
                 px,ex = pair
                 pi,p = px
                 ei,e = ex
@@ -133,12 +138,18 @@ if __name__ == "__main__":
                     #print("DIVIDING IN HALF")
                     e.num = ''.join([x for x in e.num if x!='/'])
                     op = "/"; op_val=1
-                if e.num[-1] == '*':
+                    pairs[k]=((pi,e),(ei,p))
+                elif e.num[-1] == '*':
                     #MULT:
                     e.num = ''.join([x for x in e.num if x!='*'])
                     op = "*"; op_val=1
+                elif e.num[0] == "*":
+                    #MULT BUT CHANGE ENT ORDER
+                    e.num = ''.join([x for x in e.num if x!='*'])
+                    op = "*"; op_val=1
+                    pairs[k]=((pi,e),(ei,p))
                 else:
-                    if p.ent==e.ent:
+                    if p.lemma==e.lemma:
                         #HARD CONSTRAINT AGAINST MULTIPLICATION
                         #print("Hard constraint against Multiplication/Division")
                         p_label = [1]
@@ -204,6 +215,8 @@ if __name__ == "__main__":
             right +=1 
         else: print("incorrect")
         ad.append(int(float(guess)==float(val)))
+        if VERBOSE:
+            input("Any key to continue...")
 
     print("totals: ",right,len(answs))
     print(ad)
