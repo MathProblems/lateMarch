@@ -1,0 +1,2320 @@
+Benny bought a soft drink for 2 dollars and 5 candy bars. He spent a total of 27 dollars. How much did each candy bar cost ?
+
+dollars-8 2-7
+bars-12 5-10
+dollars-7 27-6
+did-3 x-
+[[('dollars', 8, '2', 'dollar', 'benny'), ('candy bars', 12, '5', 'candy bar', 'benny')], [('dollars', 7, '27', 'dollar', 'he')], [('did', 3, 'x', 'do', 'much')]]
+[('2', <entity.entity object at 0x1033de908>), ('5', <entity.entity object at 0x1033deba8>), ('27', <entity.entity object at 0x1033deb38>)]
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 2
+adj : 
+container : benny
+sidx : 0
+text : 
+times : False
+ow :  bars bought 2
+role : 
+orels :  conj_and prep_for num
+sent : 
+loc : 
+widx : 8
+verb : 
+lemma : dollar
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : candy bars
+Number : 5
+adj : 
+container : benny
+sidx : 0
+text : 
+times : False
+ow :  dollars 5
+role : 
+orels :  conj_and num
+sent : 
+loc : 
+widx : 12
+verb : 
+lemma : candy bar
+each : True
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.2896979141330478]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.2828652451799394]]
+
+ENTITY DESCRIPTION
+Unit : dollars candy bars
+Number : 2  /  5
+adj :  
+container : benny benny
+sidx : 0 0
+text :  
+times : False False
+ow :  bars bought 2  dollars 5
+role :  
+orels :  conj_and prep_for num  conj_and num
+sent :  
+loc :  
+widx : 8 12
+verb :  
+lemma : dollar candy bar
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 27
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  total 27
+role : 
+orels :  prep_of num
+sent : 
+loc : 
+widx : 7
+verb : 
+lemma : dollar
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.5239107174578761]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.6620147903859881]]
+incorrect
+27.4 5
+
+Benny bought 4 new baseball trading cards to add to his collection. The next day his dog ate half of his collection. There are now only 34 cards left. How many cards did Benny start with ?
+
+cards-7 4-3
+cards-6 34-5
+cards-3 x-
+[[('baseball cards', 7, '4', 'baseball card', 'benny')], [('collection', 10, '2', 'collection', '???')], [('cards', 6, '34', 'card', 'cards')], [('cards', 3, 'x', 'card', 'cards')]]
+[('2', <entity.entity object at 0x1033d90b8>), ('34', <entity.entity object at 0x1033d9048>), ('x', <entity.entity object at 0x1033d9128>)]
+
+ENTITY DESCRIPTION
+Unit : collection
+Number : 2
+adj : 
+container : 
+sidx : 1
+text : 
+times : False
+ow :  his half
+role : 
+orels :  poss prep_of
+sent : 
+loc : 
+widx : 10
+verb : 
+lemma : collection
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 34
+adj : 
+container : cards
+sidx : 2
+text : 
+times : False
+ow :  left 34
+role : s
+orels :  rcmod num
+sent : 
+loc : 
+widx : 6
+verb :  are
+lemma : card
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.6335025519908468]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.2780541653236035]]
+incorrect
+-32 64
+
+Sam had 79 dollars to spend on 9 books. After buying them he had 16 dollars. How much did each book cost ?
+
+dollars-4 79-3
+books-9 9-8
+dollars-7 16-6
+did-3 x-
+[[('dollars', 4, '79', 'dollar', 'sam'), ('books', 9, '9', 'book', 'sam')], [('dollars', 7, '16', 'dollar', 'he')], [('did', 3, 'x', 'do', 'much')]]
+[('79', <entity.entity object at 0x10643c2b0>), ('9', <entity.entity object at 0x10643c4e0>), ('16', <entity.entity object at 0x10643c1d0>)]
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 79
+adj : 
+container : sam
+sidx : 0
+text : 
+times : False
+ow :  79
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  had
+lemma : dollar
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 9
+adj : 
+container : sam
+sidx : 0
+text : 
+times : False
+ow :  9
+role : 
+orels :  num
+sent : 
+loc : spend
+widx : 9
+verb : 
+lemma : book
+each : True
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-3.1117417495527535]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.7269925788813135]]
+
+ENTITY DESCRIPTION
+Unit : dollars books
+Number : 79  /  9
+adj :  
+container : sam sam
+sidx : 0 0
+text :  
+times : False False
+ow :  79  9
+role : do 
+orels :  num  num
+sent :  
+loc :  spend
+widx : 4 9
+verb :  had 
+lemma : dollar book
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 16
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  16
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 7
+verb :  had
+lemma : dollar
+each : False
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-1.4762921842538193]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.542701452387371]]
+incorrect
+0.5486111111111112 7
+
+Oceanside Bike Rental Shop charges 17 dollars plus 7 dollars an hour for renting a bike. Tom paid 80 dollars to rent a bike. How many hours did he pay to have the bike checked out ?
+
+dollars-7 17-6
+dollars-10 7-9
+dollars-4 80-3
+hours-3 x-
+[[('dollars', 7, '17', 'dollar', '???'), ('dollars', 10, '7', 'dollar', '???')], [('dollars', 4, '80', 'dollar', 'tom')], [('hours', 3, 'x', 'hour', 'he')]]
+[('17', <entity.entity object at 0x1033de080>), ('7', <entity.entity object at 0x1033deac8>), ('80', <entity.entity object at 0x1033de940>), ('x', <entity.entity object at 0x1033de470>)]
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 17
+adj : 
+container : 
+sidx : 0
+text : 
+times : False
+ow :  charges plus renting 17
+role : 
+orels :  dep prep prepc_for num
+sent : 
+loc : 
+widx : 7
+verb : 
+lemma : dollar
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 7
+adj : 
+container : 
+sidx : 0
+text : 
+times : False
+ow :  hour 7 plus
+role : 
+orels :  dep num pobj
+sent : 
+loc : 
+widx : 10
+verb : 
+lemma : dollar
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.8279045745129876]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9009131061302547]]
+
+ENTITY DESCRIPTION
+Unit : dollars dollars
+Number : 17  -  7
+adj :  
+container :  
+sidx : 0 0
+text :  
+times : False False
+ow :  charges plus renting 17  hour 7 plus
+role :  
+orels :  dep prep prepc_for num  dep num pobj
+sent :  
+loc :  
+widx : 7 10
+verb :  
+lemma : dollar dollar
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 80
+adj : 
+container : tom
+sidx : 1
+text : 
+times : False
+ow :  80
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  paid
+lemma : dollar
+each : False
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-1.2451180338205718]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9599373745624592]]
+incorrect
+16.9125 9
+
+On Monday, 375 students went on a trip to the zoo. All 7 buses were filled and 4 students had to travel in cars. How many students were in each bus ?
+
+students-5 375-4
+buses-3 7-2
+students-8 4-7
+students-3 x-
+[[('students', 5, '375', 'student', 'students')], [('buses', 3, '7', 'bus', 'students'), ('students', 8, '4', 'student', 'students')], [('students', 3, 'x', 'student', 'students')]]
+[('375', <entity.entity object at 0x106424d68>), ('4', <entity.entity object at 0x106424c50>), ('x', <entity.entity object at 0x106424f98>)]
+
+ENTITY DESCRIPTION
+Unit : students
+Number : 375
+adj : 
+container : students
+sidx : 0
+text : 
+times : False
+ow :  375
+role : s
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  went
+lemma : student
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : students
+Number : 4
+adj : 
+container : students
+sidx : 1
+text : 
+times : False
+ow :  4
+role : s
+orels :  num
+sent : 
+loc : 
+widx : 8
+verb :  had
+lemma : student
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.7694621676119722]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.34991161996101927]]
+incorrect
+379 53
+
+Sandy sold 2 of her comic books and then bought 6 more. She now has 13. How many did she begin with ?
+
+more-12 6-11
+begin-5 x-
+[[('more', 12, '6', 'more', 'sandy')], [], [('begin', 5, 'x', 'begin', 'she')]]
+[('2', <entity.entity object at 0x10643da58>), ('6', <entity.entity object at 0x1033de748>), ('13', <entity.entity object at 0x10643dac8>), ('x', <entity.entity object at 0x10643db70>)]
+
+ENTITY DESCRIPTION
+Unit : more
+Number : 2
+adj : 
+container : 
+sidx : 0
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 3
+verb : 
+lemma : more
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : more
+Number : 6
+adj : 
+container : sandy
+sidx : 0
+text : 
+times : False
+ow :  6
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 12
+verb :  bought
+lemma : more
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.7095581803402693]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.3259732200333765]]
+
+ENTITY DESCRIPTION
+Unit : more more
+Number : 2  -  6
+adj :  
+container :  sandy
+sidx : 0 0
+text :  
+times : False False
+ow :   6
+role :  do
+orels :   num
+sent :  
+loc :  
+widx : 3 12
+verb :   bought
+lemma : more more
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : more
+Number : 13
+adj : 
+container : 
+sidx : 1
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 4
+verb : 
+lemma : more
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.3222783142605108]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9445453645481201]]
+incorrect
+-17 9
+
+Tim's cat had kittens. He gave 3 to Jessica and 6 to Sara. He now has 9 kittens left. How many kittens did he have to start with ?
+
+kittens-5 9-4
+kittens-3 x-
+[[], [], [('kittens', 5, '9', 'kitten', 'he')], [('kittens', 3, 'x', 'kitten', 'he')]]
+[('3', <entity.entity object at 0x10653e4a8>), ('6', <entity.entity object at 0x10653e5f8>), ('9', <entity.entity object at 0x10653e6a0>), ('x', <entity.entity object at 0x10653e6d8>)]
+
+ENTITY DESCRIPTION
+Unit : kittens
+Number : 3
+adj : 
+container : 
+sidx : 1
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 3
+verb : 
+lemma : kitten
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : kittens
+Number : 6
+adj : 
+container : 
+sidx : 1
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 7
+verb : 
+lemma : kitten
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.6769423028831296]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9618941468995679]]
+
+ENTITY DESCRIPTION
+Unit : kittens kittens
+Number : 3  -  6
+adj :  
+container :  
+sidx : 1 1
+text :  
+times : False False
+ow :  
+role :  
+orels :  
+sent :  
+loc :  
+widx : 3 7
+verb :  
+lemma : kitten kitten
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : kittens
+Number : 9
+adj : 
+container : he
+sidx : 2
+text : 
+times : False
+ow :  left 9
+role : do
+orels :  rcmod num
+sent : 
+loc : 
+widx : 5
+verb :  has
+lemma : kitten
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.046253520779426]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.2297531338921146]]
+incorrect
+-12 18
+
+Joan has 9 blue balloons, Sally has 5 blue balloons, and Jessica has  2 blue balloons. How many blue balloons do they have in total ?
+
+balloons-5 9-3
+balloons-11 5-9
+balloons-18 2-16
+balloons-4 x-
+[[('balloons', 5, '9', 'balloon', 'joan'), ('balloons', 11, '5', 'balloon', 'joan'), ('balloons', 18, '2', 'balloon', 'joan')], [('balloons', 4, 'x', 'balloon', 'they')]]
+[('9', <entity.entity object at 0x10643d9e8>), ('5', <entity.entity object at 0x10643dc18>), ('2', <entity.entity object at 0x10643de48>), ('x', <entity.entity object at 0x10643dfd0>)]
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 9
+adj :  blue
+container : joan
+sidx : 0
+text : 
+times : False
+ow :  9
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  has
+lemma : balloon
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 5
+adj :  blue
+container : joan
+sidx : 0
+text : 
+times : False
+ow :  5
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 11
+verb :  has
+lemma : balloon
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.481995819216716]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.0000625117181976]]
+
+ENTITY DESCRIPTION
+Unit : balloons balloons
+Number : 9  +  5
+adj :  blue  blue
+container : joan joan
+sidx : 0 0
+text :  
+times : False False
+ow :  9  5
+role : do do
+orels :  num  num
+sent :  
+loc :  
+widx : 5 11
+verb :  has  has
+lemma : balloon balloon
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 2
+adj :  blue
+container : joan
+sidx : 0
+text : 
+times : False
+ow :  2
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 18
+verb :  has
+lemma : balloon
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.8735654838266624]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.7554707154640135]]
+Correct!
+16 16
+
+A restaurant served 5 cakes during lunch and 6 during dinner today. The restaurant served 3 cakes yesterday. How many cakes were served in total ?
+
+cakes-5 5-4
+cakes-5 3-4
+served-5 x-
+[[('cakes', 5, '5', 'cake', 'restaurant')], [('cakes', 5, '3', 'cake', 'restaurant')], [('served', 5, 'x', 'serve', '???')]]
+[('5', <entity.entity object at 0x10653ed68>), ('6', <entity.entity object at 0x10653e0b8>), ('3', <entity.entity object at 0x10653e0f0>), ('x', <entity.entity object at 0x10653e278>)]
+
+ENTITY DESCRIPTION
+Unit : cakes
+Number : 5
+adj : 
+container : restaurant
+sidx : 0
+text : 
+times : False
+ow :  5
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  served
+lemma : cake
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cakes
+Number : 6
+adj : 
+container : 
+sidx : 0
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 9
+verb : 
+lemma : cake
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.4754137728555063]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.4128352522606129]]
+
+ENTITY DESCRIPTION
+Unit : cakes cakes
+Number : 5  +  6
+adj :  
+container : restaurant 
+sidx : 0 0
+text :  
+times : False False
+ow :  5 
+role : do 
+orels :  num 
+sent :  
+loc :  
+widx : 5 9
+verb :  served 
+lemma : cake cake
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cakes
+Number : 3
+adj : 
+container : restaurant
+sidx : 1
+text : 
+times : False
+ow :  3
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  served
+lemma : cake
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.9707531823136675]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.7217326335008061]]
+Correct!
+14 14
+
+Melanie picked 4 plums, Dan picked 9 plums, and Sally picked 3 plums from the plum tree. How many plums were picked in total ?
+
+plums-4 4-3
+plums-9 9-8
+plums-15 3-14
+picked-5 x-
+[[('plums', 4, '4', 'plum', 'melanie'), ('plums', 9, '9', 'plum', 'melanie'), ('plums', 15, '3', 'plum', 'melanie')], [('picked', 5, 'x', 'pick', '???')]]
+[('4', <entity.entity object at 0x1064d21d0>), ('9', <entity.entity object at 0x1064d23c8>), ('3', <entity.entity object at 0x1064d2400>), ('x', <entity.entity object at 0x106541f98>)]
+
+ENTITY DESCRIPTION
+Unit : plums
+Number : 4
+adj : 
+container : melanie
+sidx : 0
+text : 
+times : False
+ow :  4
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  picked
+lemma : plum
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : plums
+Number : 9
+adj : 
+container : melanie
+sidx : 0
+text : 
+times : False
+ow :  9
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 9
+verb :  picked
+lemma : plum
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.6848881742199309]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.5906476072687135]]
+
+ENTITY DESCRIPTION
+Unit : plums plums
+Number : 4  +  9
+adj :  
+container : melanie melanie
+sidx : 0 0
+text :  
+times : False False
+ow :  4  9
+role : do do
+orels :  num  num
+sent :  
+loc :  
+widx : 4 9
+verb :  picked  picked
+lemma : plum plum
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : plums
+Number : 3
+adj : 
+container : melanie
+sidx : 0
+text : 
+times : False
+ow :  3
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 15
+verb :  picked
+lemma : plum
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.7665451043899436]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.6321662252635243]]
+Correct!
+16 16
+
+There are 7 dogwood trees currently in the park. Park workers will plant 3 more dogwood trees today and 2 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+trees-5 7-3
+trees-8 3-5
+trees-14 2-11
+dogwood-3 x-
+[[('dogwood trees', 5, '7', 'dogwood tree', 'dogwood trees')], [('dogwood trees', 8, '3', 'dogwood tree', 'park workers'), ('dogwood trees', 14, '2', 'dogwood tree', 'park workers')], [('dogwood', 3, 'x', 'dogwood', 'park')]]
+[('7', <entity.entity object at 0x106541438>), ('3', <entity.entity object at 0x106541470>), ('2', <entity.entity object at 0x106541668>)]
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 7
+adj : 
+container : dogwood trees
+sidx : 0
+text : 
+times : False
+ow :  7
+role : s
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  are
+lemma : dogwood tree
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 3
+adj :  more
+container : park workers
+sidx : 1
+text : 
+times : False
+ow :  today 3
+role : 
+orels :  dep num
+sent : 
+loc : 
+widx : 8
+verb : 
+lemma : dogwood tree
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.49424058074316957]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.6180685063484013]]
+
+ENTITY DESCRIPTION
+Unit : dogwood trees dogwood trees
+Number : 7  -  3
+adj :   more
+container : dogwood trees park workers
+sidx : 0 1
+text :  
+times : False False
+ow :  7  today 3
+role : s 
+orels :  num  dep num
+sent :  
+loc :  
+widx : 5 8
+verb :  are 
+lemma : dogwood tree dogwood tree
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 2
+adj :  more
+container : park workers
+sidx : 1
+text : 
+times : False
+ow :  tomorrow 2
+role : 
+orels :  dep num
+sent : 
+loc : 
+widx : 14
+verb : 
+lemma : dogwood tree
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.9819039566148957]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9064421815050572]]
+incorrect
+2 12
+
+Sara grew 4 onions, Sally grew 5 onions, and Fred grew  9 onions. How many onions did they grow in all ?
+
+onions-4 4-3
+onions-9 5-8
+onions-15 9-14
+onions-3 x-
+[[('onions', 4, '4', 'onion', 'sara'), ('onions', 9, '5', 'onion', 'sara'), ('onions', 15, '9', 'onion', 'sara')], [('onions', 3, 'x', 'onion', 'they')]]
+[('4', <entity.entity object at 0x106424908>), ('5', <entity.entity object at 0x1064d20b8>), ('9', <entity.entity object at 0x106424c50>), ('x', <entity.entity object at 0x106424048>)]
+
+ENTITY DESCRIPTION
+Unit : onions
+Number : 4
+adj : 
+container : sara
+sidx : 0
+text : 
+times : False
+ow :  4
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  grew
+lemma : onion
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : onions
+Number : 5
+adj : 
+container : sara
+sidx : 0
+text : 
+times : False
+ow :  5
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 9
+verb :  grew
+lemma : onion
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.1594543081680042]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.1144469544059625]]
+
+ENTITY DESCRIPTION
+Unit : onions onions
+Number : 4  +  5
+adj :  
+container : sara sara
+sidx : 0 0
+text :  
+times : False False
+ow :  4  5
+role : do do
+orels :  num  num
+sent :  
+loc :  
+widx : 4 9
+verb :  grew  grew
+lemma : onion onion
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : onions
+Number : 9
+adj : 
+container : sara
+sidx : 0
+text : 
+times : False
+ow :  9
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 15
+verb :  grew
+lemma : onion
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.5795373970054767]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.8641843782907579]]
+Correct!
+18 18
+
+There are 39 dogwood trees currently in the park. Park workers will plant  41 more dogwood trees today and 20 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+trees-5 39-3
+trees-8 41-5
+trees-14 20-11
+dogwood-3 x-
+[[('dogwood trees', 5, '39', 'dogwood tree', 'dogwood trees')], [('dogwood trees', 8, '41', 'dogwood tree', 'park workers'), ('dogwood trees', 14, '20', 'dogwood tree', 'park workers')], [('dogwood', 3, 'x', 'dogwood', 'park')]]
+[('39', <entity.entity object at 0x1064245c0>), ('41', <entity.entity object at 0x106568630>), ('20', <entity.entity object at 0x106568940>)]
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 39
+adj : 
+container : dogwood trees
+sidx : 0
+text : 
+times : False
+ow :  39
+role : s
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  are
+lemma : dogwood tree
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 41
+adj :  more
+container : park workers
+sidx : 1
+text : 
+times : False
+ow :  today 41
+role : 
+orels :  dep num
+sent : 
+loc : 
+widx : 8
+verb : 
+lemma : dogwood tree
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.49424058074316957]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.6180685063484013]]
+
+ENTITY DESCRIPTION
+Unit : dogwood trees dogwood trees
+Number : 39  -  41
+adj :   more
+container : dogwood trees park workers
+sidx : 0 1
+text :  
+times : False False
+ow :  39  today 41
+role : s 
+orels :  num  dep num
+sent :  
+loc :  
+widx : 5 8
+verb :  are 
+lemma : dogwood tree dogwood tree
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dogwood trees
+Number : 20
+adj :  more
+container : park workers
+sidx : 1
+text : 
+times : False
+ow :  tomorrow 20
+role : 
+orels :  dep num
+sent : 
+loc : 
+widx : 14
+verb : 
+lemma : dogwood tree
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.9819039566148957]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9064421815050572]]
+incorrect
+-22 100
+
+Sandy has 10 books, Benny has 24 books, and Tim has  33 books. How many books do they have together ?
+
+books-4 10-3
+books-9 24-8
+books-15 33-14
+books-3 x-
+[[('books', 4, '10', 'book', 'sandy'), ('books', 9, '24', 'book', 'sandy'), ('books', 15, '33', 'book', 'sandy')], [('books', 3, 'x', 'book', 'they')]]
+[('10', <entity.entity object at 0x106553748>), ('24', <entity.entity object at 0x1065539b0>), ('33', <entity.entity object at 0x106553ba8>), ('x', <entity.entity object at 0x106553898>)]
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 10
+adj : 
+container : sandy
+sidx : 0
+text : 
+times : False
+ow :  10
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  has
+lemma : book
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 24
+adj : 
+container : sandy
+sidx : 0
+text : 
+times : False
+ow :  24
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 9
+verb :  has
+lemma : book
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.272111214712548]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.3083175802291003]]
+
+ENTITY DESCRIPTION
+Unit : books books
+Number : 10  +  24
+adj :  
+container : sandy sandy
+sidx : 0 0
+text :  
+times : False False
+ow :  10  24
+role : do do
+orels :  num  num
+sent :  
+loc :  
+widx : 4 9
+verb :  has  has
+lemma : book book
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 33
+adj : 
+container : sandy
+sidx : 0
+text : 
+times : False
+ow :  33
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 15
+verb :  has
+lemma : book
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.7138314124621798]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.1092058881551445]]
+Correct!
+67 67
+
+Jason picked 46 pears, Keith picked 47 pears, and Mike picked a dozen pears from the pear tree. How many pears were picked in total ?
+
+pears-4 46-3
+pears-9 47-8
+pears-16 dozen-15
+pears-3 x-
+[[('pears', 4, '46', 'pear', 'jason'), ('pears', 9, '47', 'pear', 'jason'), ('pears', 16, 'dozen', 'pear', 'jason')], [('pears', 3, 'x', 'pear', '???')]]
+[('46', <entity.entity object at 0x10643d0f0>), ('47', <entity.entity object at 0x10643deb8>), ('x', <entity.entity object at 0x10650a9e8>)]
+
+ENTITY DESCRIPTION
+Unit : pears
+Number : 46
+adj : 
+container : jason
+sidx : 0
+text : 
+times : False
+ow :  46
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  picked
+lemma : pear
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : pears
+Number : 47
+adj : 
+container : jason
+sidx : 0
+text : 
+times : False
+ow :  47
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 9
+verb :  picked
+lemma : pear
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.481995819216716]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.0000625117181976]]
+incorrect
+93 105
+
+Keith grew 29 cantelopes, Fred grew 16 cantelopes, and Jason grew  20 cantelopes. How many cantelopes did they grow in total ?
+
+cantelopes-4 29-3
+cantelopes-9 16-8
+cantelopes-15 20-14
+cantelopes-3 x-
+[[('cantelopes', 4, '29', 'cantelope', 'keith'), ('cantelopes', 9, '16', 'cantelope', 'keith'), ('cantelopes', 15, '20', 'cantelope', 'keith')], [('cantelopes', 3, 'x', 'cantelope', 'they')]]
+[('29', <entity.entity object at 0x106557ac8>), ('16', <entity.entity object at 0x106557c50>), ('20', <entity.entity object at 0x106557b70>), ('x', <entity.entity object at 0x106557940>)]
+
+ENTITY DESCRIPTION
+Unit : cantelopes
+Number : 29
+adj : 
+container : keith
+sidx : 0
+text : 
+times : False
+ow :  29
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  grew
+lemma : cantelope
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cantelopes
+Number : 16
+adj : 
+container : keith
+sidx : 0
+text : 
+times : False
+ow :  16
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 9
+verb :  grew
+lemma : cantelope
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.481995819216716]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.0000625117181976]]
+
+ENTITY DESCRIPTION
+Unit : cantelopes cantelopes
+Number : 29  +  16
+adj :  
+container : keith keith
+sidx : 0 0
+text :  
+times : False False
+ow :  29  16
+role : do do
+orels :  num  num
+sent :  
+loc :  
+widx : 4 9
+verb :  grew  grew
+lemma : cantelope cantelope
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cantelopes
+Number : 20
+adj : 
+container : keith
+sidx : 0
+text : 
+times : False
+ow :  20
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 15
+verb :  grew
+lemma : cantelope
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.8735654838266624]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.7554707154640135]]
+Correct!
+65 65
+
+Alyssa has 37 blue balloons, Sandy has 28 blue balloons, and Sally  has 39 blue balloons. How many blue balloons do they have in all ?
+
+balloons-5 37-3
+balloons-11 28-9
+balloons-18 39-16
+balloons-4 x-
+[[('balloons', 5, '37', 'balloon', 'alyssa'), ('balloons', 11, '28', 'balloon', 'alyssa'), ('balloons', 18, '39', 'balloon', 'alyssa')], [('balloons', 4, 'x', 'balloon', 'they')]]
+[('37', <entity.entity object at 0x1064249e8>), ('28', <entity.entity object at 0x106394358>), ('39', <entity.entity object at 0x106424c50>), ('x', <entity.entity object at 0x10643da58>)]
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 37
+adj :  blue
+container : alyssa
+sidx : 0
+text : 
+times : False
+ow :  37
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  has
+lemma : balloon
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 28
+adj :  blue
+container : alyssa
+sidx : 0
+text : 
+times : False
+ow :  28
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 11
+verb :  has
+lemma : balloon
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.1594543081680042]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.1144469544059625]]
+
+ENTITY DESCRIPTION
+Unit : balloons balloons
+Number : 37  +  28
+adj :  blue  blue
+container : alyssa alyssa
+sidx : 0 0
+text :  
+times : False False
+ow :  37  28
+role : do do
+orels :  num  num
+sent :  
+loc :  
+widx : 5 11
+verb :  has  has
+lemma : balloon balloon
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : balloons
+Number : 39
+adj :  blue
+container : alyssa
+sidx : 0
+text : 
+times : False
+ow :  39
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 18
+verb :  has
+lemma : balloon
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.5795373970054767]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.8641843782907579]]
+Correct!
+104 104
+
+Sally had 27 cards. Dan gave her 41 new cards. Sally bought 20 cards. How many cards does Sally have now ?
+
+cards-4 27-3
+cards-6 41-4
+cards-4 20-3
+cards-3 x-
+[[('cards', 4, '27', 'card', 'sally')], [('cards', 6, '41', 'card', 'dan')], [('cards', 4, '20', 'card', '???')], [('cards', 3, 'x', 'card', 'cards')]]
+[('27', <entity.entity object at 0x1065681d0>), ('41', <entity.entity object at 0x106568208>), ('20', <entity.entity object at 0x106568160>), ('x', <entity.entity object at 0x106568320>)]
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 27
+adj : 
+container : sally
+sidx : 0
+text : 
+times : False
+ow :  27
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  had
+lemma : card
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 41
+adj :  new
+container : dan
+sidx : 1
+text : 
+times : False
+ow :  her 41
+role : do
+orels :  poss num
+sent : 
+loc : 
+widx : 6
+verb :  gave
+lemma : card
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[1.5351095291691719]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.4984100995507681]]
+
+ENTITY DESCRIPTION
+Unit : cards cards
+Number : 27  -  41
+adj :   new
+container : sally dan
+sidx : 0 1
+text :  
+times : False False
+ow :  27  her 41
+role : do do
+orels :  num  poss num
+sent :  
+loc :  
+widx : 4 6
+verb :  had  gave
+lemma : card card
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : cards
+Number : 20
+adj : 
+container : 
+sidx : 2
+text : 
+times : False
+ow :  20
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  bought
+lemma : card
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.3485109309654986]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.7637695702248315]]
+incorrect
+-34 88
+
+Jason went to 11 football games this month. He went to 17 games last month, and plans to go to 16 games next month. How many games will he attend in all ?
+
+games-6 11-4
+games-5 17-4
+games-15 16-14
+games-3 x-
+[[('football games', 6, '11', 'football game', 'jason')], [('games', 5, '17', 'game', 'he'), ('games', 15, '16', 'game', 'he')], [('games', 3, 'x', 'game', 'he')]]
+[('11', <entity.entity object at 0x1065535f8>), ('17', <entity.entity object at 0x1065538d0>), ('16', <entity.entity object at 0x106553c50>), ('x', <entity.entity object at 0x106553208>)]
+
+ENTITY DESCRIPTION
+Unit : football games
+Number : 11
+adj : 
+container : jason
+sidx : 0
+text : 
+times : False
+ow :  11 went
+role : 
+orels :  num prep_to
+sent : 
+loc : 
+widx : 6
+verb : 
+lemma : football game
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : games
+Number : 17
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  17 went
+role : 
+orels :  num prep_to
+sent : 
+loc : 
+widx : 5
+verb : 
+lemma : game
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.4097861950769568]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.8615502397001287]]
+
+ENTITY DESCRIPTION
+Unit : football games games
+Number : 11  +  17
+adj :  
+container : jason he
+sidx : 0 1
+text :  
+times : False False
+ow :  11 went  17 went
+role :  
+orels :  num prep_to  num prep_to
+sent :  
+loc :  
+widx : 6 5
+verb :  
+lemma : football game game
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : games
+Number : 16
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  16 go
+role : 
+orels :  num prep_to
+sent : 
+loc : 
+widx : 15
+verb : 
+lemma : game
+each : False
+------------------
+Operation selected :  + 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.5795373970054767]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.8641843782907579]]
+Correct!
+44 44
+
+Mike has 45 dollars in 5 dollar bills.  How many 5 dollars bills does  he have ?
+
+dollars-4 45-3
+bills-8 5-6
+dollars-4 5-3
+dollars-4 x-
+[[('dollars', 4, '45', 'dollar', 'mike'), ('dollar bills', 8, '5', 'dollar bill', 'mike')], [('dollars', 4, '5', 'dollar', 'he'), ('dollars', 4, 'x', 'dollar', 'he')]]
+[('45', <entity.entity object at 0x10664b208>), ('5', <entity.entity object at 0x10664b390>)]
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 45
+adj : 
+container : mike
+sidx : 0
+text : 
+times : False
+ow :  45
+role : do
+orels :  num
+sent : 
+loc : bills
+widx : 4
+verb :  has
+lemma : dollar
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : dollars
+Number : 5
+adj :  many
+container : he
+sidx : 1
+text : 
+times : False
+ow :  bills 5
+role : do
+orels :  dep num
+sent : 
+loc : 
+widx : 4
+verb :  have
+lemma : dollar
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-1.9058287727433525]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.816047637927353]]
+incorrect
+225 9
+
+Dan found 36 seashells. He plans to give all of his seashells equally to his 4 friends. How many seashells will each friend get ?
+
+seashells-4 36-3
+friends-13 4-12
+seashells-3 x-
+[[('seashells', 4, '36', 'seashell', 'dan')], [('friends', 13, '4', 'friend', 'he')], [('seashells', 3, 'x', 'seashell', 'friend')]]
+[('36', <entity.entity object at 0x106406048>), ('4', <entity.entity object at 0x1063517f0>), ('x', <entity.entity object at 0x1064ce5f8>)]
+
+ENTITY DESCRIPTION
+Unit : seashells
+Number : 36
+adj : 
+container : dan
+sidx : 0
+text : 
+times : False
+ow :  36
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  found
+lemma : seashell
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : friends
+Number : 4
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  his 4 equally
+role : 
+orels :  poss num prep_to
+sent : 
+loc : 
+widx : 13
+verb : 
+lemma : friend
+each : True
+------------------
+Operation selected :  / 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-2.1387703943242373]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.4591161551862564]]
+Correct!
+9.0 9
+
+There are 60 calories in a candy bar. How many dozen calories are there in 45 candy bars?
+
+calories-4 60-3
+bars-10 45-8
+calories-4 x-
+[[('calories', 4, '60', 'calorie', 'calories')], [('candy bars', 10, '45', 'candy bar', 'dozen calories'), ('dozen calories', 4, 'x', 'dozen calorie', 'dozen calories')]]
+[('60', <entity.entity object at 0x106557be0>), ('x', <entity.entity object at 0x106557ba8>), ('45', <entity.entity object at 0x1065575f8>)]
+
+ENTITY DESCRIPTION
+Unit : calories
+Number : 60
+adj : 
+container : calories
+sidx : 0
+text : 
+times : False
+ow :  60
+role : s
+orels :  num
+sent : 
+loc : bar
+widx : 4
+verb :  are
+lemma : calorie
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : candy bars
+Number : 45
+adj : 
+container : dozen calories
+sidx : 1
+text : 
+times : False
+ow :  45
+role : 
+orels :  num
+sent : 
+loc : are
+widx : 10
+verb : 
+lemma : candy bar
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-1.5322844678788927]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.43408638460959476]]
+incorrect
+2700 225
+
+Melanie has 84 blue marbles. Sandy has 8 times more blue marbles than Melanie. How many dozen blue marbles does Sandy have?
+
+marbles-5 84-3
+marbles-7 times-4
+dozen-3 x-
+[[('marbles', 5, '84', 'marble', 'melanie')], [('marbles', 7, 'times', 'marble', 'sandy')], [('dozen', 3, 'x', 'dozen', 'sandy')]]
+[('84', <entity.entity object at 0x1065c3e48>), ('8', <entity.entity object at 0x1065c3ba8>)]
+
+ENTITY DESCRIPTION
+Unit : marbles
+Number : 84
+adj :  blue
+container : melanie
+sidx : 0
+text : 
+times : False
+ow :  84
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 5
+verb :  has
+lemma : marble
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : marbles
+Number : 8
+adj : 
+container : 
+sidx : 1
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 3
+verb : 
+lemma : marble
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.6959929813005301]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.7298242600161344]]
+incorrect
+76 56
+
+Mike has 48 books. Alyssa has 8 times more books than  Mike. How many dozen books does Alyssa have?
+
+books-4 48-3
+books-6 times-4
+dozen-3 x-
+[[('books', 4, '48', 'book', 'mike')], [('books', 6, 'times', 'book', 'alyssa')], [('dozen', 3, 'x', 'dozen', 'alyssa')]]
+[('48', <entity.entity object at 0x106568390>), ('8', <entity.entity object at 0x106568320>)]
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 48
+adj : 
+container : mike
+sidx : 0
+text : 
+times : False
+ow :  48
+role : do
+orels :  num
+sent : 
+loc : 
+widx : 4
+verb :  has
+lemma : book
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : books
+Number : 8
+adj : 
+container : 
+sidx : 1
+text : 
+times : False
+ow : 
+role : 
+orels : 
+sent : 
+loc : 
+widx : 3
+verb : 
+lemma : book
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[2.063957173778543]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-1.0840558572739958]]
+incorrect
+40 32
+
+A restaurant sold 8 pies every day for a 7 days. How many pies were sold during the days ?
+
+pies-5 8-4
+days-11 7-10
+pies-3 x-
+[[('pies', 5, '8', 'pie', 'restaurant'), ('days', 11, '7', 'day', 'restaurant')], [('pies', 3, 'x', 'pie', '???')]]
+[('8', <entity.entity object at 0x1064d2048>), ('7', <entity.entity object at 0x106661e48>), ('x', <entity.entity object at 0x106661eb8>)]
+
+ENTITY DESCRIPTION
+Unit : pies
+Number : 8
+adj : 
+container : restaurant
+sidx : 0
+text : 
+times : False
+ow :  day 8
+role : do
+orels :  dep num
+sent : 
+loc : 
+widx : 5
+verb :  sold
+lemma : pie
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : days
+Number : 7
+adj : 
+container : restaurant
+sidx : 0
+text : 
+times : False
+ow :  sold a 7
+role : 
+orels :  prep_for det num
+sent : 
+loc : 
+widx : 11
+verb : 
+lemma : day
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.7407976754783236]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.5083550480632282]]
+Correct!
+56 56
+
+Mary loves eating fruits. Mary paid $11.08 for berries, $14.33 for apples, and $9.31 for peaches. In total, how much money did she spend?
+
+$-3 11.08-4
+$-8 14.33-9
+$-14 9.31-15
+money-6 x-
+[[], [('$', 3, '11.08', '$', 'mary'), ('$', 8, '14.33', '$', 'mary'), ('$', 14, '9.31', '$', 'mary')], [('money', 6, 'x', 'money', 'she')]]
+[('11.08', <entity.entity object at 0x106661198>), ('14.33', <entity.entity object at 0x1066ac048>), ('9.31', <entity.entity object at 0x106661278>), ('x', <entity.entity object at 0x1066612b0>)]
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 11.08
+adj : 
+container : mary
+sidx : 1
+text : 
+times : False
+ow :  $ berries 11.08
+role : do
+orels :  conj_and prep_for num
+sent : 
+loc : 
+widx : 3
+verb :  paid
+lemma : $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 14.33
+adj : 
+container : mary
+sidx : 1
+text : 
+times : False
+ow :  $ apples 14.33
+role : 
+orels :  conj_and prep_for num
+sent : 
+loc : 
+widx : 8
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.6171427623862842]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.01160574216742398]]
+
+ENTITY DESCRIPTION
+Unit : $ $
+Number : 11.08  *  14.33
+adj :  
+container : mary mary
+sidx : 1 1
+text :  
+times : False False
+ow :  $ berries 11.08  $ apples 14.33
+role : do 
+orels :  conj_and prep_for num  conj_and prep_for num
+sent :  
+loc :  
+widx : 3 8
+verb :  paid 
+lemma : $ $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 9.31
+adj : 
+container : mary
+sidx : 1
+text : 
+times : False
+ow :  $ peaches 9.31
+role : 
+orels :  conj_and prep_for num
+sent : 
+loc : 
+widx : 14
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.45875848108646]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.009513070025635326]]
+incorrect
+1478.208284 34.72
+
+Sandy went to the mall to buy clothes. She spent $13.99 on shorts, $12.14 on a shirt, and $7.43 on a jacket. How much money did Sandy spend on clothes?
+
+$-3 13.99-4
+$-8 12.14-9
+$-15 7.43-16
+money-3 x-
+[[], [('$', 3, '13.99', '$', 'she'), ('$', 8, '12.14', '$', 'she'), ('$', 15, '7.43', '$', 'she')], [('money', 3, 'x', 'money', 'sandy')]]
+[('13.99', <entity.entity object at 0x1066aceb8>), ('12.14', <entity.entity object at 0x1066acb38>), ('7.43', <entity.entity object at 0x1066accf8>), ('x', <entity.entity object at 0x1066acc18>)]
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 13.99
+adj : 
+container : she
+sidx : 1
+text : 
+times : False
+ow :  $ 13.99
+role : do
+orels :  conj_and num
+sent : 
+loc : shorts
+widx : 3
+verb :  spent
+lemma : $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 12.14
+adj : 
+container : she
+sidx : 1
+text : 
+times : False
+ow :  $ 12.14
+role : 
+orels :  conj_and num
+sent : 
+loc : shirt
+widx : 8
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.681776702123611]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.1006586941377902]]
+
+ENTITY DESCRIPTION
+Unit : $ $
+Number : 13.99  *  12.14
+adj :  
+container : she she
+sidx : 1 1
+text :  
+times : False False
+ow :  $ 13.99  $ 12.14
+role : do 
+orels :  conj_and num  conj_and num
+sent :  
+loc : shorts shirt
+widx : 3 8
+verb :  spent 
+lemma : $ $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 7.43
+adj : 
+container : she
+sidx : 1
+text : 
+times : False
+ow :  $ 7.43
+role : 
+orels :  conj_and num
+sent : 
+loc : jacket
+widx : 15
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.5153947169980855]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.08673361874022782]]
+incorrect
+1261.9007980000001 33.56
+
+Jason joined his school's band. He bought a flute for $142.46, a music stand for $8.89, and a song book for $7. How much did Jason spend at the music store?
+
+$-6 142.46-7
+$-13 8.89-14
+$-21 7-22
+spend-5 x-
+[[], [('$', 6, '142.46', '$', 'he'), ('$', 13, '8.89', '$', 'he'), ('$', 21, '7', '$', 'he')], [('spend', 5, 'x', 'spend', 'jason')]]
+[('142.46', <entity.entity object at 0x106661b00>), ('8.89', <entity.entity object at 0x106661390>), ('7', <entity.entity object at 0x106661e48>), ('x', <entity.entity object at 0x106661358>)]
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 142.46
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  bought 142.46
+role : 
+orels :  prep_for num
+sent : 
+loc : 
+widx : 6
+verb : 
+lemma : $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 8.89
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  book stand 8.89
+role : 
+orels :  conj_and prep_for num
+sent : 
+loc : 
+widx : 13
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.19595732090487683]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.9751837469504003]]
+
+ENTITY DESCRIPTION
+Unit : $ $
+Number : 142.46  -  8.89
+adj :  
+container : he he
+sidx : 1 1
+text :  
+times : False False
+ow :  bought 142.46  book stand 8.89
+role :  
+orels :  prep_for num  conj_and prep_for num
+sent :  
+loc :  
+widx : 6 13
+verb :  
+lemma : $ $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 7
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  book 7
+role : 
+orels :  prep_for num
+sent : 
+loc : 
+widx : 21
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  - 
+Stats for +- vs */ decision :  [1.0] (0.0, 4.0, nan) [[0.3272407433052278]]
+Stats for subsequent decision:  [-1.0] (100.0, 0.0, nan) [[-0.881475520981845]]
+incorrect
+126.57 158.35
+
+Fred loves trading cards. He bought 2 packs of football cards for $2.73 each, a pack of Pokemon cards for $4.01, and a deck of baseball cards for $8.95. How much did Fred spend on cards?
+
+packs-4 2-3
+$-9 2.73-10
+$-19 4.01-20
+$-29 8.95-30
+spend-5 x-
+[[], [('packs', 4, '2', 'pack', 'he'), ('$', 9, '2.73', '$', 'he'), ('$', 19, '4.01', '$', 'he'), ('$', 29, '8.95', '$', 'he')], [('spend', 5, 'x', 'spend', 'fred')]]
+[('2', <entity.entity object at 0x106541dd8>), ('4.01', <entity.entity object at 0x1065c3ba8>), ('8.95', <entity.entity object at 0x1065c3748>), ('x', <entity.entity object at 0x1065c37f0>)]
+
+ENTITY DESCRIPTION
+Unit : packs
+Number : 2
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  cards 2
+role : do
+orels :  prep_of num
+sent : 
+loc : 
+widx : 4
+verb :  bought
+lemma : pack
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 4.01
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  cards 4.01
+role : 
+orels :  prep_for num
+sent : 
+loc : 
+widx : 19
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-1.7576687274251883]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[1.780334391388488]]
+
+ENTITY DESCRIPTION
+Unit : packs $
+Number : 2  *  4.01
+adj :  
+container : he he
+sidx : 1 1
+text :  
+times : False False
+ow :  cards 2  cards 4.01
+role : do 
+orels :  prep_of num  prep_for num
+sent :  
+loc :  
+widx : 4 19
+verb :  bought 
+lemma : pack $
+each : False
+------------------
+
+ENTITY DESCRIPTION
+Unit : $
+Number : 8.95
+adj : 
+container : he
+sidx : 1
+text : 
+times : False
+ow :  cards 8.95
+role : 
+orels :  prep_for num
+sent : 
+loc : 
+widx : 29
+verb : 
+lemma : $
+each : False
+------------------
+Operation selected :  * 
+Stats for +- vs */ decision :  [-1.0] (100.0, 0.0, nan) [[-0.45875848108646]]
+Stats for subsequent decision:  [1.0] (0.0, 4.0, nan) [[0.009513070025635326]]
+incorrect
+71.779 18.42
+
+totals:  10 29
+[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0]

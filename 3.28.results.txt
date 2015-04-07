@@ -1,0 +1,2389 @@
+Benny bought a soft drink for 2 dollars and 5 candy bars. He spent a total of 27 dollars. How much did each candy bar cost ?
+
+
+ENTITY DESCRIPTION
+Entity : candy bars
+Number : 5
+Unit : 
+sent : 
+widx : 12
+each : True
+loc : 
+container : benny
+orels :  conj_and num
+text : 
+lemma : candy bar
+sidx : 0
+ow :  dollars 5
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : x
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : much
+orels :  root
+text : 
+lemma : $
+sidx : 2
+ow :  ROOT
+adj : 
+times : False
+verb : cost
+role : do
+------------------
+Operation selected:  *
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : 2
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : 
+container : benny
+orels :  conj_and num prep_for
+text : 
+lemma : dollar
+sidx : 0
+ow :  bars 2 bought
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (5*x)
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : much
+orels :  root
+text : 
+lemma : $
+sidx : 2
+ow :  ROOT
+adj : 
+times : False
+verb : cost
+role : do
+------------------
+Operation selected:  /
+(2/(5*x))=27
+2/135 5
+
+incorrect
+Benny bought 4 new baseball trading cards to add to his collection. The next day his dog ate half of his collection. There are now only 34 cards left. How many cards did Benny start with ?
+
+
+ENTITY DESCRIPTION
+Entity : baseball cards
+Number : 4
+Unit : 
+sent : 
+widx : 7
+each : False
+loc : 
+container : benny
+orels :  num
+text : 
+lemma : baseball card
+sidx : 0
+ow :  4
+adj :  new
+times : False
+verb : add
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : collection
+Number : 2
+Unit : 
+sent : 
+widx : 10
+each : False
+loc : 
+container : 
+orels :  poss prep_of
+text : 
+lemma : collection
+sidx : 1
+ow :  his half
+adj : 
+times : False
+verb : ate
+role : 
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : cards
+Number : x
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : cards
+orels : 
+text : 
+lemma : card
+sidx : 3
+ow : 
+adj :  many
+times : False
+verb : did
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : collection
+Number : (4-2)
+Unit : 
+sent : 
+widx : 10
+each : False
+loc : 
+container : 
+orels :  poss prep_of
+text : 
+lemma : collection
+sidx : 1
+ow :  his half
+adj : 
+times : False
+verb : ate
+role : 
+------------------
+Operation selected:  -
+(x-(4-2))=34
+36 64
+
+incorrect
+Sam had 79 dollars to spend on 9 books. After buying them he had 16 dollars. How much did each book cost ?
+
+
+ENTITY DESCRIPTION
+Entity : books
+Number : 9
+Unit : 
+sent : 
+widx : 9
+each : True
+loc : spend
+container : sam
+orels :  num
+text : 
+lemma : book
+sidx : 0
+ow :  9
+adj : 
+times : False
+verb : had spend
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : x
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : much
+orels :  root
+text : 
+lemma : $
+sidx : 2
+ow :  ROOT
+adj : 
+times : False
+verb : cost
+role : do
+------------------
+Operation selected:  *
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : 79
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : sam
+orels :  num
+text : 
+lemma : dollar
+sidx : 0
+ow :  79
+adj : 
+times : False
+verb : had
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (9*x)
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : much
+orels :  root
+text : 
+lemma : $
+sidx : 2
+ow :  ROOT
+adj : 
+times : False
+verb : cost
+role : do
+------------------
+Operation selected:  /
+(79/(9*x))=16
+79/144 7
+
+incorrect
+Oceanside Bike Rental Shop charges 17 dollars plus 7 dollars an hour for renting a bike. Tom paid 80 dollars to rent a bike. How many hours did he pay to have the bike checked out ?
+
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : 7
+Unit : 
+sent : 
+widx : 10
+each : False
+loc : 
+container : 
+orels :  dep num pobj
+text : 
+lemma : dollar
+sidx : 0
+ow :  hour 7 plus
+adj : 
+times : False
+verb : renting
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : 80
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : tom
+orels :  num
+text : 
+lemma : dollar
+sidx : 1
+ow :  80
+adj : 
+times : False
+verb : paid
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : 17
+Unit : 
+sent : 
+widx : 7
+each : False
+loc : 
+container : 
+orels :  dep prepc_for num prep
+text : 
+lemma : dollar
+sidx : 0
+ow :  charges renting 17 plus
+adj : 
+times : False
+verb : renting
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : (7+80)
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : tom
+orels :  num
+text : 
+lemma : dollar
+sidx : 1
+ow :  80
+adj : 
+times : False
+verb : paid
+role : do
+------------------
+Operation selected:  +
+(17+(7+80))=x
+104 9
+
+incorrect
+On Monday, 375 students went on a trip to the zoo. All 7 buses were filled and 4 students had to travel in cars. How many students were in each bus ?
+
+
+ENTITY DESCRIPTION
+Entity : buses
+Number : 7
+Unit : 
+sent : 
+widx : 3
+each : True
+loc : 
+container : students
+orels :  num det
+text : 
+lemma : bus
+sidx : 1
+ow :  7 all
+adj : 
+times : False
+verb : filled
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : buses
+Number : x
+Unit : 
+sent : 
+widx : 3
+each : True
+loc : 
+container : students
+orels : 
+text : 
+lemma : bus
+sidx : 2
+ow : 
+adj :  many
+times : False
+verb : were
+role : s
+------------------
+Operation selected:  *
+
+ENTITY DESCRIPTION
+Entity : students
+Number : 375
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : students
+orels :  num
+text : 
+lemma : student
+sidx : 0
+ow :  375
+adj : 
+times : False
+verb : went
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : buses
+Number : (7*x)
+Unit : 
+sent : 
+widx : 3
+each : True
+loc : 
+container : students
+orels : 
+text : 
+lemma : bus
+sidx : 2
+ow : 
+adj :  many
+times : False
+verb : were
+role : s
+------------------
+Operation selected:  /
+(375/(7*x))=4
+375/28 53
+
+incorrect
+Sandy sold 2 of her comic books and then bought 6 more. She now has 13. How many did she begin with ?
+
+
+ENTITY DESCRIPTION
+Entity : more
+Number : 2
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : 
+orels : 
+text : 
+lemma : more
+sidx : 0
+ow : 
+adj : 
+times : False
+verb : sold bought
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : more
+Number : 6
+Unit : 
+sent : 
+widx : 12
+each : False
+loc : 
+container : sandy
+orels :  num
+text : 
+lemma : more
+sidx : 0
+ow :  6
+adj : 
+times : False
+verb : bought
+role : do
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : she
+Number : x
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : she
+orels : 
+text : 
+lemma : she
+sidx : 2
+ow : 
+adj : 
+times : False
+verb : begin
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : more
+Number : (2-6)
+Unit : 
+sent : 
+widx : 12
+each : False
+loc : 
+container : sandy
+orels :  num
+text : 
+lemma : more
+sidx : 0
+ow :  6
+adj : 
+times : False
+verb : bought
+role : do
+------------------
+Operation selected:  *
+(x*(2-6))=13
+-13/4 9
+
+incorrect
+Tim's cat had kittens. He gave 3 to Jessica and 6 to Sara. He now has 9 kittens left. How many kittens did he have to start with ?
+
+
+ENTITY DESCRIPTION
+Entity : had
+Number : 3
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : 
+orels : 
+text : 
+lemma : have
+sidx : 1
+ow : 
+adj : 
+times : False
+verb : gave
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : had
+Number : 6
+Unit : 
+sent : 
+widx : 7
+each : False
+loc : 
+container : 
+orels : 
+text : 
+lemma : have
+sidx : 1
+ow : 
+adj : 
+times : False
+verb : gave
+role : 
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : kittens
+Number : x
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : he
+orels :  advmod aux root xcomp
+text : 
+lemma : kitten
+sidx : 3
+ow :  how did ROOT start
+adj : 
+times : False
+verb : have start
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : had
+Number : (3+6)
+Unit : 
+sent : 
+widx : 7
+each : False
+loc : 
+container : 
+orels : 
+text : 
+lemma : have
+sidx : 1
+ow : 
+adj : 
+times : False
+verb : gave
+role : 
+------------------
+Operation selected:  -
+(x-(3+6))=9
+18 18
+
+Correct!
+Joan has 9 blue balloons, Sally has 5 blue balloons, and Jessica has  2 blue balloons. How many blue balloons do they have in total ?
+
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : 5
+Unit : 
+sent : 
+widx : 11
+each : False
+loc : 
+container : joan
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  5
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : 2
+Unit : 
+sent : 
+widx : 18
+each : False
+loc : 
+container : joan
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  2
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : 9
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : joan
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  9
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : (5+2)
+Unit : 
+sent : 
+widx : 18
+each : False
+loc : 
+container : joan
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  2
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  +
+(9+(5+2))=x
+16 16
+
+Correct!
+A restaurant served 5 cakes during lunch and 6 during dinner today. The restaurant served 3 cakes yesterday. How many cakes were served in total ?
+
+
+ENTITY DESCRIPTION
+Entity : cakes
+Number : 6
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : 
+orels : 
+text : 
+lemma : cake
+sidx : 0
+ow : 
+adj : 
+times : False
+verb : served
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : cakes
+Number : 3
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : restaurant
+orels :  num
+text : 
+lemma : cake
+sidx : 1
+ow :  3
+adj : 
+times : False
+verb : served
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : cakes
+Number : 5
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : restaurant
+orels :  num
+text : 
+lemma : cake
+sidx : 0
+ow :  5
+adj : 
+times : False
+verb : served
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : cakes
+Number : (6+3)
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : restaurant
+orels :  num
+text : 
+lemma : cake
+sidx : 1
+ow :  3
+adj : 
+times : False
+verb : served
+role : do
+------------------
+Operation selected:  +
+(5+(6+3))=x
+14 14
+
+Correct!
+Melanie picked 4 plums, Dan picked 9 plums, and Sally picked 3 plums from the plum tree. How many plums were picked in total ?
+
+
+ENTITY DESCRIPTION
+Entity : plums
+Number : 9
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : melanie
+orels :  num
+text : 
+lemma : plum
+sidx : 0
+ow :  9
+adj : 
+times : False
+verb : picked
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : plums
+Number : 3
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : melanie
+orels :  num
+text : 
+lemma : plum
+sidx : 0
+ow :  3
+adj : 
+times : False
+verb : picked
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : plums
+Number : 4
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : melanie
+orels :  num
+text : 
+lemma : plum
+sidx : 0
+ow :  4
+adj : 
+times : False
+verb : picked
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : plums
+Number : (9+3)
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : melanie
+orels :  num
+text : 
+lemma : plum
+sidx : 0
+ow :  3
+adj : 
+times : False
+verb : picked
+role : do
+------------------
+Operation selected:  +
+(4+(9+3))=x
+16 16
+
+Correct!
+There are 7 dogwood trees currently in the park. Park workers will plant 3 more dogwood trees today and 2 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : 7
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : dogwood trees
+orels :  num
+text : 
+lemma : dogwood tree
+sidx : 0
+ow :  7
+adj : 
+times : False
+verb : are
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : 3
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : 
+container : park workers
+orels :  dep num
+text : 
+lemma : dogwood tree
+sidx : 1
+ow :  today 3
+adj :  more
+times : False
+verb : plant
+role : 
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : (7+3)
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : 
+container : park workers
+orels :  dep num
+text : 
+lemma : dogwood tree
+sidx : 1
+ow :  today 3
+adj :  more
+times : False
+verb : plant
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : 2
+Unit : 
+sent : 
+widx : 14
+each : False
+loc : 
+container : park workers
+orels :  dep num
+text : 
+lemma : dogwood tree
+sidx : 1
+ow :  tomorrow 2
+adj :  more
+times : False
+verb : plant
+role : 
+------------------
+Operation selected:  +
+((7+3)+2)=x
+12 12
+
+Correct!
+Sara grew 4 onions, Sally grew 5 onions, and Fred grew  9 onions. How many onions did they grow in all ?
+
+
+ENTITY DESCRIPTION
+Entity : onions
+Number : 5
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : sara
+orels :  num
+text : 
+lemma : onion
+sidx : 0
+ow :  5
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : onions
+Number : 9
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : sara
+orels :  num
+text : 
+lemma : onion
+sidx : 0
+ow :  9
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : onions
+Number : 4
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : sara
+orels :  num
+text : 
+lemma : onion
+sidx : 0
+ow :  4
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : onions
+Number : (5+9)
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : sara
+orels :  num
+text : 
+lemma : onion
+sidx : 0
+ow :  9
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+Operation selected:  +
+(4+(5+9))=x
+18 18
+
+Correct!
+There are 39 dogwood trees currently in the park. Park workers will plant  41 more dogwood trees today and 20 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : 39
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : dogwood trees
+orels :  num
+text : 
+lemma : dogwood tree
+sidx : 0
+ow :  39
+adj : 
+times : False
+verb : are
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : 41
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : 
+container : park workers
+orels :  dep num
+text : 
+lemma : dogwood tree
+sidx : 1
+ow :  today 41
+adj :  more
+times : False
+verb : plant
+role : 
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : (39+41)
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : 
+container : park workers
+orels :  dep num
+text : 
+lemma : dogwood tree
+sidx : 1
+ow :  today 41
+adj :  more
+times : False
+verb : plant
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : dogwood trees
+Number : 20
+Unit : 
+sent : 
+widx : 14
+each : False
+loc : 
+container : park workers
+orels :  dep num
+text : 
+lemma : dogwood tree
+sidx : 1
+ow :  tomorrow 20
+adj :  more
+times : False
+verb : plant
+role : 
+------------------
+Operation selected:  +
+((39+41)+20)=x
+100 100
+
+Correct!
+Sandy has 10 books, Benny has 24 books, and Tim has  33 books. How many books do they have together ?
+
+
+ENTITY DESCRIPTION
+Entity : books
+Number : 24
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : sandy
+orels :  num
+text : 
+lemma : book
+sidx : 0
+ow :  24
+adj : 
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : books
+Number : 33
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : sandy
+orels :  num
+text : 
+lemma : book
+sidx : 0
+ow :  33
+adj : 
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : books
+Number : 10
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : sandy
+orels :  num
+text : 
+lemma : book
+sidx : 0
+ow :  10
+adj : 
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : books
+Number : (24+33)
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : sandy
+orels :  num
+text : 
+lemma : book
+sidx : 0
+ow :  33
+adj : 
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  +
+(10+(24+33))=x
+67 67
+
+Correct!
+Jason picked 46 pears, Keith picked 47 pears, and Mike picked a dozen pears from the pear tree. How many pears were picked in total ?
+
+
+ENTITY DESCRIPTION
+Entity : pears
+Number : 46
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : jason
+orels :  num
+text : 
+lemma : pear
+sidx : 0
+ow :  46
+adj : 
+times : False
+verb : picked
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : pears
+Number : 47
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : jason
+orels :  num
+text : 
+lemma : pear
+sidx : 0
+ow :  47
+adj : 
+times : False
+verb : picked
+role : do
+------------------
+Operation selected:  +
+(46+47)=x
+93 105
+
+incorrect
+Keith grew 29 cantelopes, Fred grew 16 cantelopes, and Jason grew  20 cantelopes. How many cantelopes did they grow in total ?
+
+
+ENTITY DESCRIPTION
+Entity : cantelopes
+Number : 16
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : keith
+orels :  num
+text : 
+lemma : cantelope
+sidx : 0
+ow :  16
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : cantelopes
+Number : 20
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : keith
+orels :  num
+text : 
+lemma : cantelope
+sidx : 0
+ow :  20
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : cantelopes
+Number : 29
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : keith
+orels :  num
+text : 
+lemma : cantelope
+sidx : 0
+ow :  29
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : cantelopes
+Number : (16+20)
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : keith
+orels :  num
+text : 
+lemma : cantelope
+sidx : 0
+ow :  20
+adj : 
+times : False
+verb : grew
+role : do
+------------------
+Operation selected:  +
+(29+(16+20))=x
+65 65
+
+Correct!
+Alyssa has 37 blue balloons, Sandy has 28 blue balloons, and Sally  has 39 blue balloons. How many blue balloons do they have in all ?
+
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : 28
+Unit : 
+sent : 
+widx : 11
+each : False
+loc : 
+container : alyssa
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  28
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : 39
+Unit : 
+sent : 
+widx : 18
+each : False
+loc : 
+container : alyssa
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  39
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : 37
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : alyssa
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  37
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : balloons
+Number : (28+39)
+Unit : 
+sent : 
+widx : 18
+each : False
+loc : 
+container : alyssa
+orels :  num
+text : 
+lemma : balloon
+sidx : 0
+ow :  39
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  +
+(37+(28+39))=x
+104 104
+
+Correct!
+Sally had 27 cards. Dan gave her 41 new cards. Sally bought 20 cards. How many cards does Sally have now ?
+
+
+ENTITY DESCRIPTION
+Entity : cards
+Number : 41
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : dan
+orels :  poss num
+text : 
+lemma : card
+sidx : 1
+ow :  her 41
+adj :  new
+times : False
+verb : gave
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : cards
+Number : 20
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : 
+orels :  num
+text : 
+lemma : card
+sidx : 2
+ow :  20
+adj : 
+times : False
+verb : bought
+role : do
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : cards
+Number : 27
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : sally
+orels :  num
+text : 
+lemma : card
+sidx : 0
+ow :  27
+adj : 
+times : False
+verb : had
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : cards
+Number : (41-20)
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : 
+orels :  num
+text : 
+lemma : card
+sidx : 2
+ow :  20
+adj : 
+times : False
+verb : bought
+role : do
+------------------
+Operation selected:  -
+(27-(41-20))=x
+6 88
+
+incorrect
+Jason went to 11 football games this month. He went to 17 games last month, and plans to go to 16 games next month. How many games will he attend in all ?
+
+
+ENTITY DESCRIPTION
+Entity : football games
+Number : 11
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : jason
+orels :  num prep_to
+text : 
+lemma : football game
+sidx : 0
+ow :  11 went
+adj : 
+times : False
+verb : went
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : football games
+Number : 11
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : jason
+orels :  num prep_to
+text : 
+lemma : football game
+sidx : 0
+ow :  11 went
+adj : 
+times : False
+verb : went
+role : 
+------------------
+Operation selected:  +
+
+ENTITY DESCRIPTION
+Entity : football games
+Number : (11+11)
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : jason
+orels :  num prep_to
+text : 
+lemma : football game
+sidx : 0
+ow :  11 went
+adj : 
+times : False
+verb : went
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : games
+Number : 17
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : he
+orels :  prep_to num
+text : 
+lemma : game
+sidx : 1
+ow :  went 17
+adj : 
+times : False
+verb : went plans go
+role : 
+------------------
+Operation selected:  /
+
+ENTITY DESCRIPTION
+Entity : games
+Number : ((11+11)/17)
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : he
+orels :  prep_to num
+text : 
+lemma : game
+sidx : 1
+ow :  went 17
+adj : 
+times : False
+verb : went plans go
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : games
+Number : 16
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : 
+container : he
+orels :  prep_to num
+text : 
+lemma : game
+sidx : 1
+ow :  go 16
+adj : 
+times : False
+verb : went plans go
+role : 
+------------------
+Operation selected:  -
+(((11+11)/17)-16)=x
+-250/17 44
+
+incorrect
+Mike has 45 dollars in 5 dollar bills.  How many 5 dollars bills does  he have ?
+
+
+ENTITY DESCRIPTION
+Entity : dollars
+Number : 45
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : bills
+container : mike
+orels :  num
+text : 
+lemma : dollar
+sidx : 0
+ow :  45
+adj : 
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : dollar bills
+Number : 5
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : dollars
+container : mike
+orels :  num
+text : 
+lemma : dollar bill
+sidx : 0
+ow :  5
+adj : 
+times : False
+verb : has
+role : 
+------------------
+Operation selected:  +
+0 9
+
+incorrect
+Dan found 36 seashells. He plans to give all of his seashells equally to his 4 friends. How many seashells will each friend get ?
+
+
+ENTITY DESCRIPTION
+Entity : friends
+Number : 4
+Unit : 
+sent : 
+widx : 13
+each : True
+loc : 
+container : he
+orels :  poss prep_to num
+text : 
+lemma : friend
+sidx : 1
+ow :  his equally 4
+adj : 
+times : False
+verb : plans give
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : friends
+Number : x
+Unit : 
+sent : 
+widx : 7
+each : True
+loc : 
+container : friend
+orels :  advmod aux root
+text : 
+lemma : friend
+sidx : 2
+ow :  how will ROOT
+adj : 
+times : False
+verb : get
+role : s
+------------------
+Operation selected:  *
+(4*x)=36
+9 9
+
+Correct!
+There are 60 calories in a candy bar. How many dozen calories are there in 45 candy bars?
+
+
+ENTITY DESCRIPTION
+Entity : calories
+Number : 60
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : bar
+container : calories
+orels :  num
+text : 
+lemma : calorie
+sidx : 0
+ow :  60
+adj : 
+times : False
+verb : are
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : dozen calories
+Number : x
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : dozen calories
+orels : 
+text : 
+lemma : dozen calorie
+sidx : 1
+ow : 
+adj :  many
+times : False
+verb : are
+role : s
+------------------
+Operation selected:  *
+
+ENTITY DESCRIPTION
+Entity : dozen calories
+Number : (60*x)
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : dozen calories
+orels : 
+text : 
+lemma : dozen calorie
+sidx : 1
+ow : 
+adj :  many
+times : False
+verb : are
+role : s
+------------------
+
+ENTITY DESCRIPTION
+Entity : dozen calories
+Number : x
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : dozen calories
+orels : 
+text : 
+lemma : dozen calorie
+sidx : 1
+ow : 
+adj :  many
+times : False
+verb : are
+role : s
+------------------
+Operation selected:  -
+((60*x)-x)=45
+45/59 225
+
+incorrect
+Melanie has 84 blue marbles. Sandy has 8 times more blue marbles than Melanie. How many dozen blue marbles does Sandy have?
+
+
+ENTITY DESCRIPTION
+Entity : marbles
+Number : 84
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : melanie
+orels :  num
+text : 
+lemma : marble
+sidx : 0
+ow :  84
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : marbles
+Number : 8
+Unit : 
+sent : 
+widx : 7
+each : False
+loc : 
+container : sandy
+orels :  num prep_than
+text : 
+lemma : marble
+sidx : 1
+ow :  times melanie
+adj :  blue
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  *
+(84*8)/12=x
+56 56
+
+Correct!
+Mike has 48 books. Alyssa has 8 times more books than  Mike. How many dozen books does Alyssa have?
+
+
+ENTITY DESCRIPTION
+Entity : books
+Number : 48
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : mike
+orels :  num
+text : 
+lemma : book
+sidx : 0
+ow :  48
+adj : 
+times : False
+verb : has
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : books
+Number : 8
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : alyssa
+orels :  num prep_than
+text : 
+lemma : book
+sidx : 1
+ow :  times mike
+adj : 
+times : False
+verb : has
+role : do
+------------------
+Operation selected:  *
+(48*8)/12=x
+32 32
+
+Correct!
+A restaurant sold 8 pies every day for a 7 days. How many pies were sold during the days ?
+
+
+ENTITY DESCRIPTION
+Entity : pies
+Number : 8
+Unit : 
+sent : 
+widx : 5
+each : False
+loc : 
+container : restaurant
+orels :  dep num
+text : 
+lemma : pie
+sidx : 0
+ow :  day 8
+adj : 
+times : False
+verb : sold
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : days
+Number : 7
+Unit : 
+sent : 
+widx : 11
+each : False
+loc : 
+container : restaurant
+orels :  num prep_for det
+text : 
+lemma : day
+sidx : 0
+ow :  7 sold a
+adj : 
+times : False
+verb : sold
+role : 
+------------------
+Operation selected:  -
+(8-7)=x
+1 56
+
+incorrect
+Mary loves eating fruits. Mary paid $11.08 for berries, $14.33 for apples, and $9.31 for peaches. In total, how much money did she spend?
+
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 14.33
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : 
+container : mary
+orels :  conj_and num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  $ 14.33 apples
+adj : 
+times : False
+verb : paid
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 9.31
+Unit : 
+sent : 
+widx : 14
+each : False
+loc : 
+container : mary
+orels :  conj_and num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  $ 9.31 peaches
+adj : 
+times : False
+verb : paid
+role : 
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 11.08
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : 
+container : mary
+orels :  conj_and num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  $ 11.08 berries
+adj : 
+times : False
+verb : paid
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (14.33-9.31)
+Unit : 
+sent : 
+widx : 14
+each : False
+loc : 
+container : mary
+orels :  conj_and num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  $ 9.31 peaches
+adj : 
+times : False
+verb : paid
+role : 
+------------------
+Operation selected:  -
+(11.08-(14.33-9.31))=x
+6.06000000000000 34.72
+
+incorrect
+Sandy went to the mall to buy clothes. She spent $13.99 on shorts, $12.14 on a shirt, and $7.43 on a jacket. How much money did Sandy spend on clothes?
+
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 13.99
+Unit : 
+sent : 
+widx : 3
+each : False
+loc : shorts
+container : she
+orels :  conj_and num
+text : 
+lemma : $
+sidx : 1
+ow :  $ 13.99
+adj : 
+times : False
+verb : spent
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 12.14
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : shirt
+container : she
+orels :  conj_and num
+text : 
+lemma : $
+sidx : 1
+ow :  $ 12.14
+adj : 
+times : False
+verb : spent
+role : 
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (13.99-12.14)
+Unit : 
+sent : 
+widx : 8
+each : False
+loc : shirt
+container : she
+orels :  conj_and num
+text : 
+lemma : $
+sidx : 1
+ow :  $ 12.14
+adj : 
+times : False
+verb : spent
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 7.43
+Unit : 
+sent : 
+widx : 15
+each : False
+loc : jacket
+container : she
+orels :  conj_and num
+text : 
+lemma : $
+sidx : 1
+ow :  $ 7.43
+adj : 
+times : False
+verb : spent
+role : 
+------------------
+Operation selected:  -
+((13.99-12.14)-7.43)=x
+-5.58000000000000 33.56
+
+incorrect
+Jason joined his school's band. He bought a flute for $142.46, a music stand for $8.89, and a song book for $7. How much did Jason spend at the music store?
+
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 8.89
+Unit : 
+sent : 
+widx : 13
+each : False
+loc : 
+container : he
+orels :  conj_and num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  book 8.89 stand
+adj : 
+times : False
+verb : bought stand
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 7
+Unit : 
+sent : 
+widx : 21
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  7 book
+adj : 
+times : False
+verb : bought stand
+role : 
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 142.46
+Unit : 
+sent : 
+widx : 6
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  142.46 bought
+adj : 
+times : False
+verb : bought stand
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (8.89-7)
+Unit : 
+sent : 
+widx : 21
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  7 book
+adj : 
+times : False
+verb : bought stand
+role : 
+------------------
+Operation selected:  -
+(142.46-(8.89-7))=x
+140.570000000000 158.35
+
+incorrect
+Fred loves trading cards. He bought 2 packs of football cards for $2.73 each, a pack of Pokemon cards for $4.01, and a deck of baseball cards for $8.95. How much did Fred spend on cards?
+
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 4.01
+Unit : 
+sent : 
+widx : 19
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  4.01 cards
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 8.95
+Unit : 
+sent : 
+widx : 29
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  8.95 cards
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : $
+Number : 2.73
+Unit : 
+sent : 
+widx : 9
+each : False
+loc : 
+container : he
+orels :  conj_and dep num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  deck each 2.73 bought
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (4.01-8.95)
+Unit : 
+sent : 
+widx : 29
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  8.95 cards
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+Operation selected:  -
+
+ENTITY DESCRIPTION
+Entity : packs
+Number : 2
+Unit : 
+sent : 
+widx : 4
+each : False
+loc : 
+container : he
+orels :  prep_of num
+text : 
+lemma : pack
+sidx : 1
+ow :  cards 2
+adj : 
+times : False
+verb : bought
+role : do
+------------------
+
+ENTITY DESCRIPTION
+Entity : $
+Number : (2.73-(4.01-8.95))
+Unit : 
+sent : 
+widx : 29
+each : False
+loc : 
+container : he
+orels :  num prep_for
+text : 
+lemma : $
+sidx : 1
+ow :  8.95 cards
+adj : 
+times : False
+verb : bought
+role : 
+------------------
+Operation selected:  *
+(2*(2.73-(4.01-8.95)))=x
+15.3400000000000 18.42
+
+incorrect
+totals:  13 29
+[0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0]
