@@ -14,9 +14,14 @@ import numpy as np
 #sys.path.insert(0, '/Users/rikka/liblinear-1.94/python')
 #from liblinearutil import *
 sys.path.insert(0, '/Users/rikka/libsvm-3.18/python')
+sys.path.insert(0, './treebuilder')
+from StringTemplate import StringTemplate
 from svmutil import *
 import setmaker
 from sympy.solvers.solvers import solve
+
+adds = svm_load_model("data/3.19.as.svmclassifier")
+multd = svm_load_model("data/3.19.md.svmclassifier")
 
 class StanfordNLP:
     def __init__(self, port_number=8080):
@@ -43,7 +48,30 @@ def training(trips,problem,target):
     return texamples
 
 
-
+def compute(p,op,e,target,problem):
+    vec,features = ENTITY.vector((0,p),(0,e),problem,target,True)
+    if op == '+':
+        op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q -b 1')
+        op_val = op_val[0]
+        val = op_val[0]
+    elif op == '-':
+        op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q -b 1')
+        op_val = op_val[0]
+        val = op_val[1]
+    elif op == '*':
+        op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q -b 1')
+        op_val = op_val[0]
+        val = op_val[0]
+    elif op == '/':
+        op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q -b 1')
+        op_val = op_val[0]
+        val = op_val[1]
+    else:
+        print("BAD OP:",op)
+        return -1
+    
+    c = setmaker.combine(p,e,op)
+    return (val,c)
 
 
 if __name__ == "__main__":
@@ -64,20 +92,21 @@ if __name__ == "__main__":
     multd = load_model("data/3.19.md.classifier")
     '''
     #libsvm
-    asmd = svm_load_model("data/3.19.asmd.svmclassifier")
-    adds = svm_load_model("data/3.19.as.svmclassifier")
-    multd = svm_load_model("data/3.19.md.svmclassifier")
+    #asmd = svm_load_model("data/3.19.asmd.svmclassifier")
+    #adds = svm_load_model("data/3.19.as.svmclassifier")
+    #multd = svm_load_model("data/3.19.md.svmclassifier")
     wps = open("complex_dev.problems").readlines()
     answs = open("complex_dev.answers").readlines()
     right = 0
+    guesses = 0
     ad = []
-    for j in range(len(wps)):
+    for k in range(len(wps)):
         if VERBOSE:
             for i in range(len(wps)):
                 print(i,wps[i])
             j = int(input())
-        print(wps[j])
-        problem = wps[j].lower()
+        print(wps[k])
+        problem = wps[k].lower()
 
 
 
@@ -85,17 +114,22 @@ if __name__ == "__main__":
         numbs = setmaker.setmaker(story,VERBOSE)
         #for x in numbs: x[1].details()
         #input(); continue
-        allnumbs = {str(v.num):v for k,v in numbs}
         numlist = [(str(v.num),v) for k,v in numbs if setmaker.floatcheck(v.num) or v.num == 'x']
+        for i in range(len(numlist)):
+            if "*" in numlist[i][0] or "/" in numlist[i][0]:
+                numlist[i] = (''.join([x for x in numlist[i][0] if x not in ['*','/']]),numlist[i][1])
+                numlist[i][1].num = numlist[i][0]
+        objs = {k:(0,v) for k,v in numlist}
         if VERBOSE:
-            print(allnumbs,numlist,[v.num for k,v in numbs])
+            print(objs,numlist,[v.num for k,v in numbs])
         #print(allnumbs)
 
 
 
 
-        for num,e in allnumbs.items():
-            ent = e.ent
+        for num,e in objs.items():
+            ent = e[1].ent
+            e = e[1]
             if ent[-1]=='s':
                 ent = ent[:-1]
             if ent[-1]=='e':
@@ -112,6 +146,95 @@ if __name__ == "__main__":
         
 
         #for e in allnumbs.items():
+        print(numlist)
+        numidxlist = [x[0] for x in numlist]
+        ST = StringTemplate(numidxlist)
+        scores = []
+        for j,eq in enumerate(ST.equations):
+            thisscore = []
+            #print(eq.toString())
+            #determine score for this eq
+            l,r = [x.strip().split(' ') for x in eq.toString().split('=')]
+            if len(l)>1 and len(r)>1: 
+                scores.append(0);continue
+            compound = r if len(l)==1 else l
+            target = l[0] if len(l)==1 else r[0]
+            target = (target,objs[target])
+
+            #find innermost parens?
+            while len(compound)>1:
+                if "(" in compound:
+                    rpidx = (len(compound) - 1) - compound[::-1].index('(')
+                    lpidx = rpidx+compound[rpidx:].index(")")
+                    subeq = compound[rpidx+1:lpidx]
+                    substr = ' '.join(subeq)
+                    compound = compound[:rpidx]+[substr]+compound[lpidx+1:]
+                else:
+                    subeq = compound[0:3]
+                    substr = ' '.join(subeq)
+                    compound = [substr]+compound[lpidx:]
+                if substr in objs:
+                    pute = objs[substr]
+                else:
+                    p,op,e = subeq
+                    #print(p,op,e)
+                    p = objs[p][1]
+                    e = objs[e][1]
+                    op = op.strip()
+                    pute = compute(p,op,e,target,problem)
+                    objs[substr]=pute
+                if pute == -1:
+                    exit()
+                score,c = pute
+                thisscore.append(score)
+            print(thisscore)
+            
+            scores.append(sum(thisscore))
+
+            #print(compound)
+        m = np.argmax(scores)
+        print(scores[m],ST.equations[m].toString())
+
+        '''
+        try:
+            if target.ent=='dozen':
+                guess = solve('('+numlist[0].num+'/12)'+"-"+target.num,'x')[0]
+                print(numlist[0].num+"/12="+target.num)
+            else:
+                guess = solve(numlist[0].num+"-"+target.num,'x')[0]
+                print(numlist[0].num+"="+target.num)
+        '''
+        eqidxs = [i for i,x in enumerate(scores) if x==scores[m]]
+        tright = 0
+        for i in eqidxs:
+            eq = ST.equations[i].toString()
+            eq = eq.replace("=",'-')
+            print(eq)
+            try:
+                guess = solve(eq,'x')[0]
+            except: guess = 0
+            answ = answs[k]
+            if guess == answ: 
+                print("CORRECT")
+                tright=1
+
+            print(guess, answ)
+        guesses += len(eqidxs)
+        if tright==1:
+            right +=1
+
+        break
+        continue
+    print(right,guesses)
+
+    exit()
+    '''
+
+
+
+            
+
+        
 
         #make max choice each time
         numlist = [v for k,v in numbs if setmaker.floatcheck(v.num) or v.num == 'x']
@@ -220,7 +343,7 @@ if __name__ == "__main__":
 
     print("totals: ",right,len(answs))
     print(ad)
-    
+    '''
         
 
 
