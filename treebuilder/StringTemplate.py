@@ -124,7 +124,7 @@ class StringTemplate:
             result += [eq.toString]
         return result
 
-    @property
+    #@property
     def toString(self):
         result = []
         for eq in self.equations:

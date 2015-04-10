@@ -40,23 +40,34 @@ if __name__ == "__main__":
     raw_counts = {x:" " for x in ["+","*"]}
     if len(sys.argv)<2:
         print("args");exit()
-    if sys.argv[1]=='asmd':
-        f2 = open("data/3.19.asmd",'wb')
+    if sys.argv[1]=='a':
+        f2 = open("data/4.7.a",'wb')
         wps = open('add.problems').readlines()
-        wps.extend([x for x in open('sub.problems').readlines()])
         addlen = len(wps)
+        wps.extend([x for x in open('sub.problems').readlines()])
         wps.extend([x for x in open('mult.problems').readlines()])
         wps.extend([x for x in open('div.problems').readlines()])
-    elif sys.argv[1]=='as':
-        f2 = open("data/3.19.as",'wb')
-        wps = open('add.problems').readlines()
+    elif sys.argv[1]=='s':
+        f2 = open("data/4.7.s",'wb')
+        wps = open('sub.problems').readlines()
         addlen = len(wps)
-        wps.extend([x for x in open('sub.problems').readlines()])
-    elif sys.argv[1]=='md':
-        f2 = open("data/3.19.md",'wb')
+        wps.extend([x for x in open('add.problems').readlines()])
+        wps.extend([x for x in open('mult.problems').readlines()])
+        wps.extend([x for x in open('div.problems').readlines()])
+    elif sys.argv[1]=='m':
+        f2 = open("data/4.7.m",'wb')
         wps = open('mult.problems').readlines()
         addlen = len(wps)
+        wps.extend([x for x in open('add.problems').readlines()])
+        wps.extend([x for x in open('sub.problems').readlines()])
         wps.extend([x for x in open('div.problems').readlines()])
+    elif sys.argv[1]=='d':
+        f2 = open("data/4.7.d",'wb')
+        wps = open('div.problems').readlines()
+        addlen = len(wps)
+        wps.extend([x for x in open('add.problems').readlines()])
+        wps.extend([x for x in open('mult.problems').readlines()])
+        wps.extend([x for x in open('sub.problems').readlines()])
     pos = []
     neg = []
     texamples = {x:([],[],[]) for x in ["+","*"]}
@@ -71,22 +82,6 @@ if __name__ == "__main__":
         if xes:
             allnumbs['x']=xes[0]
         print(allnumbs)
-
-
-
-        for num,e in allnumbs.items():
-            ent = e.ent
-            if ent[-1]=='s':
-                ent = ent[:-1]
-            if ent[-1]=='e':
-                ent=ent[:-1]
-            print(ent)
-            if "each "+ent in problem:
-                e.each = True
-                print("good")
-            elif "each" in problem:
-                print("missed")
-
 
 
         #print(allnumbs.keys())

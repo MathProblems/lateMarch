@@ -5,8 +5,8 @@
 import sys
 import json
 import jsonrpclib
-from nltk.corpus import wordnet as wn
-from nltk.corpus import wordnet_ic
+#from nltk.corpus import wordnet as wn
+#from nltk.corpus import wordnet_ic
 import entity as ENTITY
 from entity import entity
 import pickle
@@ -20,8 +20,10 @@ from svmutil import *
 import setmaker
 from sympy.solvers.solvers import solve
 
-adds = svm_load_model("data/3.19.as.svmclassifier")
-multd = svm_load_model("data/3.19.md.svmclassifier")
+add = svm_load_model("data/4.7.a.svmclassifier")
+sub = svm_load_model("data/4.7.s.svmclassifier")
+mult = svm_load_model("data/4.7.m.svmclassifier")
+div = svm_load_model("data/4.7.d.svmclassifier")
 
 class StanfordNLP:
     def __init__(self, port_number=8080):
@@ -50,22 +52,25 @@ def training(trips,problem,target):
 
 def compute(p,op,e,target,problem):
     vec,features = ENTITY.vector((0,p),(0,e),problem,target,True)
-    if op == '+':
-        op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q -b 1')
+    if p.ent == e.ent and op in ['*','/']:
+        val = 0
+
+    elif op == '+':
+        op_label, op_acc, op_val = svm_predict([-1], [vec], add,'-q -b 1')
         op_val = op_val[0]
         val = op_val[0]
     elif op == '-':
-        op_label, op_acc, op_val = svm_predict([-1], [vec], adds,'-q -b 1')
+        op_label, op_acc, op_val = svm_predict([-1], [vec], sub,'-q -b 1')
         op_val = op_val[0]
-        val = op_val[1]
+        val = op_val[0]
     elif op == '*':
-        op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q -b 1')
+        op_label, op_acc, op_val = svm_predict([-1], [vec], mult,'-q -b 1')
         op_val = op_val[0]
         val = op_val[0]
     elif op == '/':
-        op_label, op_acc, op_val = svm_predict([-1], [vec], multd,'-q -b 1')
+        op_label, op_acc, op_val = svm_predict([-1], [vec], div,'-q -b 1')
         op_val = op_val[0]
-        val = op_val[1]
+        val = op_val[0]
     else:
         print("BAD OP:",op)
         return -1
@@ -100,11 +105,12 @@ if __name__ == "__main__":
     right = 0
     guesses = 0
     ad = []
+    wrong = []
     for k in range(len(wps)):
         if VERBOSE:
             for i in range(len(wps)):
                 print(i,wps[i])
-            j = int(input())
+            k = int(input())
         print(wps[k])
         problem = wps[k].lower()
 
@@ -115,29 +121,28 @@ if __name__ == "__main__":
         #for x in numbs: x[1].details()
         #input(); continue
         numlist = [(str(v.num),v) for k,v in numbs if setmaker.floatcheck(v.num) or v.num == 'x']
+        constraints = []
         for i in range(len(numlist)):
-            if "*" in numlist[i][0] or "/" in numlist[i][0]:
+            if numlist[i][0][-1] == "*":
+                if i==0:continue
+                constraints.append(numlist[i-1][0]+" * "+numlist[i][0][:-1])
                 numlist[i] = (''.join([x for x in numlist[i][0] if x not in ['*','/']]),numlist[i][1])
                 numlist[i][1].num = numlist[i][0]
+            elif numlist[i][0][0] == "*":
+                if i==0:continue
+                numlist[i] = (''.join([x for x in numlist[i][0] if x not in ['*','/']]),numlist[i][1])
+                tmp = numlist[i-1]
+                numlist[i-1]=numlist[i]
+                numlist[i]=tmp
+                constraints.append(numlist[i-1][0]+" * "+numlist[i][0][1:])
+            elif numlist[i][0][-1] == "/":
+                if i==0:continue
+                constraints.append(" / "+numlist[i][0][:-1])
+                numlist[i] = (''.join([x for x in numlist[i][0] if x not in ['*','/']]),numlist[i][1])
         objs = {k:(0,v) for k,v in numlist}
         if VERBOSE:
             print(objs,numlist,[v.num for k,v in numbs])
         #print(allnumbs)
-
-
-
-
-        for num,e in objs.items():
-            ent = e[1].ent
-            e = e[1]
-            if ent[-1]=='s':
-                ent = ent[:-1]
-            if ent[-1]=='e':
-                ent=ent[:-1]
-            if "each "+ent in problem:
-                e.each = True
-            elif "each" in problem:
-                pass
 
 
         state = []
@@ -151,14 +156,30 @@ if __name__ == "__main__":
         ST = StringTemplate(numidxlist)
         scores = []
         for j,eq in enumerate(ST.equations):
+            print(j,eq.toString())
+            good = False
+            if len(constraints)==0:
+                good = True
+            else:
+                for constraint in constraints:
+                    if constraint in eq.toString():
+                        good = True
+            if not good:
+                scores.append(-0.2)
+                continue
+            
+                    
             thisscore = []
             #print(eq.toString())
             #determine score for this eq
             l,r = [x.strip().split(' ') for x in eq.toString().split('=')]
-            if len(l)>1 and len(r)>1: 
-                scores.append(0);continue
-            compound = r if len(l)==1 else l
-            target = l[0] if len(l)==1 else r[0]
+            #print(l,r)
+            
+            if len(r)>1: 
+                scores.append(-0.2);continue
+            #print(constraints)
+            compound = l
+            target = r[0]
             target = (target,objs[target])
 
             #find innermost parens?
@@ -167,14 +188,15 @@ if __name__ == "__main__":
                     rpidx = (len(compound) - 1) - compound[::-1].index('(')
                     lpidx = rpidx+compound[rpidx:].index(")")
                     subeq = compound[rpidx+1:lpidx]
-                    substr = ' '.join(subeq)
+                    substr = "("+''.join(subeq)+")"
                     compound = compound[:rpidx]+[substr]+compound[lpidx+1:]
                 else:
                     subeq = compound[0:3]
-                    substr = ' '.join(subeq)
-                    compound = [substr]+compound[lpidx:]
+                    substr = "("+''.join(subeq)+")"
+                    compound = [substr]+compound[3:]
                 if substr in objs:
                     pute = objs[substr]
+                    print(pute[0],pute[1].num)
                 else:
                     p,op,e = subeq
                     #print(p,op,e)
@@ -182,12 +204,18 @@ if __name__ == "__main__":
                     e = objs[e][1]
                     op = op.strip()
                     pute = compute(p,op,e,target,problem)
+                    print("OPERATION SELECTED: ",op)
+                    p.details()
+                    e.details()
+                    print(substr,pute[1].num)
                     objs[substr]=pute
                 if pute == -1:
                     exit()
                 score,c = pute
                 thisscore.append(score)
-            print(thisscore)
+            if target[1][1].ent != c.ent:
+                thisscore.append(-0.2)
+            print("WAT",thisscore,c.ent,c.num)
             
             scores.append(sum(thisscore))
 
@@ -204,28 +232,40 @@ if __name__ == "__main__":
                 guess = solve(numlist[0].num+"-"+target.num,'x')[0]
                 print(numlist[0].num+"="+target.num)
         '''
-        eqidxs = [i for i,x in enumerate(scores) if x==scores[m]]
+        eqidxs = [y[0] for y in sorted(enumerate(scores),key=lambda x:x[1],reverse=True)]
+        seen = []
         tright = 0
         for i in eqidxs:
+            if len(seen)>=5:break
             eq = ST.equations[i].toString()
             eq = eq.replace("=",'-')
-            print(eq)
+            print(scores[i], eq)
             try:
                 guess = solve(eq,'x')[0]
             except: guess = 0
-            answ = answs[k]
+            if guess not in seen:
+                seen.append(guess)
+            else: 
+                continue
+            answ = float(answs[k])
             if guess == answ: 
                 print("CORRECT")
                 tright=1
 
             print(guess, answ)
-        guesses += len(eqidxs)
+        guesses += len(seen)
         if tright==1:
             right +=1
+        else:
+            wrong.append(k)
 
-        break
+        #break
+        if VERBOSE: input()
         continue
     print(right,guesses)
+
+    for k in wrong:
+        print(wps[k])
 
     exit()
     '''

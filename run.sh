@@ -1,8 +1,10 @@
 #!/bin/bash
 
-python3 mktraindata.py as
-python3 mktraindata.py asmd
-python3 mktraindata.py md
-python3 build_classifiers.py data/3.19.as
-python3 build_classifiers.py data/3.19.asmd
-python3 build_classifiers.py data/3.19.md
+python3 mktraindata.py a
+python3 build_classifiers.py data/4.7.a
+python3 mktraindata.py s
+python3 build_classifiers.py data/4.7.s
+python3 mktraindata.py m
+python3 build_classifiers.py data/4.7.m
+python3 mktraindata.py d
+python3 build_classifiers.py data/4.7.d

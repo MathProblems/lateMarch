@@ -49,5 +49,6 @@ def xfinder(s,xent,psets):
 
             #find this entity elsewhere and times it by money
 
+
     return (idx,ent,target)
     

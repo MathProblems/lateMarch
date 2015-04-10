@@ -49,8 +49,7 @@ def training(trips,problem,target):
 if __name__ == "__main__":
     VERBOSE = False
     VVERBOSE = False
-    EDUMP = True
-    #EDUMP = False 
+    EDUMP = False 
     if len(sys.argv) > 1:
         if sys.argv[1] == '-v':
             VERBOSE = True

@@ -4,7 +4,7 @@ from xfinder import xfinder
 def combine(a,b,op):
     #takes two entities and returns a combo of them.
     c = entity()
-    if a.ent == b.contains:
+    if b.ent == a.container:
         t = a
         a = b
         b = t
@@ -239,10 +239,9 @@ def setmaker(story, debug=False):
                         if s['words'][trueidx][1]['Lemma'] in ["a","each","every","per"]:
                             ent = s['words'][trueidx+1][0]
                             lemma = s['words'][trueidx+1][1]["Lemma"]
-                            num = "*1"
+                            num = "1*"
                             print('PER IS HAPPENING')
                             print(ent,lemma,num)
-                            #find other words
                             entities.append([i*100+trueidx+2,makeentity((ent,idx+2,num,lemma,"???"),deps,s['text'],i,words)])
 
                     #entities.append(pset)
@@ -288,31 +287,6 @@ def setmaker(story, debug=False):
         entities[j][1].times = True
         entities[j][0]=num
     '''
-    print(entities)
-    #handle per
-    permatches = [j for j,y in enumerate(entities) if y[1].num[0]=="*"]
-    if debug: 
-        print(ent)
-        print([y[1].lemma for y in entities])
-    print("PERMATCHES: ",permatches)
-    if len(permatches)==1:
-        j = permatches[0]
-        target = entities[j][1].lemma
-        print(target)
-        # find other mentions of per ent (wrap equiv in a fn that tests for unit similarity)
-        perents = [i for i,x in enumerate(entities) if x[1].lemma == target and i!=j]
-        if perents:
-            print(target)
-            i = perents[0]
-            ient = entities[i][1].num
-            entities[j][1].num = ient+"*"
-            entities[j][1].contains = entities[j-1][1].ent
-            print(entities[j][1].num)
-            entities.pop(i)
-        else:
-            print("JPOP")
-            entities.pop(j)
-
 
     #find x
     exes = [(i,x) for i,x in enumerate(entities) if x[1].num=='x']
@@ -324,6 +298,17 @@ def setmaker(story, debug=False):
             entities[i][1].ent = word
             entities[i][1].lemma = lemma
 
+        #handle per
+        permatches = [j for j,y in enumerate(entities) if y[1].lemma == ent[1] and y[1].num[0]=="*"]
+        if debug: 
+            print(ent)
+            print([y[1].lemma for y in entities])
+            print("PERMATCHES: ",permatches)
+        if len(permatches)==1:
+            j = permatches[0]
+            entities[j][1].num = "*x"
+            entities.pop(i)
+            target = None; idx = entities[j][0]
         
         if target is not None:
             if debug: print("TARGET:" + target)

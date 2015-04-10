@@ -14,7 +14,6 @@ class entity:
         self.sidx=sidx
         self.widx=widx
         self.num = num
-        self.unit = ""
         self.ent = ent
         self.adj = ""
         self.verb = ""
@@ -23,24 +22,16 @@ class entity:
         self.orels = ""
         self.loc = ""
         self.container = container
+        self.contains = "NULL VALUE"
         self.lemma = lemma
         self.sent = ""
         self.text = ""
-        self.each = False
-        self.times = False
+        self.each = 0
         if deps != None:
             self.parsedeps(deps)
         if s != None:
             self.text = s["text"]
             #self.getContainer(s)
-
-
-    def setUnit(self,unit):
-        self.unit = unit
-
-    def getContainer(self,s):
-        self.container = ' '.join([w[0] for w in s["words"] if w[1]["PartOfSpeech"] in ["PRP","NNP"]])
-        #print(self.container)
 
     def parsedeps(self,deps):
         noun = self.ent.split(" ")[-1]+"-"+str(self.widx)
@@ -54,6 +45,10 @@ class entity:
         locations = [deps[x] for x in preps if x.split("_")[1] in ["in","at","on"]]
         # need to check if prep_on is a noun or a verb
         self.loc = " ".join(locations)
+
+        each = [x for x in protod if "each" in x[1]]
+        if each:
+            self.each = 1
 
         if "nsubj" in deps:
             self.verb = self.verb+" "+deps["nsubj"]
@@ -86,9 +81,8 @@ class entity:
         print("ENTITY DESCRIPTION")
         print("Entity : "+self.ent)
         print('Number : '+str(self.num))
-        print('Unit : '+self.unit)
         for x in self.__dict__:
-            if x in ['ent','unit','num']: continue
+            if x in ['ent','num']: continue
             if type(self.__dict__[x])==type([]):
                 print(x)
                 for y in self.__dict__[x]:
@@ -116,7 +110,7 @@ def vector(a,b,problem,target,v=False):
     srtd = sorted(a.__dict__.keys());
     for k in srtd:
         #print(k)
-        if k in ["sent","ow","orels",'text','each','num']:continue
+        if k in ["contains","sent","ow","orels",'text','each','num']:continue
         if type(a.__dict__[k])!=type('aaa'):continue
         if type(b.__dict__[k])!=type('aaa'):continue
         features.append(k)
@@ -229,8 +223,8 @@ def vector(a,b,problem,target,v=False):
     
     asent = a.__dict__['text'].lower().split()
     bsent = b.__dict__['text'].lower().split()
-    features.extend(["a each",'b each',"a times",'b times',"a total",'b total',"a together",'b together',"a more", 'b more' ,"a less",'b less',"a add",'b add',"a divide",'b divide',"a split",'b split',"a equal",'b equal',"a equally",'b equally'])
-    for li in ["each","times","total","together","more","less","add","divide","split","equal","equally"]:
+    features.extend(["a times",'b times',"a total",'b total',"a together",'b together',"a more", 'b more' ,"a less",'b less',"a add",'b add',"a divide",'b divide',"a split",'b split',"a equal",'b equal',"a equally",'b equally'])
+    for li in ["times","total","together","more","less","add","divide","split","equal","equally"]:
         if li in asent:
             vec.append(1)
         else:
@@ -246,8 +240,8 @@ def vector(a,b,problem,target,v=False):
     if "end with" in problem: vec.append(1)
     else: vec.append(0)
     problem = problem.split()
-    features.extend(["each","times","total","together","more","less","add","divide","split","left","equal","equally","now",'left','start'])
-    for li in ["each","times","total","together","more","less","add","divide","split","left","equal","equally","now",'left','start']:
+    features.extend(["times","total","together","more","less","add","divide","split","left","equal","equally","now",'left','start'])
+    for li in ["times","total","together","more","less","add","divide","split","left","equal","equally","now",'left','start']:
         if li in problem:
             vec.append(1)
         else:

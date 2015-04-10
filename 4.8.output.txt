@@ -1,0 +1,642 @@
+Benny bought a soft drink for 2 dollars and 5 candy bars. He spent a total of 27 dollars. How much did each candy bar cost ?
+
+[[8, <entity.entity object at 0x113b1d748>], [12, <entity.entity object at 0x113b1d908>], [107, <entity.entity object at 0x113b1d940>], [203, <entity.entity object at 0x113b1d8d0>]]
+PERMATCHES:  []
+('bars', 'bar')
+cost
+('$', '$')
+$
+['dollar', 'bar', 'dollar', '$']
+[('2', <entity.entity object at 0x113b1d748>), ('5', <entity.entity object at 0x113b1d908>), ('x', <entity.entity object at 0x113b1d8d0>), ('27', <entity.entity object at 0x113b1d940>)]
+0.5510674391774154 2 + ( 5 * x ) = 27
+0.5510674391774154 2 + ( 5 * x ) - 27
+CORRECT
+5 5.0
+0.1442734763134841 2 - ( 5 * x ) - 27
+-5 5.0
+0.13254775496271443 2 / ( 5 * x ) - 27
+2/135 5.0
+0.13254775496271443 2 * ( 5 * x ) - 27
+27/10 5.0
+-0.2 ( 2 + 5 ) + x - 27
+20 5.0
+Benny bought 4 new baseball trading cards to add to his collection. The next day his dog ate half of his collection. There are now only 34 cards left. How many cards did Benny start with ?
+
+[[7, <entity.entity object at 0x113b0add8>], [110, <entity.entity object at 0x113aec978>], [206, <entity.entity object at 0x113b0ae80>], [303, <entity.entity object at 0x113b0acf8>]]
+PERMATCHES:  []
+('cards', 'card')
+[('x', <entity.entity object at 0x113b0acf8>), ('4', <entity.entity object at 0x113b0add8>), ('2', <entity.entity object at 0x113aec978>), ('34', <entity.entity object at 0x113b0ae80>)]
+0.8016475254822681 ( x - 4 ) / 2 = 34
+0.8016475254822681 ( x - 4 ) / 2 - 34
+72 64.0
+0.07511578243699779 x + ( 4 / 2 ) - 34
+32 64.0
+0.07511578243699779 x - ( 4 / 2 ) - 34
+36 64.0
+0.07511578243699779 x / ( 4 / 2 ) - 34
+68 64.0
+0.07511578243699779 x * ( 4 / 2 ) - 34
+17 64.0
+Sam had 79 dollars to spend on 9 books. After buying them he had 16 dollars. How much did each book cost ?
+
+[[4, <entity.entity object at 0x116c3cc88>], [9, <entity.entity object at 0x116c3ce10>], [107, <entity.entity object at 0x116c3ce48>], [203, <entity.entity object at 0x116c3cf28>]]
+PERMATCHES:  []
+('books', 'book')
+cost
+('$', '$')
+$
+['dollar', 'book', 'dollar', '$']
+[('79', <entity.entity object at 0x116c3cc88>), ('9', <entity.entity object at 0x116c3ce10>), ('x', <entity.entity object at 0x116c3cf28>), ('16', <entity.entity object at 0x116c3ce48>)]
+0.36842387319712 79 - ( 9 * x ) = 16
+0.36842387319712 79 - ( 9 * x ) - 16
+CORRECT
+7 7.0
+0.2430166885919997 79 + ( 9 * x ) - 16
+-7 7.0
+0.15315778695382948 79 / ( 9 * x ) - 16
+79/144 7.0
+0.15315778695382948 79 * ( 9 * x ) - 16
+16/711 7.0
+-0.2 ( 79 + 9 ) + x - 16
+-72 7.0
+Oceanside Bike Rental Shop charges 17 dollars plus 7 dollars an hour for renting a bike. Tom paid 80 dollars to rent a bike. How many hours did he pay to have the bike checked out ?
+
+PER IS HAPPENING
+hour hour *1
+[[7, <entity.entity object at 0x116d03978>], [10, <entity.entity object at 0x116d03b38>], [12, <entity.entity object at 0x116d03ba8>], [104, <entity.entity object at 0x116d030f0>], [203, <entity.entity object at 0x116d03a90>]]
+PERMATCHES:  [2]
+hour
+hour
+x*
+[('17', <entity.entity object at 0x116d03978>), ('7', <entity.entity object at 0x116d03b38>), ('x', <entity.entity object at 0x116d03ba8>), ('80', <entity.entity object at 0x116d030f0>)]
+0.7781415316503142 17 / ( 7 * x ) = 80
+0.7781415316503142 17 / ( 7 * x ) - 80
+17/560 9.0
+0.1201512716173449 17 * ( 7 * x ) - 80
+80/119 9.0
+0.0013873727987242512 17 + ( 7 * x ) - 80
+CORRECT
+9 9.0
+-0.03766613731348595 17 - ( 7 * x ) - 80
+-9 9.0
+-0.2 ( 17 + 7 ) + x - 80
+56 9.0
+On Monday, 375 students went on a trip to the zoo. All 7 buses were filled and 4 students had to travel in cars. How many students were in each bus ?
+
+[[5, <entity.entity object at 0x116d0ac18>], [108, <entity.entity object at 0x116d0ad68>], [103, <entity.entity object at 0x116d0acf8>], [203, <entity.entity object at 0x116d0af28>]]
+PERMATCHES:  []
+('students', 'student')
+bus
+('students', 'student')
+students
+['student', 'student', 'bus', 'student']
+[('375', <entity.entity object at 0x116d0ac18>), ('7', <entity.entity object at 0x116d0acf8>), ('x', <entity.entity object at 0x116d0af28>), ('4', <entity.entity object at 0x116d0ad68>)]
+0.27475606665476154 375 / ( 7 * x ) = 4
+0.27475606665476154 375 / ( 7 * x ) - 4
+375/28 53.0
+0.09497855139866229 375 * ( 7 * x ) - 4
+4/2625 53.0
+0.06414795266566653 375 + ( 7 * x ) - 4
+-53 53.0
+-0.07050446993162898 375 - ( 7 * x ) - 4
+CORRECT
+53 53.0
+-0.2 ( 375 + 7 ) + x - 4
+-378 53.0
+Sandy sold 2 of her comic books and then bought 6 more. She now has 13. How many did she begin with ?
+
+[[7, <entity.entity object at 0x116c3c390>], [12, <entity.entity object at 0x116c3cb38>], [104, <entity.entity object at 0x113aec978>], [205, <entity.entity object at 0x113aecc18>]]
+PERMATCHES:  []
+('books', 'book')
+[('x', <entity.entity object at 0x113aecc18>), ('2', <entity.entity object at 0x116c3c390>), ('6', <entity.entity object at 0x116c3cb38>), ('13', <entity.entity object at 0x113aec978>)]
+1.6315434332562766 ( x - 2 ) - 6 = 13
+1.6315434332562766 ( x - 2 ) - 6 - 13
+21 9.0
+1.592439132312073 x + ( 2 - 6 ) - 13
+17 9.0
+1.592439132312073 x - ( 2 - 6 ) - 13
+CORRECT
+9 9.0
+1.592439132312073 x / ( 2 - 6 ) - 13
+-52 9.0
+1.592439132312073 x * ( 2 - 6 ) - 13
+-13/4 9.0
+Tim's cat had kittens. He gave 3 to Jessica and 6 to Sara. He now has 9 kittens left. How many kittens did he have to start with ?
+
+[[103, <entity.entity object at 0x116dfa978>], [107, <entity.entity object at 0x116dfa908>], [109, <entity.entity object at 0x116dfa9b0>], [205, <entity.entity object at 0x116dfa9e8>], [306, <entity.entity object at 0x116dfaac8>]]
+PERMATCHES:  []
+('???', '???')
+[('x', <entity.entity object at 0x116dfaac8>), ('3', <entity.entity object at 0x116dfa978>), ('6', <entity.entity object at 0x116dfa908>), ('9', <entity.entity object at 0x116dfa9e8>)]
+0.49803695209868887 ( x - 3 ) + 6 = 9
+0.49803695209868887 ( x - 3 ) + 6 - 9
+6 18.0
+0.29233285485876404 ( x - 3 ) - 6 - 9
+CORRECT
+18 18.0
+0.2694671822792402 ( x - 3 ) / 6 - 9
+57 18.0
+0.2694671822792402 ( x - 3 ) * 6 - 9
+9/2 18.0
+0.2571395396388974 x + ( 3 + 6 ) - 9
+0 18.0
+Joan has 9 blue balloons, Sally has 5 blue balloons, and Jessica has  2 blue balloons. How many blue balloons do they have in total ?
+
+[[5, <entity.entity object at 0x116dffda0>], [11, <entity.entity object at 0x116dfff28>], [18, <entity.entity object at 0x116dffeb8>], [104, <entity.entity object at 0x116dffef0>]]
+PERMATCHES:  []
+('balloons', 'balloon')
+[('9', <entity.entity object at 0x116dffda0>), ('5', <entity.entity object at 0x116dfff28>), ('2', <entity.entity object at 0x116dffeb8>), ('x', <entity.entity object at 0x116dffef0>)]
+0.9096756645648011 ( 9 + 5 ) + 2 = x
+0.9096756645648011 ( 9 + 5 ) + 2 - x
+CORRECT
+16 16.0
+0.9096756645648011 9 + ( 5 + 2 ) - x
+0.9096756645648011 9 - ( 5 + 2 ) - x
+2 16.0
+0.9096756645648011 9 / ( 5 + 2 ) - x
+9/7 16.0
+0.9096756645648011 9 * ( 5 + 2 ) - x
+63 16.0
+0.4665828024866038 ( 9 + 5 ) - 2 - x
+12 16.0
+A restaurant served 5 cakes during lunch and 6 during dinner today. The restaurant served 3 cakes yesterday. How many cakes were served in total ?
+
+[[5, <entity.entity object at 0x113b9cac8>], [9, <entity.entity object at 0x113b9cba8>], [105, <entity.entity object at 0x113b9cbe0>], [203, <entity.entity object at 0x113b9cc50>]]
+PERMATCHES:  []
+('cakes', 'cake')
+[('5', <entity.entity object at 0x113b9cac8>), ('6', <entity.entity object at 0x113b9cba8>), ('3', <entity.entity object at 0x113b9cbe0>), ('x', <entity.entity object at 0x113b9cc50>)]
+0.8947482616738333 5 + ( 6 + 3 ) = x
+0.8947482616738333 5 + ( 6 + 3 ) - x
+CORRECT
+14 14.0
+0.8947482616738333 5 - ( 6 + 3 ) - x
+-4 14.0
+0.8947482616738333 5 / ( 6 + 3 ) - x
+5/9 14.0
+0.8947482616738333 5 * ( 6 + 3 ) - x
+45 14.0
+0.8755564679003216 ( 5 + 6 ) + 3 - x
+0.4548051041550426 ( 5 - 6 ) + 3 - x
+2 14.0
+Melanie picked 4 plums, Dan picked 9 plums, and Sally picked 3 plums from the plum tree. How many plums were picked in total ?
+
+[[4, <entity.entity object at 0x116dfdd68>], [9, <entity.entity object at 0x116dfdef0>], [15, <entity.entity object at 0x116dfd080>], [103, <entity.entity object at 0x116dfd470>]]
+PERMATCHES:  []
+('plums', 'plum')
+[('4', <entity.entity object at 0x116dfdd68>), ('9', <entity.entity object at 0x116dfdef0>), ('3', <entity.entity object at 0x116dfd080>), ('x', <entity.entity object at 0x116dfd470>)]
+0.8881175776272563 ( 4 + 9 ) + 3 = x
+0.8881175776272563 ( 4 + 9 ) + 3 - x
+CORRECT
+16 16.0
+0.8881175776272563 4 + ( 9 + 3 ) - x
+0.8881175776272563 4 - ( 9 + 3 ) - x
+-8 16.0
+0.8881175776272563 4 / ( 9 + 3 ) - x
+1/3 16.0
+0.8881175776272563 4 * ( 9 + 3 ) - x
+48 16.0
+0.4550276125477964 ( 4 + 9 ) - 3 - x
+10 16.0
+There are 7 dogwood trees currently in the park. Park workers will plant 3 more dogwood trees today and 2 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+[[5, <entity.entity object at 0x113b93080>], [108, <entity.entity object at 0x113b93240>], [114, <entity.entity object at 0x113b93320>], [203, <entity.entity object at 0x113b93438>]]
+PERMATCHES:  []
+('dogwood', 'dogwood')
+[('7', <entity.entity object at 0x113b93080>), ('3', <entity.entity object at 0x113b93240>), ('2', <entity.entity object at 0x113b93320>), ('x', <entity.entity object at 0x113b93438>)]
+0.7345343882152995 ( 7 - 3 ) - 2 = x
+0.7345343882152995 ( 7 - 3 ) - 2 - x
+2 12.0
+0.7096786945291154 7 + ( 3 - 2 ) - x
+8 12.0
+0.7096786945291154 7 - ( 3 - 2 ) - x
+6 12.0
+0.7096786945291154 7 / ( 3 - 2 ) - x
+7 12.0
+0.7096786945291154 7 * ( 3 - 2 ) - x
+0.37268655130812317 ( 7 + 3 ) - 2 - x
+0.37268655130812317 ( 7 - 3 ) + 2 - x
+0.26726719410764976 ( 7 - 3 ) / 2 - x
+0.26726719410764976 ( 7 - 3 ) * 2 - x
+0.26726719410764976 ( 7 / 3 ) - 2 - x
+1/3 12.0
+Sara grew 4 onions, Sally grew 5 onions, and Fred grew  9 onions. How many onions did they grow in all ?
+
+[[4, <entity.entity object at 0x113b1a710>], [9, <entity.entity object at 0x113b1ab70>], [15, <entity.entity object at 0x116dfae10>], [106, <entity.entity object at 0x116dfa198>]]
+PERMATCHES:  []
+('onions', 'onion')
+[('4', <entity.entity object at 0x113b1a710>), ('5', <entity.entity object at 0x113b1ab70>), ('9', <entity.entity object at 0x116dfae10>), ('x', <entity.entity object at 0x116dfa198>)]
+0.33270514199237405 ( 4 + 5 ) + 9 = x
+0.33270514199237405 ( 4 + 5 ) + 9 - x
+CORRECT
+18 18.0
+0.33270514199237405 4 + ( 5 + 9 ) - x
+0.33270514199237405 4 - ( 5 + 9 ) - x
+-10 18.0
+0.33270514199237405 4 / ( 5 + 9 ) - x
+2/7 18.0
+0.33270514199237405 4 * ( 5 + 9 ) - x
+56 18.0
+0.29345611972185615 ( 4 + 5 ) - 9 - x
+0 18.0
+There are 39 dogwood trees currently in the park. Park workers will plant  41 more dogwood trees today and 20 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+[[5, <entity.entity object at 0x113bf8128>], [108, <entity.entity object at 0x113bf8240>], [114, <entity.entity object at 0x113bf8438>], [203, <entity.entity object at 0x113bf83c8>]]
+PERMATCHES:  []
+('dogwood', 'dogwood')
+[('39', <entity.entity object at 0x113bf8128>), ('41', <entity.entity object at 0x113bf8240>), ('20', <entity.entity object at 0x113bf8438>), ('x', <entity.entity object at 0x113bf83c8>)]
+0.7345343882152995 ( 39 - 41 ) - 20 = x
+0.7345343882152995 ( 39 - 41 ) - 20 - x
+-22 100.0
+0.7096786945291154 39 + ( 41 - 20 ) - x
+60 100.0
+0.7096786945291154 39 - ( 41 - 20 ) - x
+18 100.0
+0.7096786945291154 39 / ( 41 - 20 ) - x
+13/7 100.0
+0.7096786945291154 39 * ( 41 - 20 ) - x
+819 100.0
+Sandy has 10 books, Benny has 24 books, and Tim has  33 books. How many books do they have together ?
+
+[[4, <entity.entity object at 0x116e2ff98>], [9, <entity.entity object at 0x116e2fcc0>], [15, <entity.entity object at 0x116e2f080>], [103, <entity.entity object at 0x116e2f438>]]
+PERMATCHES:  []
+('books', 'book')
+[('10', <entity.entity object at 0x116e2ff98>), ('24', <entity.entity object at 0x116e2fcc0>), ('33', <entity.entity object at 0x116e2f080>), ('x', <entity.entity object at 0x116e2f438>)]
+0.9386050637832768 ( 10 + 24 ) + 33 = x
+0.9386050637832768 ( 10 + 24 ) + 33 - x
+CORRECT
+67 67.0
+0.9386050637832768 10 + ( 24 + 33 ) - x
+0.9386050637832768 10 - ( 24 + 33 ) - x
+-47 67.0
+0.9386050637832768 10 / ( 24 + 33 ) - x
+10/57 67.0
+0.9386050637832768 10 * ( 24 + 33 ) - x
+570 67.0
+0.5722808271389038 ( 10 + 24 ) - 33 - x
+1 67.0
+Jason picked 46 pears, Keith picked 47 pears, and Mike picked a dozen pears from the pear tree. How many pears were picked in total ?
+
+[[4, <entity.entity object at 0x113ba6eb8>], [9, <entity.entity object at 0x113ba66d8>], [16, <entity.entity object at 0x113ba6668>], [103, <entity.entity object at 0x113ba6550>]]
+PERMATCHES:  []
+('pears', 'pear')
+[('46', <entity.entity object at 0x113ba6eb8>), ('47', <entity.entity object at 0x113ba66d8>), ('x', <entity.entity object at 0x113ba6550>)]
+0.44405878881362815 46 + 47 = x
+0.44405878881362815 46 + 47 - x
+93 105.0
+0.010968823734168232 46 - 47 - x
+-1 105.0
+0 46 / 47 - x
+46/47 105.0
+0 46 * 47 - x
+2162 105.0
+-0.2 46 - 47 + x
+1 105.0
+Keith grew 29 cantelopes, Fred grew 16 cantelopes, and Jason grew  20 cantelopes. How many cantelopes did they grow in total ?
+
+[[4, <entity.entity object at 0x113c04438>], [9, <entity.entity object at 0x113c04588>], [15, <entity.entity object at 0x113c048d0>], [106, <entity.entity object at 0x113c04470>]]
+PERMATCHES:  []
+('cantelopes', 'cantelope')
+[('29', <entity.entity object at 0x113c04438>), ('16', <entity.entity object at 0x113c04588>), ('20', <entity.entity object at 0x113c048d0>), ('x', <entity.entity object at 0x113c04470>)]
+0.8881175776272563 ( 29 + 16 ) + 20 = x
+0.8881175776272563 ( 29 + 16 ) + 20 - x
+CORRECT
+65 65.0
+0.8881175776272563 29 + ( 16 + 20 ) - x
+0.8881175776272563 29 - ( 16 + 20 ) - x
+-7 65.0
+0.8881175776272563 29 / ( 16 + 20 ) - x
+29/36 65.0
+0.8881175776272563 29 * ( 16 + 20 ) - x
+1044 65.0
+0.4550276125477964 ( 29 + 16 ) - 20 - x
+25 65.0
+Alyssa has 37 blue balloons, Sandy has 28 blue balloons, and Sally  has 39 blue balloons. How many blue balloons do they have in all ?
+
+[[5, <entity.entity object at 0x116e2b1d0>], [11, <entity.entity object at 0x116dfd240>], [18, <entity.entity object at 0x116dfd128>], [104, <entity.entity object at 0x116dfd198>]]
+PERMATCHES:  []
+('balloons', 'balloon')
+[('37', <entity.entity object at 0x116e2b1d0>), ('28', <entity.entity object at 0x116dfd240>), ('39', <entity.entity object at 0x116dfd128>), ('x', <entity.entity object at 0x116dfd198>)]
+0.35255429454579423 ( 37 + 28 ) + 39 = x
+0.35255429454579423 ( 37 + 28 ) + 39 - x
+CORRECT
+104 104.0
+0.35255429454579423 37 + ( 28 + 39 ) - x
+0.35255429454579423 37 - ( 28 + 39 ) - x
+-30 104.0
+0.35255429454579423 37 / ( 28 + 39 ) - x
+37/67 104.0
+0.35255429454579423 37 * ( 28 + 39 ) - x
+2479 104.0
+0.30563227915781344 ( 37 + 28 ) - 39 - x
+26 104.0
+Sally had 27 cards. Dan gave her 41 new cards. Sally bought 20 cards. How many cards does Sally have now ?
+
+[[4, <entity.entity object at 0x113c30278>], [106, <entity.entity object at 0x113c30358>], [204, <entity.entity object at 0x113c303c8>], [303, <entity.entity object at 0x113c30518>]]
+PERMATCHES:  []
+('cards', 'card')
+[('27', <entity.entity object at 0x113c30278>), ('41', <entity.entity object at 0x113c30358>), ('20', <entity.entity object at 0x113c303c8>), ('x', <entity.entity object at 0x113c30518>)]
+1.5315238365013024 ( 27 - 41 ) - 20 = x
+1.5315238365013024 ( 27 - 41 ) - 20 - x
+-34 88.0
+1.4775833982779474 27 + ( 41 - 20 ) - x
+48 88.0
+1.4775833982779474 27 - ( 41 - 20 ) - x
+6 88.0
+1.4775833982779474 27 / ( 41 - 20 ) - x
+9/7 88.0
+1.4775833982779474 27 * ( 41 - 20 ) - x
+567 88.0
+Jason went to 11 football games this month. He went to 17 games last month, and plans to go to 16 games next month. How many games will he attend in all ?
+
+[[6, <entity.entity object at 0x113ba37f0>], [105, <entity.entity object at 0x113ba3048>], [115, <entity.entity object at 0x113c17080>], [203, <entity.entity object at 0x113c17160>]]
+PERMATCHES:  []
+('games', 'game')
+[('11', <entity.entity object at 0x113ba37f0>), ('17', <entity.entity object at 0x113ba3048>), ('16', <entity.entity object at 0x113c17080>), ('x', <entity.entity object at 0x113c17160>)]
+0.3298078257857898 ( 11 + 17 ) + 16 = x
+0.3298078257857898 ( 11 + 17 ) + 16 - x
+CORRECT
+44 44.0
+0.3097148613485786 11 + ( 17 + 16 ) - x
+0.3097148613485786 11 - ( 17 + 16 ) - x
+-22 44.0
+0.3097148613485786 11 / ( 17 + 16 ) - x
+1/3 44.0
+0.3097148613485786 11 * ( 17 + 16 ) - x
+363 44.0
+0.2689403592141531 ( 11 + 17 ) - 16 - x
+12 44.0
+Mike has 45 dollars in 5 dollar bills.  How many 5 dollars bills does  he have ?
+
+[[4, <entity.entity object at 0x116e2efd0>], [8, <entity.entity object at 0x116e2e710>], [104, <entity.entity object at 0x116e2ee80>]]
+PERMATCHES:  []
+[('45', <entity.entity object at 0x116e2efd0>), ('5', <entity.entity object at 0x116e2e710>), ('5', <entity.entity object at 0x116e2ee80>)]
+0.19292030542103508 45 - 5 = 5
+0.19292030542103508 45 - 5 - 5
+0 9.0
+0.0843577417623978 45 + 5 - 5
+0 45 / 5 - 5
+0 45 * 5 - 5
+-0.2 45 - 5 + 5
+-0.2 45 - 5 - 5
+-0.2 45 - 5 / 5
+-0.2 45 - 5 * 5
+Dan found 36 seashells. He plans to give all of his seashells equally to his 4 friends. How many seashells will each friend get ?
+
+[[4, <entity.entity object at 0x113c30da0>], [113, <entity.entity object at 0x113c30198>], [207, <entity.entity object at 0x113c309b0>]]
+PERMATCHES:  []
+('seashells', 'seashell')
+friend
+('seashells', 'seashell')
+seashells
+['seashell', 'friend', 'seashell']
+[('36', <entity.entity object at 0x113c30da0>), ('4', <entity.entity object at 0x113c30198>), ('x', <entity.entity object at 0x113c309b0>)]
+-0.2 36 + 4 = x
+-0.2 36 + 4 - x
+40 9.0
+-0.2 36 - 4 - x
+32 9.0
+-0.2 36 / 4 - x
+CORRECT
+9 9.0
+-0.2 36 * 4 - x
+144 9.0
+-0.2 36 - 4 + x
+-32 9.0
+There are 60 calories in a candy bar. How many dozen calories are there in 45 candy bars?
+
+[[4, <entity.entity object at 0x113b93080>], [104, <entity.entity object at 0x113b932e8>], [110, <entity.entity object at 0x113ae6c88>]]
+PERMATCHES:  []
+('calories', 'calorie')
+[('60', <entity.entity object at 0x113b93080>), ('45', <entity.entity object at 0x113ae6c88>), ('x', <entity.entity object at 0x113b932e8>)]
+0.3607821135995654 60 / 45 = x
+0.3607821135995654 60 / 45 - x
+4/3 225.0
+0.18676040876893352 60 * 45 - x
+2700 225.0
+-0.06360284970557606 60 + 45 - x
+105 225.0
+-0.18121366989718177 60 - 45 - x
+15 225.0
+-0.2 60 - 45 + x
+-15 225.0
+Melanie has 84 blue marbles. Sandy has 8 times more blue marbles than Melanie. How many dozen blue marbles does Sandy have?
+
+[[5, <entity.entity object at 0x116e6a0f0>], [107, <entity.entity object at 0x116e6a160>], [203, <entity.entity object at 0x116e6ab38>]]
+PERMATCHES:  []
+('dozen', 'dozen')
+[('84', <entity.entity object at 0x116e6a0f0>), ('8', <entity.entity object at 0x116e6a160>), ('x', <entity.entity object at 0x116e6ab38>)]
+-0.2 84 + 8 = x
+-0.2 84 + 8 - x
+92 56.0
+-0.2 84 - 8 - x
+76 56.0
+-0.2 84 / 8 - x
+21/2 56.0
+-0.2 84 * 8 - x
+672 56.0
+-0.2 84 - 8 + x
+-76 56.0
+Mike has 48 books. Alyssa has 8 times more books than  Mike. How many dozen books does Alyssa have?
+
+[[4, <entity.entity object at 0x113bc6ba8>], [106, <entity.entity object at 0x113bc6f98>], [203, <entity.entity object at 0x113c0d940>]]
+PERMATCHES:  []
+('dozen', 'dozen')
+[('48', <entity.entity object at 0x113bc6ba8>), ('8', <entity.entity object at 0x113bc6f98>), ('x', <entity.entity object at 0x113c0d940>)]
+-0.2 48 + 8 = x
+-0.2 48 + 8 - x
+56 32.0
+-0.2 48 - 8 - x
+40 32.0
+-0.2 48 / 8 - x
+6 32.0
+-0.2 48 * 8 - x
+384 32.0
+-0.2 48 - 8 + x
+-40 32.0
+A restaurant sold 8 pies every day for a week. How many pies were sold during the 7 days?
+
+PER IS HAPPENING
+day day *1
+[[5, <entity.entity object at 0x116e6a470>], [7, <entity.entity object at 0x116e6a550>], [103, <entity.entity object at 0x116e6a5c0>], [109, <entity.entity object at 0x116e6a898>]]
+PERMATCHES:  [1]
+day
+day
+7*
+('pies', 'pie')
+[('8', <entity.entity object at 0x116e6a470>), ('7', <entity.entity object at 0x116e6a550>), ('x', <entity.entity object at 0x116e6a5c0>)]
+0.024531712601871203 8 * 7 = x
+0.024531712601871203 8 * 7 - x
+CORRECT
+56 56.0
+-0.2 8 + 7 - x
+15 56.0
+-0.2 8 - 7 - x
+1 56.0
+-0.2 8 / 7 - x
+8/7 56.0
+-0.2 8 - 7 + x
+-1 56.0
+Mary loves eating fruits. Mary paid $11.08 for berries, $14.33 for apples, and $9.31 for peaches. In total, how much money did she spend?
+
+[[103, <entity.entity object at 0x113c3bb70>], [108, <entity.entity object at 0x113bf8240>], [114, <entity.entity object at 0x113bf86d8>], [206, <entity.entity object at 0x116e2e470>]]
+PERMATCHES:  []
+('money', 'money')
+[('11.08', <entity.entity object at 0x113c3bb70>), ('14.33', <entity.entity object at 0x113bf8240>), ('9.31', <entity.entity object at 0x113bf86d8>), ('x', <entity.entity object at 0x116e2e470>)]
+0.26148530006895143 11.08 + ( 14.33 - 9.31 ) = x
+0.26148530006895143 11.08 + ( 14.33 - 9.31 ) - x
+16.1000000000000 34.72
+0.26148530006895143 ( 11.08 - 14.33 ) - 9.31 - x
+-12.5600000000000 34.72
+0.26148530006895143 11.08 - ( 14.33 - 9.31 ) - x
+6.06000000000000 34.72
+0.26148530006895143 11.08 / ( 14.33 - 9.31 ) - x
+2.20717131474104 34.72
+0.26148530006895143 11.08 * ( 14.33 - 9.31 ) - x
+55.6216000000000 34.72
+Sandy went to the mall to buy clothes. She spent $13.99 on shorts, $12.14 on a shirt, and $7.43 on a jacket. How much money did Sandy spend on clothes?
+
+[[103, <entity.entity object at 0x116e741d0>], [108, <entity.entity object at 0x116e74550>], [115, <entity.entity object at 0x116e74588>], [203, <entity.entity object at 0x116e74898>]]
+PERMATCHES:  []
+('money', 'money')
+[('13.99', <entity.entity object at 0x116e741d0>), ('12.14', <entity.entity object at 0x116e74550>), ('7.43', <entity.entity object at 0x116e74588>), ('x', <entity.entity object at 0x116e74898>)]
+0.26148530006895143 13.99 + ( 12.14 - 7.43 ) = x
+0.26148530006895143 13.99 + ( 12.14 - 7.43 ) - x
+18.7000000000000 33.56
+0.26148530006895143 ( 13.99 - 12.14 ) - 7.43 - x
+-5.58000000000000 33.56
+0.26148530006895143 13.99 - ( 12.14 - 7.43 ) - x
+9.28000000000000 33.56
+0.26148530006895143 13.99 / ( 12.14 - 7.43 ) - x
+2.97027600849257 33.56
+0.26148530006895143 13.99 * ( 12.14 - 7.43 ) - x
+65.8929000000000 33.56
+Jason joined his school's band. He bought a flute for $142.46, a music stand for $8.89, and a song book for $7. How much did Jason spend at the music store?
+
+[[106, <entity.entity object at 0x116ed12b0>], [113, <entity.entity object at 0x116ed11d0>], [121, <entity.entity object at 0x116ed1780>], [205, <entity.entity object at 0x116ed1550>]]
+PERMATCHES:  []
+('spend', 'spend')
+[('142.46', <entity.entity object at 0x116ed12b0>), ('8.89', <entity.entity object at 0x116ed11d0>), ('7', <entity.entity object at 0x116ed1780>), ('x', <entity.entity object at 0x116ed1550>)]
+0.26148530006895143 142.46 + ( 8.89 - 7 ) = x
+0.26148530006895143 142.46 + ( 8.89 - 7 ) - x
+144.350000000000 158.35
+0.26148530006895143 ( 142.46 - 8.89 ) - 7 - x
+126.570000000000 158.35
+0.26148530006895143 142.46 - ( 8.89 - 7 ) - x
+140.570000000000 158.35
+0.26148530006895143 142.46 / ( 8.89 - 7 ) - x
+75.3756613756614 158.35
+0.26148530006895143 142.46 * ( 8.89 - 7 ) - x
+269.249400000000 158.35
+Fred loves trading cards. He bought 2 packs of football cards for $2.73 each, a pack of Pokemon cards for $4.01, and a deck of baseball cards for $8.95. How much did Fred spend on cards?
+
+[[104, <entity.entity object at 0x116e74d30>], [109, <entity.entity object at 0x113c0a4a8>], [119, <entity.entity object at 0x113c0a400>], [129, <entity.entity object at 0x113c0a5f8>], [205, <entity.entity object at 0x113c0a550>]]
+PERMATCHES:  []
+('spend', 'spend')
+[('2', <entity.entity object at 0x116e74d30>), ('2.73', <entity.entity object at 0x113c0a4a8>), ('4.01', <entity.entity object at 0x113c0a400>), ('8.95', <entity.entity object at 0x113c0a5f8>), ('x', <entity.entity object at 0x113c0a550>)]
+0.8764717305651681 ( 2 / 2.73 ) + ( 4.01 - 8.95 ) = x
+0.8764717305651681 ( 2 / 2.73 ) + ( 4.01 - 8.95 ) - x
+-4.20739926739927 18.42
+0.8764717305651681 ( 2 / 2.73 ) + ( 4.01 - 8.95 ) - x
+0.8764717305651681 ( ( 2 / 2.73 ) - 4.01 ) - 8.95 - x
+-12.2273992673993 18.42
+0.8764717305651681 ( 2 / 2.73 ) - ( 4.01 - 8.95 ) - x
+5.67260073260073 18.42
+0.8764717305651681 ( 2 / 2.73 ) - ( 4.01 - 8.95 ) - x
+0.8764717305651681 ( 2 / 2.73 ) / ( 4.01 - 8.95 ) - x
+-0.148299743441444 18.42
+0.8764717305651681 ( 2 / 2.73 ) / ( 4.01 - 8.95 ) - x
+0.8764717305651681 ( 2 / 2.73 ) * ( 4.01 - 8.95 ) - x
+-3.61904761904762 18.42
+Jeff swims 20 laps every day. How many laps will he swim in 6 weeks?
+
+PER IS HAPPENING
+day day *1
+[[4, <entity.entity object at 0x116e74320>], [6, <entity.entity object at 0x116e749b0>], [109, <entity.entity object at 0x116e74b38>], [106, <entity.entity object at 0x116e6af28>]]
+PERMATCHES:  [1]
+day
+JPOP
+('laps', 'lap')
+[('20', <entity.entity object at 0x116e74320>), ('6', <entity.entity object at 0x116e74b38>), ('x', <entity.entity object at 0x116e6af28>)]
+0.31667190905500747 20 / 6 = x
+0.31667190905500747 20 / 6 - x
+10/3 840.0
+-0.021596123958417313 20 * 6 - x
+120 840.0
+-0.13480374331548134 20 + 6 - x
+26 840.0
+-0.1725529974816753 20 - 6 - x
+14 840.0
+-0.2 20 - 6 + x
+-14 840.0
+Mary Beth could jump 42 times each minute. How many times could she jump in 2 hours?
+
+[[8, <entity.entity object at 0x116f6f908>], [109, <entity.entity object at 0x116f6f080>], [103, <entity.entity object at 0x116f6f748>]]
+PERMATCHES:  []
+('times', 'time')
+[('42*', <entity.entity object at 0x116f6f908>), ('2', <entity.entity object at 0x116f6f080>), ('x', <entity.entity object at 0x116f6f748>)]
+0.46577903974350005 42* / 2 = x
+0.46577903974350005 42* / 2 - x
+0 5040.0
+-0.08361207283907765 42* - 2 - x
+-84 5040.0
+-0.08676290972536563 42* * 2 - x
+1764 5040.0
+-0.11253887723818463 42* + 2 - x
+84 5040.0
+-0.2 42* - 2 + x
+-0.2 42* - 2 - x
+-0.2 42* - 2 / x
+-0.2 42* - 2 * x
+Jeff swims 20 laps every day. How many laps will he swim in 10 days?
+
+PER IS HAPPENING
+day day *1
+[[4, <entity.entity object at 0x113c17550>], [6, <entity.entity object at 0x113c17128>], [109, <entity.entity object at 0x113c17c18>], [106, <entity.entity object at 0x113c171d0>]]
+PERMATCHES:  [1]
+day
+day
+10*
+('laps', 'lap')
+[('20', <entity.entity object at 0x113c17550>), ('10', <entity.entity object at 0x113c17128>), ('x', <entity.entity object at 0x113c171d0>)]
+-0.023614506379929567 20 * 10 = x
+-0.023614506379929567 20 * 10 - x
+CORRECT
+200 200.0
+-0.2 20 + 10 - x
+30 200.0
+-0.2 20 - 10 - x
+10 200.0
+-0.2 20 / 10 - x
+2 200.0
+-0.2 20 - 10 + x
+-10 200.0
+17 155
+Benny bought 4 new baseball trading cards to add to his collection. The next day his dog ate half of his collection. There are now only 34 cards left. How many cards did Benny start with ?
+
+There are 7 dogwood trees currently in the park. Park workers will plant 3 more dogwood trees today and 2 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+There are 39 dogwood trees currently in the park. Park workers will plant  41 more dogwood trees today and 20 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+Jason picked 46 pears, Keith picked 47 pears, and Mike picked a dozen pears from the pear tree. How many pears were picked in total ?
+
+Sally had 27 cards. Dan gave her 41 new cards. Sally bought 20 cards. How many cards does Sally have now ?
+
+Mike has 45 dollars in 5 dollar bills.  How many 5 dollars bills does  he have ?
+
+There are 60 calories in a candy bar. How many dozen calories are there in 45 candy bars?
+
+Melanie has 84 blue marbles. Sandy has 8 times more blue marbles than Melanie. How many dozen blue marbles does Sandy have?
+
+Mike has 48 books. Alyssa has 8 times more books than  Mike. How many dozen books does Alyssa have?
+
+Mary loves eating fruits. Mary paid $11.08 for berries, $14.33 for apples, and $9.31 for peaches. In total, how much money did she spend?
+
+Sandy went to the mall to buy clothes. She spent $13.99 on shorts, $12.14 on a shirt, and $7.43 on a jacket. How much money did Sandy spend on clothes?
+
+Jason joined his school's band. He bought a flute for $142.46, a music stand for $8.89, and a song book for $7. How much did Jason spend at the music store?
+
+Fred loves trading cards. He bought 2 packs of football cards for $2.73 each, a pack of Pokemon cards for $4.01, and a deck of baseball cards for $8.95. How much did Fred spend on cards?
+
+Jeff swims 20 laps every day. How many laps will he swim in 6 weeks?
+
+Mary Beth could jump 42 times each minute. How many times could she jump in 2 hours?
+

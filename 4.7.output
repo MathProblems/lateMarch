@@ -1,0 +1,525 @@
+Benny bought a soft drink for 2 dollars and 5 candy bars. He spent a total of 27 dollars. How much did each candy bar cost ?
+
+('bars', 'bar')
+cost
+('$', '$')
+$
+['dollar', 'bar', 'dollar', '$']
+[('2', <entity.entity object at 0x10ab07588>), ('5', <entity.entity object at 0x10ab07748>), ('x', <entity.entity object at 0x10ab07710>), ('27', <entity.entity object at 0x10ab07780>)]
+0.7070668251772745 2 = ( 5 * x ) + 27
+2 - ( 5 * x ) + 27
+29/5 5.0
+2 + ( 5 * x ) - 27
+CORRECT
+5 5.0
+2 - ( 5 * x ) - 27
+-5 5.0
+2 - ( 5 * x ) - 27
+-5 5.0
+2 / ( 5 * x ) - 27
+2/135 5.0
+Benny bought 4 new baseball trading cards to add to his collection. The next day his dog ate half of his collection. There are now only 34 cards left. How many cards did Benny start with ?
+
+('cards', 'card')
+[('x', <entity.entity object at 0x10ab018d0>), ('4', <entity.entity object at 0x10ab016a0>), ('2', <entity.entity object at 0x10ab01860>), ('34', <entity.entity object at 0x10ab01828>)]
+1.1270747850438168 x = ( 4 / 2 ) - 34
+x - ( 4 / 2 ) - 34
+36 64.0
+( x - 4 ) / 2 - 34
+72 64.0
+x - ( 4 / 2 ) / 34
+1/17 64.0
+x - ( 4 / 2 ) + 34
+-32 64.0
+x - ( 4 / 2 ) * 34
+68 64.0
+Sam had 79 dollars to spend on 9 books. After buying them he had 16 dollars. How much did each book cost ?
+
+('books', 'book')
+cost
+('$', '$')
+$
+['dollar', 'book', 'dollar', '$']
+[('79', <entity.entity object at 0x10dbd0668>), ('9', <entity.entity object at 0x10dbd0898>), ('x', <entity.entity object at 0x10dbd0978>), ('16', <entity.entity object at 0x10dbd08d0>)]
+1.0114339462274813 79 = ( 9 * x ) - 16
+79 - ( 9 * x ) - 16
+CORRECT
+7 7.0
+79 - ( 9 * x ) - 16
+CORRECT
+7 7.0
+79 + ( 9 * x ) - 16
+-7 7.0
+79 - ( 9 * x ) + 16
+95/9 7.0
+79 / ( 9 * x ) - 16
+79/144 7.0
+Oceanside Bike Rental Shop charges 17 dollars plus 7 dollars an hour for renting a bike. Tom paid 80 dollars to rent a bike. How many hours did he pay to have the bike checked out ?
+
+PER IS HAPPENING
+hour hour *1
+('hours', 'hour')
+[('17', <entity.entity object at 0x10dc9c908>), ('x', <entity.entity object at 0x10dc9cb38>), ('7', <entity.entity object at 0x10dc9cac8>), ('80', <entity.entity object at 0x10dc9cc18>)]
+0.49467337102753733 17 = x * ( 7 - 80 )
+17 - x * ( 7 - 80 )
+-17/73 9.0
+17 - ( x * 7 ) - 80
+-9 9.0
+17 + ( x * 7 ) - 80
+CORRECT
+9 9.0
+17 - ( x * 7 ) + 80
+97/7 9.0
+17 - x * ( 7 + 80 )
+17/87 9.0
+On Monday, 375 students went on a trip to the zoo. All 7 buses were filled and 4 students had to travel in cars. How many students were in each bus ?
+
+('students', 'student')
+bus
+('students', 'student')
+students
+['student', 'student', 'bus', 'student']
+[('375', <entity.entity object at 0x10dca1b00>), ('7', <entity.entity object at 0x10dca1c18>), ('x', <entity.entity object at 0x10dca1e10>), ('4', <entity.entity object at 0x10dca1c88>)]
+0.9939753250312342 375 = ( 7 * x ) + 4
+375 - ( 7 * x ) + 4
+379/7 53.0
+375 + ( 7 * x ) - 4
+-53 53.0
+375 - ( 7 * x ) - 4
+CORRECT
+53 53.0
+375 - ( 7 * x ) - 4
+CORRECT
+53 53.0
+375 / ( 7 * x ) - 4
+375/28 53.0
+Sandy sold 2 of her comic books and then bought 6 more. She now has 13. How many did she begin with ?
+
+('books', 'book')
+[('x', <entity.entity object at 0x10dca1470>), ('2', <entity.entity object at 0x10dca1198>), ('6', <entity.entity object at 0x10dca13c8>), ('13', <entity.entity object at 0x10dca1438>)]
+0 ( x + 2 ) + 6 = 13
+( x + 2 ) + 6 - 13
+5 9.0
+x + ( 2 + 6 ) - 13
+5 9.0
+( x + 2 ) - 6 - 13
+17 9.0
+x + ( 2 - 6 ) - 13
+17 9.0
+( x + 2 ) / 6 - 13
+76 9.0
+Tim's cat had kittens. He gave 3 to Jessica and 6 to Sara. He now has 9 kittens left. How many kittens did he have to start with ?
+
+('???', '???')
+[('x', <entity.entity object at 0x10dd97860>), ('3', <entity.entity object at 0x10dd97748>), ('6', <entity.entity object at 0x10dd976d8>), ('9', <entity.entity object at 0x10dd977b8>)]
+0 ( x + 3 ) + 6 = 9
+( x + 3 ) + 6 - 9
+0 18.0
+x + ( 3 + 6 ) - 9
+0 18.0
+( x + 3 ) - 6 - 9
+12 18.0
+x + ( 3 - 6 ) - 9
+12 18.0
+( x + 3 ) / 6 - 9
+51 18.0
+Joan has 9 blue balloons, Sally has 5 blue balloons, and Jessica has  2 blue balloons. How many blue balloons do they have in total ?
+
+('balloons', 'balloon')
+[('9', <entity.entity object at 0x10dd31748>), ('5', <entity.entity object at 0x10dd317f0>), ('2', <entity.entity object at 0x10dd317b8>), ('x', <entity.entity object at 0x10dcf04e0>)]
+0 ( 9 + 5 ) + 2 = x
+( 9 + 5 ) + 2 - x
+CORRECT
+16 16.0
+9 + ( 5 + 2 ) - x
+CORRECT
+16 16.0
+( 9 + 5 ) - 2 - x
+12 16.0
+9 + ( 5 - 2 ) - x
+12 16.0
+( 9 + 5 ) / 2 - x
+7 16.0
+A restaurant served 5 cakes during lunch and 6 during dinner today. The restaurant served 3 cakes yesterday. How many cakes were served in total ?
+
+('cakes', 'cake')
+[('5', <entity.entity object at 0x10dd9ac18>), ('6', <entity.entity object at 0x10dd9ada0>), ('3', <entity.entity object at 0x10dd9ad30>), ('x', <entity.entity object at 0x10dd9ad68>)]
+0 ( 5 + 6 ) + 3 = x
+( 5 + 6 ) + 3 - x
+CORRECT
+14 14.0
+5 + ( 6 + 3 ) - x
+CORRECT
+14 14.0
+( 5 + 6 ) - 3 - x
+8 14.0
+5 + ( 6 - 3 ) - x
+8 14.0
+( 5 + 6 ) / 3 - x
+11/3 14.0
+Melanie picked 4 plums, Dan picked 9 plums, and Sally picked 3 plums from the plum tree. How many plums were picked in total ?
+
+('plums', 'plum')
+[('4', <entity.entity object at 0x10dd2fb38>), ('9', <entity.entity object at 0x10dd2fb70>), ('3', <entity.entity object at 0x10dd2fd30>), ('x', <entity.entity object at 0x10dd2fba8>)]
+0 ( 4 + 9 ) + 3 = x
+( 4 + 9 ) + 3 - x
+CORRECT
+16 16.0
+4 + ( 9 + 3 ) - x
+CORRECT
+16 16.0
+( 4 + 9 ) - 3 - x
+10 16.0
+4 + ( 9 - 3 ) - x
+10 16.0
+( 4 + 9 ) / 3 - x
+13/3 16.0
+There are 7 dogwood trees currently in the park. Park workers will plant 3 more dogwood trees today and 2 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+('dogwood', 'dogwood')
+[('7', <entity.entity object at 0x10dcf1978>), ('3', <entity.entity object at 0x10dcf18d0>), ('2', <entity.entity object at 0x10dda4c18>), ('x', <entity.entity object at 0x10dda4b38>)]
+0 ( 7 + 3 ) + 2 = x
+( 7 + 3 ) + 2 - x
+CORRECT
+12 12.0
+7 + ( 3 + 2 ) - x
+CORRECT
+12 12.0
+( 7 + 3 ) - 2 - x
+8 12.0
+7 + ( 3 - 2 ) - x
+8 12.0
+( 7 + 3 ) / 2 - x
+5 12.0
+Sara grew 4 onions, Sally grew 5 onions, and Fred grew  9 onions. How many onions did they grow in all ?
+
+('onions', 'onion')
+[('4', <entity.entity object at 0x10dd2f0b8>), ('5', <entity.entity object at 0x10dd2f320>), ('9', <entity.entity object at 0x10dcf01d0>), ('x', <entity.entity object at 0x10dcf04a8>)]
+0 ( 4 + 5 ) + 9 = x
+( 4 + 5 ) + 9 - x
+CORRECT
+18 18.0
+4 + ( 5 + 9 ) - x
+CORRECT
+18 18.0
+( 4 + 5 ) - 9 - x
+0 18.0
+4 + ( 5 - 9 ) - x
+0 18.0
+( 4 + 5 ) / 9 - x
+1 18.0
+There are 39 dogwood trees currently in the park. Park workers will plant  41 more dogwood trees today and 20 more dogwood trees tomorrow. How many dogwood trees will the park have when the workers are finished ?
+
+('dogwood', 'dogwood')
+[('39', <entity.entity object at 0x10ddb7978>), ('41', <entity.entity object at 0x10ddb7a90>), ('20', <entity.entity object at 0x10ddb7c88>), ('x', <entity.entity object at 0x10ddb7c18>)]
+0 ( 39 + 41 ) + 20 = x
+( 39 + 41 ) + 20 - x
+CORRECT
+100 100.0
+39 + ( 41 + 20 ) - x
+CORRECT
+100 100.0
+( 39 + 41 ) - 20 - x
+60 100.0
+39 + ( 41 - 20 ) - x
+60 100.0
+( 39 + 41 ) / 20 - x
+4 100.0
+Sandy has 10 books, Benny has 24 books, and Tim has  33 books. How many books do they have together ?
+
+('books', 'book')
+[('10', <entity.entity object at 0x10dda4e80>), ('24', <entity.entity object at 0x10dd31160>), ('33', <entity.entity object at 0x10dda4f98>), ('x', <entity.entity object at 0x10dda4f60>)]
+0 ( 10 + 24 ) + 33 = x
+( 10 + 24 ) + 33 - x
+CORRECT
+67 67.0
+10 + ( 24 + 33 ) - x
+CORRECT
+67 67.0
+( 10 + 24 ) - 33 - x
+1 67.0
+10 + ( 24 - 33 ) - x
+1 67.0
+( 10 + 24 ) / 33 - x
+34/33 67.0
+Jason picked 46 pears, Keith picked 47 pears, and Mike picked a dozen pears from the pear tree. How many pears were picked in total ?
+
+('pears', 'pear')
+[('46', <entity.entity object at 0x10ddc4a20>), ('47', <entity.entity object at 0x10dd2f438>), ('x', <entity.entity object at 0x10ddc4a90>)]
+0 46 + 47 = x
+46 + 47 - x
+93 105.0
+46 - 47 - x
+-1 105.0
+46 / 47 - x
+46/47 105.0
+46 * 47 - x
+2162 105.0
+46 - 47 + x
+1 105.0
+Keith grew 29 cantelopes, Fred grew 16 cantelopes, and Jason grew  20 cantelopes. How many cantelopes did they grow in total ?
+
+('cantelopes', 'cantelope')
+[('29', <entity.entity object at 0x10dcf5518>), ('16', <entity.entity object at 0x10dcf5278>), ('20', <entity.entity object at 0x10dcf5550>), ('x', <entity.entity object at 0x10dcf5630>)]
+0 ( 29 + 16 ) + 20 = x
+( 29 + 16 ) + 20 - x
+CORRECT
+65 65.0
+29 + ( 16 + 20 ) - x
+CORRECT
+65 65.0
+( 29 + 16 ) - 20 - x
+25 65.0
+29 + ( 16 - 20 ) - x
+25 65.0
+( 29 + 16 ) / 20 - x
+9/4 65.0
+Alyssa has 37 blue balloons, Sandy has 28 blue balloons, and Sally  has 39 blue balloons. How many blue balloons do they have in all ?
+
+('balloons', 'balloon')
+[('37', <entity.entity object at 0x10dd310b8>), ('28', <entity.entity object at 0x10dd31080>), ('39', <entity.entity object at 0x10dd2f0b8>), ('x', <entity.entity object at 0x10dd2f390>)]
+0 ( 37 + 28 ) + 39 = x
+( 37 + 28 ) + 39 - x
+CORRECT
+104 104.0
+37 + ( 28 + 39 ) - x
+CORRECT
+104 104.0
+( 37 + 28 ) - 39 - x
+26 104.0
+37 + ( 28 - 39 ) - x
+26 104.0
+( 37 + 28 ) / 39 - x
+5/3 104.0
+Sally had 27 cards. Dan gave her 41 new cards. Sally bought 20 cards. How many cards does Sally have now ?
+
+('cards', 'card')
+[('27', <entity.entity object at 0x10ddb7390>), ('41', <entity.entity object at 0x10dcf0e48>), ('20', <entity.entity object at 0x10dcf04a8>), ('x', <entity.entity object at 0x10dcf0d68>)]
+0 ( 27 + 41 ) + 20 = x
+( 27 + 41 ) + 20 - x
+CORRECT
+88 88.0
+27 + ( 41 + 20 ) - x
+CORRECT
+88 88.0
+( 27 + 41 ) - 20 - x
+48 88.0
+27 + ( 41 - 20 ) - x
+48 88.0
+( 27 + 41 ) / 20 - x
+17/5 88.0
+Jason went to 11 football games this month. He went to 17 games last month, and plans to go to 16 games next month. How many games will he attend in all ?
+
+('games', 'game')
+[('11', <entity.entity object at 0x10ddabac8>), ('17', <entity.entity object at 0x10ddabcf8>), ('16', <entity.entity object at 0x10ddab400>), ('x', <entity.entity object at 0x10ddab2e8>)]
+0 ( 11 + 17 ) + 16 = x
+( 11 + 17 ) + 16 - x
+CORRECT
+44 44.0
+11 + ( 17 + 16 ) - x
+CORRECT
+44 44.0
+( 11 + 17 ) - 16 - x
+12 44.0
+11 + ( 17 - 16 ) - x
+12 44.0
+( 11 + 17 ) / 16 - x
+7/4 44.0
+Mike has 45 dollars in 5 dollar bills.  How many 5 dollars bills does  he have ?
+
+[('45', <entity.entity object at 0x10dab3f60>), ('5', <entity.entity object at 0x10ab1f048>), ('5', <entity.entity object at 0x10ab019e8>)]
+0 45 + 5 = 5
+45 + 5 - 5
+0 9.0
+45 - 5 - 5
+0 9.0
+45 / 5 - 5
+0 9.0
+45 * 5 - 5
+0 9.0
+45 - 5 + 5
+0 9.0
+Dan found 36 seashells. He plans to give all of his seashells equally to his 4 friends. How many seashells will each friend get ?
+
+('seashells', 'seashell')
+friend
+('seashells', 'seashell')
+seashells
+['seashell', 'friend', 'seashell']
+[('36', <entity.entity object at 0x10ddab4a8>), ('4', <entity.entity object at 0x10ddab7b8>), ('x', <entity.entity object at 0x10dd97438>)]
+0.7539985985010258 36 = 4 * x
+36 - 4 * x
+CORRECT
+9 9.0
+36 + 4 - x
+40 9.0
+36 - 4 - x
+32 9.0
+36 / 4 - x
+CORRECT
+9 9.0
+36 * 4 - x
+144 9.0
+There are 60 calories in a candy bar. How many dozen calories are there in 45 candy bars?
+
+('calories', 'calorie')
+[('60', <entity.entity object at 0x10dcf5da0>), ('45', <entity.entity object at 0x10dcf1588>), ('x', <entity.entity object at 0x10dcf5b00>)]
+0 60 + 45 = x
+60 + 45 - x
+105 225.0
+60 - 45 - x
+15 225.0
+60 / 45 - x
+4/3 225.0
+60 * 45 - x
+2700 225.0
+60 - 45 + x
+-15 225.0
+Melanie has 84 blue marbles. Sandy has 8 times more blue marbles than Melanie. How many dozen blue marbles does Sandy have?
+
+('dozen', 'dozen')
+[('84', <entity.entity object at 0x10abc9be0>), ('8', <entity.entity object at 0x10abc9d30>), ('x', <entity.entity object at 0x10abc9e10>)]
+0 84 + 8 = x
+84 + 8 - x
+92 56.0
+84 - 8 - x
+76 56.0
+84 / 8 - x
+21/2 56.0
+84 * 8 - x
+672 56.0
+84 - 8 + x
+-76 56.0
+Mike has 48 books. Alyssa has 8 times more books than  Mike. How many dozen books does Alyssa have?
+
+('dozen', 'dozen')
+[('48', <entity.entity object at 0x10ddc4f98>), ('8', <entity.entity object at 0x10ddc4668>), ('x', <entity.entity object at 0x10ddc4470>)]
+0 48 + 8 = x
+48 + 8 - x
+56 32.0
+48 - 8 - x
+40 32.0
+48 / 8 - x
+6 32.0
+48 * 8 - x
+384 32.0
+48 - 8 + x
+-40 32.0
+A restaurant sold 8 pies every day for a week. How many pies were sold during the 7 days?
+
+PER IS HAPPENING
+day day *1
+('pies', 'pie')
+[('1', <entity.entity object at 0x10abb8390>), ('8', <entity.entity object at 0x10abb8940>), ('7', <entity.entity object at 0x10abb84e0>), ('x', <entity.entity object at 0x10abb8828>)]
+0.3427469389983187 1 * ( 8 / 7 ) = x
+1 * ( 8 / 7 ) - x
+8/7 56.0
+( 1 * 8 ) / 7 - x
+8/7 56.0
+1 * ( 8 * 7 ) - x
+CORRECT
+56 56.0
+( 1 * 8 ) * 7 - x
+CORRECT
+56 56.0
+1 * ( 8 + 7 ) - x
+15 56.0
+Mary loves eating fruits. Mary paid $11.08 for berries, $14.33 for apples, and $9.31 for peaches. In total, how much money did she spend?
+
+('money', 'money')
+[('11.08', <entity.entity object at 0x10ddf0be0>), ('14.33', <entity.entity object at 0x10ddf0fd0>), ('9.31', <entity.entity object at 0x10ddf07b8>), ('x', <entity.entity object at 0x10ddf0828>)]
+0 ( 11.08 + 14.33 ) + 9.31 = x
+( 11.08 + 14.33 ) + 9.31 - x
+CORRECT
+34.7200000000000 34.72
+11.08 + ( 14.33 + 9.31 ) - x
+CORRECT
+34.7200000000000 34.72
+( 11.08 + 14.33 ) - 9.31 - x
+16.1000000000000 34.72
+11.08 + ( 14.33 - 9.31 ) - x
+16.1000000000000 34.72
+( 11.08 + 14.33 ) / 9.31 - x
+2.72932330827068 34.72
+Sandy went to the mall to buy clothes. She spent $13.99 on shorts, $12.14 on a shirt, and $7.43 on a jacket. How much money did Sandy spend on clothes?
+
+('money', 'money')
+[('13.99', <entity.entity object at 0x10abe4940>), ('12.14', <entity.entity object at 0x10abe4240>), ('7.43', <entity.entity object at 0x10abe4320>), ('x', <entity.entity object at 0x10abe4438>)]
+0 ( 13.99 + 12.14 ) + 7.43 = x
+( 13.99 + 12.14 ) + 7.43 - x
+CORRECT
+33.5600000000000 33.56
+13.99 + ( 12.14 + 7.43 ) - x
+CORRECT
+33.5600000000000 33.56
+( 13.99 + 12.14 ) - 7.43 - x
+18.7000000000000 33.56
+13.99 + ( 12.14 - 7.43 ) - x
+18.7000000000000 33.56
+( 13.99 + 12.14 ) / 7.43 - x
+3.51682368775236 33.56
+Jason joined his school's band. He bought a flute for $142.46, a music stand for $8.89, and a song book for $7. How much did Jason spend at the music store?
+
+('spend', 'spend')
+[('142.46', <entity.entity object at 0x10abc9518>), ('8.89', <entity.entity object at 0x10abc9e80>), ('7', <entity.entity object at 0x10ddb7710>), ('x', <entity.entity object at 0x10abd9898>)]
+0 ( 142.46 + 8.89 ) + 7 = x
+( 142.46 + 8.89 ) + 7 - x
+CORRECT
+158.350000000000 158.35
+142.46 + ( 8.89 + 7 ) - x
+CORRECT
+158.350000000000 158.35
+( 142.46 + 8.89 ) - 7 - x
+144.350000000000 158.35
+142.46 + ( 8.89 - 7 ) - x
+144.350000000000 158.35
+( 142.46 + 8.89 ) / 7 - x
+21.6214285714286 158.35
+Fred loves trading cards. He bought 2 packs of football cards for $2.73 each, a pack of Pokemon cards for $4.01, and a deck of baseball cards for $8.95. How much did Fred spend on cards?
+
+('spend', 'spend')
+[('2', <entity.entity object at 0x10de11d68>), ('2.73', <entity.entity object at 0x10de11fd0>), ('4.01', <entity.entity object at 0x10de21080>), ('8.95', <entity.entity object at 0x10de21240>), ('x', <entity.entity object at 0x10de21208>)]
+0 ( ( 2 + 2.73 ) + 4.01 ) + 8.95 = x
+( ( 2 + 2.73 ) + 4.01 ) + 8.95 - x
+17.6900000000000 18.42
+( 2 + 2.73 ) + ( 4.01 + 8.95 ) - x
+17.6900000000000 18.42
+( 2 + ( 2.73 + 4.01 ) ) + 8.95 - x
+17.6900000000000 18.42
+2 + ( ( 2.73 + 4.01 ) + 8.95 ) - x
+17.6900000000000 18.42
+( 2 + 2.73 ) + ( 4.01 + 8.95 ) - x
+17.6900000000000 18.42
+Jeff swims 20 laps every day. How many laps will he swim in 6 weeks?
+
+PER IS HAPPENING
+day day *1
+('laps', 'lap')
+[('1', <entity.entity object at 0x10dde74a8>), ('20', <entity.entity object at 0x10abb8390>), ('6', <entity.entity object at 0x10dde7358>), ('x', <entity.entity object at 0x10dde7d30>)]
+0 ( 1 + 20 ) + 6 = x
+( 1 + 20 ) + 6 - x
+27 840.0
+1 + ( 20 + 6 ) - x
+27 840.0
+( 1 + 20 ) - 6 - x
+15 840.0
+1 + ( 20 - 6 ) - x
+15 840.0
+( 1 + 20 ) / 6 - x
+7/2 840.0
+Mary Beth could jump 42 times each minute. How many times could she jump in 2 hours?
+
+('times', 'time')
+[('42*', <entity.entity object at 0x10de7d048>), ('2', <entity.entity object at 0x10de7d208>), ('x', <entity.entity object at 0x10de7d2b0>)]
+0 42* + 2 = x
+42* + 2 - x
+84 5040.0
+42* - 2 - x
+-84 5040.0
+42* / 2 - x
+0 5040.0
+42* * 2 - x
+1764 5040.0
+42* - 2 + x
+84 5040.0
+20 155
