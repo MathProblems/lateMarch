@@ -6,6 +6,7 @@ import numpy as np
 #from liblinearutil import *
 sys.path.insert(0, '/Users/rikka/libsvm-3.18/python')
 from svmutil import *
+import pdb
 
 def build_d(d, fn, c=1):     
 
@@ -33,27 +34,22 @@ def build_d(d, fn, c=1):
 
 
     prob = svm_problem(labels, bsqs)
-    param = svm_parameter('-v 5 -b 1 -t 2 -c '+str(c)+' -w-1 '+str(1/nl)+' -w1 '+str(1/pl))
+    param = svm_parameter('-q -v 10 -b 1 -t 2 -c '+str(c)+' -w-1 '+str(1/nl)+' -w1 '+str(1/pl))
     m = svm_train(prob, param)
 
-    #param = svm_parameter('-q -b 1 -t 2 -c '+str(c)+' -w-1 '+str(1/nl)+' -w1 '+str(1/pl))
+    param = svm_parameter('-q -b 1 -t 2 -c '+str(c)+' -w-1 '+str(1/nl)+' -w1 '+str(1/pl))
 
-    #m = svm_train(prob, param)
+    m = svm_train(prob, param)
 
-    filename = 'data/'+fn + ".svmclassifier"
+    filename = fn + ".svmclassifier"
     svm_save_model(filename, m)
     #save_model(filename, m)
 
 if __name__=="__main__":
-    d = pickle.load(open('data/bigtexamples.pickle','rb'))
-    named = {'+':'plus','-':'minus','/':'divide','*':'multiply','=':'equal'}
-    for op in d:
-        fn = named[op]
-        pos = d[op][0]
-        neg = []
-        for x in d:
-            if x == op: continue
-            neg.extend(d[x][0])
-        build_d((pos,neg),fn)
+    fn = sys.argv[1]
+    d= pickle.load(open(fn,"rb"))
+    #NOT GENERIC CODE:
+    ex = d["+"]
+    build_d((ex[0],ex[1]),fn)
 
 

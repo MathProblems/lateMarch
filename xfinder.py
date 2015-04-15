@@ -34,18 +34,18 @@ def xfinder(s,xent,psets):
     
 
     target = None
-    print(ent)
+    #print(ent)
     if 'each' in words:
 
         each = [x[1] for x in deps if 'each-' in x[2]]
         if each:
             target = s['words'][int(each[0].split("-")[1])-1][1]['Lemma']
-            print(target)
+            #print(target)
             if target == 'cost':
                 #print("NEW TARGET :",ent)
                 target = ent[1]
                 ent = ("$","$")
-            print(ent)
+            #print(ent)
 
             #find this entity elsewhere and times it by money
 

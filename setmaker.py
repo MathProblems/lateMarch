@@ -240,8 +240,8 @@ def setmaker(story, debug=False):
                             ent = s['words'][trueidx+1][0]
                             lemma = s['words'][trueidx+1][1]["Lemma"]
                             num = "*1"
-                            print('PER IS HAPPENING')
-                            print(ent,lemma,num)
+                            #print('PER IS HAPPENING')
+                            #print(ent,lemma,num)
                             #find other words
                             entities.append([i*100+trueidx+2,makeentity((ent,idx+2,num,lemma,"???"),deps,s['text'],i,words)])
 
@@ -276,7 +276,12 @@ def setmaker(story, debug=False):
                     closeness=makeentity(("???",idx,num,"???","???"),deps,s,i,words)
 
             else:
-                closeness = sorted([(abs(x[0]-thisidx),x[1]) for x in entities if x[0]<thisidx],key=lambda y:y[0],reverse=True)[0][1]
+                closeness = sorted([(abs(x[0]-thisidx),x[1]) for x in entities if x[0]<thisidx],key=lambda y:y[0],reverse=True)
+                if closeness != []:
+                    closeness = closeness[0][1]
+                else:
+                    closeness=makeentity((where,idx,num,"???","???"),deps,s,i,words)
+
             ent = closeness.ent
             lemma = closeness.lemma
             entities.append([thisidx,makeentity((ent,idx,num,lemma,cont),deps,s['text'],i,words)])
@@ -288,29 +293,29 @@ def setmaker(story, debug=False):
         entities[j][1].times = True
         entities[j][0]=num
     '''
-    print(entities)
+    #print(entities)
     #handle per
     permatches = [j for j,y in enumerate(entities) if y[1].num[0]=="*"]
     if debug: 
         print(ent)
         print([y[1].lemma for y in entities])
-    print("PERMATCHES: ",permatches)
+    #print("PERMATCHES: ",permatches)
     if len(permatches)==1:
         j = permatches[0]
         target = entities[j][1].lemma
-        print(target)
+        #print(target)
         # find other mentions of per ent (wrap equiv in a fn that tests for unit similarity)
         perents = [i for i,x in enumerate(entities) if x[1].lemma == target and i!=j]
         if perents:
-            print(target)
+            #print(target)
             i = perents[0]
             ient = entities[i][1].num
             entities[j][1].num = ient+"*"
             entities[j][1].contains = entities[j-1][1].ent
-            print(entities[j][1].num)
+            #print(entities[j][1].num)
             entities.pop(i)
         else:
-            print("JPOP")
+            #print("JPOP")
             entities.pop(j)
 
 
@@ -327,9 +332,9 @@ def setmaker(story, debug=False):
         
         if target is not None:
             if debug: print("TARGET:" + target)
-            print(entities[i][1].ent)
+            #print(entities[i][1].ent)
             entnames = [y[1].lemma for y in entities]
-            print(entnames)
+            #print(entnames)
             if target in entnames:
                 oidx = entities[entnames.index(target)][0]
                 entities[i][0]=oidx+1

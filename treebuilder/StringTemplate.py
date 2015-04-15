@@ -57,6 +57,7 @@ class StringTemplate:
                 return [TokenEquation([tokens[0]], [])]
 
     def createEquations(self):
+        '''
         self.vals = self.b
         self.initialize()
         
@@ -66,7 +67,7 @@ class StringTemplate:
         for i in range(len(self.b)+1):
             self.vals = self.b[0:i] + ['x'] + self.b[i:len(self.b)]
             self.initialize()
-        '''
+        
 
     def initialize(self):
         if len(self.vals) is 2:
